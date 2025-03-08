@@ -7,7 +7,7 @@ parameter bw = 8;
 parameter bw_psum = 2*bw+4;
 parameter pr = 8;
 
-output [bw_psum+3:0] sum_out;
+output [bw_psum*col-1:0] sum_out;
 output [bw_psum*col-1:0] out;
 wire   [bw_psum*col-1:0] pmem_out;
 input  [pr*bw-1:0] mem_in;
@@ -24,8 +24,8 @@ wire  [bw_psum*col-1:0] sfp_out;
 wire  [bw_psum*col-1:0] array_out;
 wire  [col-1:0] fifo_wr;
 wire  ofifo_rd;
-wire [2:0] qkmem_add;
-wire [2:0] pmem_add;
+wire [3:0] qkmem_add;
+wire [3:0] pmem_add;
 
 wire  qmem_rd;
 wire  qmem_wr; 
@@ -47,6 +47,7 @@ assign pmem_wr = inst[0];
 
 assign mac_in  = inst[6] ? kmem_out : qmem_out;
 assign pmem_in = fifo_out;
+assign sum_out = pmem_out;
 
 mac_array #(.bw(bw), .bw_psum(bw_psum), .col(col), .pr(pr)) mac_array_instance (
         .in(mac_in), 
@@ -67,8 +68,7 @@ ofifo #(.bw(bw_psum), .col(col))  ofifo_inst (
         .out(fifo_out)
 );
 
-
-sram_w8 #(.sram_bit(pr*bw)) qmem_instance (
+sram_w16 #(.sram_bit(pr*bw)) qmem_instance (
         .CLK(clk),
         .D(mem_in),
         .Q(qmem_out),
@@ -77,7 +77,7 @@ sram_w8 #(.sram_bit(pr*bw)) qmem_instance (
         .A(qkmem_add)
 );
 
-sram_w8 #(.sram_bit(pr*bw)) kmem_instance (
+sram_w16 #(.sram_bit(pr*bw)) kmem_instance (
         .CLK(clk),
         .D(mem_in),
         .Q(kmem_out),
@@ -86,7 +86,7 @@ sram_w8 #(.sram_bit(pr*bw)) kmem_instance (
         .A(qkmem_add)
 );
 
-sram_w8 #(.sram_bit(col*bw_psum)) psum_mem_instance (
+sram_w16 #(.sram_bit(col*bw_psum)) psum_mem_instance (
         .CLK(clk),
         .D(pmem_in),
         .Q(pmem_out),

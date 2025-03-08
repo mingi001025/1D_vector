@@ -3,7 +3,7 @@
 module mac_col (clk, reset, out, q_in, q_out, i_inst, fifo_wr, o_inst);
 
 parameter bw = 8;
-parameter bw_psum = 2*bw+6;
+parameter bw_psum = 2*bw+4; // Change
 parameter pr = 8;
 parameter col_id = 0;
 
@@ -19,57 +19,46 @@ reg    [3:0] cnt_q;
 reg    [1:0] inst_q;
 reg    [1:0] inst_2q;
 reg   signed [pr*bw-1:0] query_q;
-reg   signed [pr*bw-1:0] query_2q;
 reg   signed [pr*bw-1:0] key_q;
 wire  signed [bw_psum-1:0] psum;
-wire  signed [pr*bw*2-1:0] product;
-reg   signed [pr*bw*2-1:0] product_q;
 
-assign o_inst = inst_2q;
+assign o_inst = inst_q;
 assign fifo_wr = inst_2q[1];
-assign q_out  = query_2q;
+assign q_out  = query_q;
 assign out = psum;
 
-mac_8in #(.bw(bw), .bw_psum(bw_psum), .pr(pr)) mac_8in_instance (
+mac_16in #(.bw(bw), .bw_psum(bw_psum), .pr(pr)) mac_16in_instance (
         .a(query_q), 
         .b(key_q),
-	.product(product)
+	.out(psum)
 ); 
 
-mac_8add #(.bw(bw), .bw_psum(bw_psum), .pr(pr)) mac_8add_instance (
-	.product(product_q),
-	.out(psum)
-);
+
 always @ (posedge clk) begin
   if (reset) begin
     cnt_q <= 0;
     load_ready_q <= 1;
     inst_q <= 0;
     inst_2q <= 0;
-    product_q <= 0;
   end
   else begin
     inst_q <= i_inst;
     inst_2q <= inst_q;
-    
-    query_q <= q_in;
-    query_2q<= query_q; 
-    if (inst_2q[0]) begin //key in, load
-	    if (load_ready_q && (cnt_q == col_id -1)) begin
-	        cnt_q <= 0;
-		key_q <= q_in;
-       		load_ready_q <= 0;
-    	end
-    	else if (load_ready_q)
-	    cnt_q <= cnt_q + 1;
+    if (inst_q[0]) begin
+       query_q <= q_in;
+       if (cnt_q == 9-col_id)begin
+         cnt_q <= 0;
+         key_q <= q_in;
+         load_ready_q <= 0;
+       end
+       else if (load_ready_q)
+         cnt_q <= cnt_q + 1;
     end
-
-    else if(inst_2q[1]) begin //query in,  execution
+    else if(inst_q[1]) begin
       //out     <= psum;
-    product_q <= product;  
+      query_q <= q_in;
     end
   end
 end
 
 endmodule
-
