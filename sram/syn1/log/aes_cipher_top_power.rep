@@ -1,0 +1,80 @@
+Information: Propagating switching activity (low effort zero delay simulation). (PWR-6)
+Warning: There is no defined clock in the design. (PWR-80)
+Warning: Design has unannotated primary inputs. (PWR-414)
+Warning: Design has unannotated sequential cell outputs. (PWR-415)
+ 
+****************************************
+Report : power
+        -analysis_effort low
+Design : aes_cipher_top
+Version: K-2015.06-SP2
+Date   : Fri Mar  7 16:54:33 2025
+****************************************
+
+
+Library(s) Used:
+
+    tcbn65gpluswc (File: /home/linux/ieng6/ee260bwi25/public/PDKdata/db/tcbn65gpluswc.db)
+
+
+Operating Conditions: WCCOM   Library: tcbn65gpluswc
+Wire Load Model Mode: segmented
+
+Design        Wire Load Model            Library
+------------------------------------------------
+aes_cipher_top         ZeroWireload      tcbn65gpluswc
+aes_key_expand_128     ZeroWireload      tcbn65gpluswc
+aes_sbox_19            ZeroWireload      tcbn65gpluswc
+aes_rcon               ZeroWireload      tcbn65gpluswc
+aes_sbox_0             ZeroWireload      tcbn65gpluswc
+aes_sbox_1             ZeroWireload      tcbn65gpluswc
+aes_sbox_2             ZeroWireload      tcbn65gpluswc
+aes_sbox_3             ZeroWireload      tcbn65gpluswc
+aes_sbox_4             ZeroWireload      tcbn65gpluswc
+aes_sbox_5             ZeroWireload      tcbn65gpluswc
+aes_sbox_6             ZeroWireload      tcbn65gpluswc
+aes_sbox_7             ZeroWireload      tcbn65gpluswc
+aes_sbox_8             ZeroWireload      tcbn65gpluswc
+aes_sbox_9             ZeroWireload      tcbn65gpluswc
+aes_sbox_10            ZeroWireload      tcbn65gpluswc
+aes_sbox_11            ZeroWireload      tcbn65gpluswc
+aes_sbox_12            ZeroWireload      tcbn65gpluswc
+aes_sbox_13            ZeroWireload      tcbn65gpluswc
+aes_sbox_14            ZeroWireload      tcbn65gpluswc
+aes_sbox_15            ZeroWireload      tcbn65gpluswc
+aes_sbox_16            ZeroWireload      tcbn65gpluswc
+aes_sbox_17            ZeroWireload      tcbn65gpluswc
+aes_sbox_18            ZeroWireload      tcbn65gpluswc
+
+
+Global Operating Voltage = 0.9  
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 1.000000pf
+    Time Units = 1ns
+    Dynamic Power Units = 1mW    (derived from V,C,T units)
+    Leakage Power Units = 1nW
+
+
+  Cell Internal Power  = 493.7836 uW   (76%)
+  Net Switching Power  = 156.6826 uW   (24%)
+                         ---------
+Total Dynamic Power    = 650.4662 uW  (100%)
+
+Cell Leakage Power     = 118.5633 uW
+
+Information: report_power power group summary does not include estimated clock tree power. (PWR-789)
+
+                 Internal         Switching           Leakage            Total
+Power Group      Power            Power               Power              Power   (   %    )  Attrs
+--------------------------------------------------------------------------------------------------
+io_pad             0.0000            0.0000            0.0000            0.0000  (   0.00%)
+memory             0.0000            0.0000            0.0000            0.0000  (   0.00%)
+black_box          0.0000            0.0000            0.0000            0.0000  (   0.00%)
+clock_network      0.0000            0.0000            0.0000            0.0000  (   0.00%)
+register           0.0000            0.0000            0.0000            0.0000  (   0.00%)
+sequential         0.3984        7.9614e-02        3.2961e+04            0.5110  (  66.45%)
+combinational  9.5367e-02        7.7068e-02        8.5602e+04            0.2580  (  33.55%)
+--------------------------------------------------------------------------------------------------
+Total              0.4938 mW         0.1567 mW     1.1856e+05 nW         0.7690 mW
+1
