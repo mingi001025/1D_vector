@@ -13,6 +13,7 @@ parameter col = 8;           // how many dot product units are equipped
 
 integer qk_file ; // file handler
 integer qk_scan_file ; // file handler
+integer counter = 0; // to track elapsed clock cycles
 
 
 integer  captured_data;
@@ -25,9 +26,14 @@ integer  weight [col*pr-1:0];
 integer  K[col-1:0][pr-1:0];
 integer  Q[total_cycle-1:0][pr-1:0];
 integer  result[total_cycle-1:0][col-1:0];
+integer  rtlResult[total_cycle-1:0][col-1:0];
 integer  sum[total_cycle-1:0];
 
 integer i,j,k,t,p,q,s,u, m;
+reg signed [bw_psum-1:0] mask = 0;
+integer temp = 0;
+
+reg [7:0] tempHex = 0;
 
 
 
@@ -91,14 +97,22 @@ $display("##### Q data txt reading #####");
 
 
   qk_file = $fopen("qdata.txt", "r");
-
+  
   for (q=0; q<total_cycle; q=q+1) begin
+    $write("Q%0d = [", q);
     for (j=0; j<pr; j=j+1) begin
           qk_scan_file = $fscanf(qk_file, "%d\n", captured_data);
           Q[q][j] = captured_data;
-          //$display("%d\n", K[q][j]);
+          $write("%d", Q[q][j]);
     end
+    $write("] Hex: ");
+    for (j=0; j<pr; j=j+1) begin
+        tempHex = Q[q][j] & 'hff;	    
+        $write("%h", tempHex);
+    end
+    $display();
   end
+
 /////////////////////////////////
 
 
@@ -124,13 +138,19 @@ $display("##### K data txt reading #####");
 
   qk_file = $fopen("kdata.txt", "r");
 
-
   for (q=0; q<col; q=q+1) begin
+    $write("K%0d = [", q);
     for (j=0; j<pr; j=j+1) begin
           qk_scan_file = $fscanf(qk_file, "%d\n", captured_data);
           K[q][j] = captured_data;
-          //$display("##### %d\n", K[q][j]);
+          $write("%d", K[q][j]);
     end
+    $write("] Hex: ");
+    for (j=0; j<pr; j=j+1) begin
+        tempHex = K[q][j] & 'hff;	    
+        $write("%h", tempHex);
+    end
+    $display();
   end
 /////////////////////////////////
 
@@ -158,12 +178,16 @@ $display("##### Estimated multiplication result #####");
             result[t][q] = result[t][q] + Q[t][k] * K[q][k];
          end
 
-         temp5b = result[t][q];
-         temp16b = {temp16b[139:0], temp5b};
+         //temp5b = result[t][q];
+         //temp16b = {temp16b[139:0], temp5b};
      end
 
      //$display("%d %d %d %d %d %d %d %d", result[t][0], result[t][1], result[t][2], result[t][3], result[t][4], result[t][5], result[t][6], result[t][7]);
-     $display("prd @cycle%2d: %40h", t, temp16b);
+     $write("prd @cycle%2d: Q%0d*K[n] = [", t, t);
+     for (q=0; q<col; q=q+1) begin
+	$write("%d ", result[t][q]);	
+     end
+     $display("]");
   end
 
 //////////////////////////////////////////////
@@ -181,7 +205,7 @@ $display("##### Qmem writing  #####");
 
     #0.5 clk = 1'b0;  
     qmem_wr = 1;  if (q>0) qkmem_add = qkmem_add + 1; 
-    
+
     mem_in[1*bw-1:0*bw] = Q[q][0];
     mem_in[2*bw-1:1*bw] = Q[q][1];
     mem_in[3*bw-1:2*bw] = Q[q][2];
@@ -190,6 +214,12 @@ $display("##### Qmem writing  #####");
     mem_in[6*bw-1:5*bw] = Q[q][5];
     mem_in[7*bw-1:6*bw] = Q[q][6];
     mem_in[8*bw-1:7*bw] = Q[q][7];
+
+    $write("Clock Cycle = %0d: Q%0d = [", counter, q);
+    for (i=0; i<col; i=i+1) begin
+      $write("%d", Q[q][i]);	
+    end
+    $display("]"); 
 
     #0.5 clk = 1'b1;  
 
@@ -213,7 +243,7 @@ $display("##### Kmem writing #####");
   for (q=0; q<col; q=q+1) begin
 
     #0.5 clk = 1'b0;  
-    kmem_wr = 1; if (q>0) qkmem_add = qkmem_add + 1; 
+    kmem_wr = 1; if (q>0) qkmem_add = qkmem_add + 1;
     
     mem_in[1*bw-1:0*bw] = K[q][0];
     mem_in[2*bw-1:1*bw] = K[q][1];
@@ -224,6 +254,11 @@ $display("##### Kmem writing #####");
     mem_in[7*bw-1:6*bw] = K[q][6];
     mem_in[8*bw-1:7*bw] = K[q][7];
 
+    $write("Clock Cycle = %0d: K%0d = [", counter, q);
+    for (i=0; i<col; i=i+1) begin
+      $write("%d", K[q][i]);	
+    end
+    $display("]");
 
     #0.5 clk = 1'b1;  
 
@@ -337,6 +372,24 @@ $display("##### move ofifo to pmem #####");
 
 
 end
+
+always@(posedge clk) begin
+  counter = counter + 1; // To keep track of clock cycles elapsed
+end
+
+//////////// For printing purpose ////////////
+  always @(posedge clk) begin
+      if(fullchip_tb.fullchip_instance.core_instance.pmem_wr) begin
+          $write("Memory write to PSUM mem add %x Hex: %x -> Dec: [", fullchip_tb.fullchip_instance.core_instance.pmem_add, fullchip_tb.fullchip_instance.core_instance.pmem_in);
+	  temp = pr; 
+ 	  repeat(pr) begin
+	      mask = (fullchip_tb.fullchip_instance.core_instance.pmem_in >> (temp-1)*bw_psum) & ({bw_psum{1'b1}}); 
+	      $write("%d ", mask);
+	      temp = temp - 1;
+	  end
+	  $display("]");
+      end
+  end
 
 endmodule
 

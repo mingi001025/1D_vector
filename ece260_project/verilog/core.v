@@ -95,14 +95,4 @@ sram_w8 #(.sram_bit(col*bw_psum)) psum_mem_instance (
         .A(pmem_add)
 );
 
-
-
-  //////////// For printing purpose ////////////
-  always @(posedge clk) begin
-      if(pmem_wr)
-         $display("Memory write to PSUM mem add %x %x ", pmem_add, pmem_in); 
-  end
-
-
-
 endmodule
