@@ -3,6 +3,8 @@
 
 `timescale 1ns/1ps
 
+`include "./verilog/defines.v"
+
 module fullchip_tb;
 
 parameter total_cycle = 8;   // how many streamed Q vectors will be processed
@@ -380,10 +382,10 @@ end
 //////////// For printing purpose ////////////
   always @(posedge clk) begin
       if(fullchip_tb.fullchip_instance.core_instance.pmem_wr) begin
-          $write("Memory write to PSUM mem add %x Hex: %x -> Dec: [", fullchip_tb.fullchip_instance.core_instance.pmem_add, fullchip_tb.fullchip_instance.core_instance.pmem_in);
+          $write("Memory write to PSUM mem add %x Hex: %x -> Dec: [", `core.pmem_add, `core.pmem_in);
 	  temp = pr; 
  	  repeat(pr) begin
-	      mask = (fullchip_tb.fullchip_instance.core_instance.pmem_in >> (temp-1)*bw_psum) & ({bw_psum{1'b1}}); 
+	      mask = (`core.pmem_in >> (temp-1)*bw_psum) & ({bw_psum{1'b1}}); 
 	      $write("%d ", mask);
 	      temp = temp - 1;
 	  end
