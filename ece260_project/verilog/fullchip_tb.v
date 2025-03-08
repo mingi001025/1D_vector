@@ -99,7 +99,6 @@ $display("##### Q data txt reading #####");
           qk_scan_file = $fscanf(qk_file, "%d\n", captured_data);
           Q[q][j] = captured_data;
           //$display("%d\n", K[q][j]);
-          $display("%d %d %d", captured_data,q,j);
     end
   end
 /////////////////////////////////
@@ -168,8 +167,8 @@ $display("##### Estimated multiplication result #####");
          temp16b = {temp16b[139:0], temp5b};
      end
 
-     $display("%d %d %d %d %d %d %d %d", result[t][0], result[t][1], result[t][2], result[t][3], result[t][4], result[t][5], result[t][6], result[t][7]);
-     //$display("prd @cycle%2d: %40h", t, temp16b);
+     //$display("%d %d %d %d %d %d %d %d", result[t][0], result[t][1], result[t][2], result[t][3], result[t][4], result[t][5], result[t][6], result[t][7]);
+     $display("prd @cycle%2d: %40h", t, temp16b);
   end
 
 //////////////////////////////////////////////
