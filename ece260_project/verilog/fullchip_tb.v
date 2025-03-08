@@ -8,7 +8,7 @@ module fullchip_tb;
 parameter total_cycle = 8;   // how many streamed Q vectors will be processed
 parameter bw = 8;            // Q & K vector bit precision
 parameter bw_psum = 2*bw+4;  // partial sum bit precision
-parameter pr = 16;           // how many products added in each dot product 
+parameter pr = 8;           // how many products added in each dot product 
 parameter col = 8;           // how many dot product units are equipped
 
 integer qk_file ; // file handler
@@ -92,11 +92,6 @@ $display("##### Q data txt reading #####");
 
   qk_file = $fopen("qdata.txt", "r");
 
-  //// To get rid of first 3 lines in data file ////
-  qk_scan_file = $fscanf(qk_file, "%s\n", captured_data);
-  qk_scan_file = $fscanf(qk_file, "%s\n", captured_data);
-  qk_scan_file = $fscanf(qk_file, "%s\n", captured_data);
-  qk_scan_file = $fscanf(qk_file, "%s\n", captured_data);
 
 
   for (q=0; q<total_cycle; q=q+1) begin
@@ -104,6 +99,7 @@ $display("##### Q data txt reading #####");
           qk_scan_file = $fscanf(qk_file, "%d\n", captured_data);
           Q[q][j] = captured_data;
           //$display("%d\n", K[q][j]);
+          $display("%d %d %d", captured_data,q,j);
     end
   end
 /////////////////////////////////
@@ -131,11 +127,6 @@ $display("##### K data txt reading #####");
 
   qk_file = $fopen("kdata.txt", "r");
 
-  //// To get rid of first 4 lines in data file ////
-  qk_scan_file = $fscanf(qk_file, "%s\n", captured_data);
-  qk_scan_file = $fscanf(qk_file, "%s\n", captured_data);
-  qk_scan_file = $fscanf(qk_file, "%s\n", captured_data);
-  qk_scan_file = $fscanf(qk_file, "%s\n", captured_data);
 
 
 
@@ -177,8 +168,8 @@ $display("##### Estimated multiplication result #####");
          temp16b = {temp16b[139:0], temp5b};
      end
 
-     //$display("%d %d %d %d %d %d %d %d", result[t][0], result[t][1], result[t][2], result[t][3], result[t][4], result[t][5], result[t][6], result[t][7]);
-     $display("prd @cycle%2d: %40h", t, temp16b);
+     $display("%d %d %d %d %d %d %d %d", result[t][0], result[t][1], result[t][2], result[t][3], result[t][4], result[t][5], result[t][6], result[t][7]);
+     //$display("prd @cycle%2d: %40h", t, temp16b);
   end
 
 //////////////////////////////////////////////

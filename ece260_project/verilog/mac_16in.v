@@ -59,15 +59,7 @@ assign out =
 	+	{{(4){product4[2*bw-1]}},product4	}
 	+	{{(4){product5[2*bw-1]}},product5	}
 	+	{{(4){product6[2*bw-1]}},product6	}
-	+	{{(4){product7[2*bw-1]}},product7	}
-	+	{{(4){product8[2*bw-1]}},product8	}
-	+	{{(4){product9[2*bw-1]}},product9	}
-	+	{{(4){product10[2*bw-1]}},product10	}
-	+	{{(4){product11[2*bw-1]}},product11	}
-	+	{{(4){product12[2*bw-1]}},product12	}
-	+	{{(4){product13[2*bw-1]}},product13	}
-	+	{{(4){product14[2*bw-1]}},product14	}
-	+	{{(4){product15[2*bw-1]}},product15	};
+	+	{{(4){product7[2*bw-1]}},product7	};
 
 
 
