@@ -16,46 +16,30 @@ module sfp_row (clk, acc, div, fifo_ext_rd, sum_in, sum_out, sfp_in, sfp_out);
   output [bw_psum+3:0] sum_out;
   wire [bw_psum+3:0] sum_this_core;
   wire signed [bw_psum-1:0] sum_2core;
-  wire signed [bw_psum-1:0] sfp_in_sign0;
-  wire signed [bw_psum-1:0] sfp_in_sign1;
-  wire signed [bw_psum-1:0] sfp_in_sign2;
-  wire signed [bw_psum-1:0] sfp_in_sign3;
-  wire signed [bw_psum-1:0] sfp_in_sign4;
-  wire signed [bw_psum-1:0] sfp_in_sign5;
-  wire signed [bw_psum-1:0] sfp_in_sign6;
-  wire signed [bw_psum-1:0] sfp_in_sign7;
 
 
-  reg signed [bw_psum-1:0] sfp_out_sign0;
-  reg signed [bw_psum-1:0] sfp_out_sign1;
-  reg signed [bw_psum-1:0] sfp_out_sign2;
-  reg signed [bw_psum-1:0] sfp_out_sign3;
-  reg signed [bw_psum-1:0] sfp_out_sign4;
-  reg signed [bw_psum-1:0] sfp_out_sign5;
-  reg signed [bw_psum-1:0] sfp_out_sign6;
-  reg signed [bw_psum-1:0] sfp_out_sign7;
+  reg signed [bw_psum-1:0] sfp_out_0;
+  reg signed [bw_psum-1:0] sfp_out_1;
+  reg signed [bw_psum-1:0] sfp_out_2;
+  reg signed [bw_psum-1:0] sfp_out_3;
+  reg signed [bw_psum-1:0] sfp_out_4;
+  reg signed [bw_psum-1:0] sfp_out_5;
+  reg signed [bw_psum-1:0] sfp_out_6;
+  reg signed [bw_psum-1:0] sfp_out_7;
 
   reg [bw_psum+3:0] sum_q;
   reg fifo_wr;
 
-  assign sfp_in_sign0 =  sfp_in[bw_psum*1-1 : bw_psum*0];
-  assign sfp_in_sign1 =  sfp_in[bw_psum*2-1 : bw_psum*1];
-  assign sfp_in_sign2 =  sfp_in[bw_psum*3-1 : bw_psum*2];
-  assign sfp_in_sign3 =  sfp_in[bw_psum*4-1 : bw_psum*3];
-  assign sfp_in_sign4 =  sfp_in[bw_psum*5-1 : bw_psum*4];
-  assign sfp_in_sign5 =  sfp_in[bw_psum*6-1 : bw_psum*5];
-  assign sfp_in_sign6 =  sfp_in[bw_psum*7-1 : bw_psum*6];
-  assign sfp_in_sign7 =  sfp_in[bw_psum*8-1 : bw_psum*7];
 
 
-  assign sfp_out[bw_psum*1-1 : bw_psum*0] = sfp_out_sign0;
-  assign sfp_out[bw_psum*2-1 : bw_psum*1] = sfp_out_sign1;
-  assign sfp_out[bw_psum*3-1 : bw_psum*2] = sfp_out_sign2;
-  assign sfp_out[bw_psum*4-1 : bw_psum*3] = sfp_out_sign3;
-  assign sfp_out[bw_psum*5-1 : bw_psum*4] = sfp_out_sign4;
-  assign sfp_out[bw_psum*6-1 : bw_psum*5] = sfp_out_sign5;
-  assign sfp_out[bw_psum*7-1 : bw_psum*6] = sfp_out_sign6;
-  assign sfp_out[bw_psum*8-1 : bw_psum*7] = sfp_out_sign7;
+  assign sfp_out[bw_psum*1-1 : bw_psum*0] = sfp_out_0;
+  assign sfp_out[bw_psum*2-1 : bw_psum*1] = sfp_out_1;
+  assign sfp_out[bw_psum*3-1 : bw_psum*2] = sfp_out_2;
+  assign sfp_out[bw_psum*4-1 : bw_psum*3] = sfp_out_3;
+  assign sfp_out[bw_psum*5-1 : bw_psum*4] = sfp_out_4;
+  assign sfp_out[bw_psum*6-1 : bw_psum*5] = sfp_out_5;
+  assign sfp_out[bw_psum*7-1 : bw_psum*6] = sfp_out_6;
+  assign sfp_out[bw_psum*8-1 : bw_psum*7] = sfp_out_7;
 
 
   assign sum_2core = sum_this_core[bw_psum+3:7] + sum_in[bw_psum+3:7];
@@ -90,6 +74,7 @@ module sfp_row (clk, acc, div, fifo_ext_rd, sum_in, sum_out, sfp_in, sfp_out);
   );
 
   always @ (posedge clk) begin
+
     if (reset) begin
       fifo_wr <= 0;
     end
@@ -112,14 +97,16 @@ module sfp_row (clk, acc, div, fifo_ext_rd, sum_in, sum_out, sfp_in, sfp_out);
          fifo_wr <= 0;
    
          if (div) begin
-           sfp_out_sign0 <= sfp_in_sign0 / sum_2core;
-           sfp_out_sign1 <= sfp_in_sign1 / sum_2core;
-           sfp_out_sign2 <= sfp_in_sign2 / sum_2core;
-           sfp_out_sign3 <= sfp_in_sign3 / sum_2core;
-           sfp_out_sign4 <= sfp_in_sign4 / sum_2core;
-           sfp_out_sign5 <= sfp_in_sign5 / sum_2core;
-           sfp_out_sign6 <= sfp_in_sign6 / sum_2core;
-           sfp_out_sign7 <= sfp_in_sign7 / sum_2core;
+           sfp_out_0 <= abs[bw_psum*1-1 : bw_psum*0] / sum_2core;
+           sfp_out_1 <= abs[bw_psum*2-1 : bw_psum*1] / sum_2core;
+           sfp_out_2 <= abs[bw_psum*3-1 : bw_psum*2] / sum_2core;
+           sfp_out_3 <= abs[bw_psum*4-1 : bw_psum*3] / sum_2core;
+           sfp_out_4 <= abs[bw_psum*5-1 : bw_psum*4] / sum_2core;
+           sfp_out_5 <= abs[bw_psum*6-1 : bw_psum*5] / sum_2core;
+           sfp_out_6 <= abs[bw_psum*7-1 : bw_psum*6] / sum_2core;
+           sfp_out_7 <= abs[bw_psum*8-1 : bw_psum*7] / sum_2core;
+           $display("%d %d %d %d %d %d %d %d, sum_2core %d",sfp_out_0,sfp_out_1,sfp_out_2,sfp_out_3,sfp_out_4,sfp_out_5, sfp_out_6, sfp_out_7, sum_2core);
+
 
 
 
@@ -130,4 +117,3 @@ module sfp_row (clk, acc, div, fifo_ext_rd, sum_in, sum_out, sfp_in, sfp_out);
 
 
 endmodule
-

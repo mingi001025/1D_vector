@@ -15,7 +15,7 @@ parameter col = 8;           // how many dot product units are equipped
 
 integer qk_file ; // file handler
 integer qk_scan_file ; // file handler
-integer counter = 0; // to track elapsed clock cycles
+// integer counter = 0; // to track elapsed clock cycles
 
 
 integer  captured_data;
@@ -45,7 +45,7 @@ reg reset = 1;
 reg clk = 0;
 reg [pr*bw-1:0] mem_in; 
 reg ofifo_rd = 0;
-wire [16:0] inst; 
+wire [19:0] inst; 
 reg qmem_rd = 0;
 reg qmem_wr = 0; 
 reg kmem_rd = 0; 
@@ -56,8 +56,13 @@ reg execute = 0;
 reg load = 0;
 reg [3:0] qkmem_add = 0;
 reg [3:0] pmem_add = 0;
+reg acc;
+reg div;
+reg get_sum;
 
-
+assign inst[19] = get_sum;
+assign inst[18] = div;
+assign inst[17] = acc;
 assign inst[16] = ofifo_rd;
 assign inst[15:12] = qkmem_add;
 assign inst[11:8]  = pmem_add;
@@ -163,6 +168,37 @@ $display("##### K data txt reading #####");
 
 
 
+// /////////////// Estimated result printing /////////////////
+
+
+// $display("##### Estimated multiplication result #####");
+
+//   for (t=0; t<total_cycle; t=t+1) begin
+//      for (q=0; q<col; q=q+1) begin
+//        result[t][q] = 0;
+//      end
+//   end
+
+//   for (t=0; t<total_cycle; t=t+1) begin
+//      for (q=0; q<col; q=q+1) begin
+//          for (k=0; k<pr; k=k+1) begin
+//             result[t][q] = result[t][q] + Q[t][k] * K[q][k];
+//          end
+
+//          //temp5b = result[t][q];
+//          //temp16b = {temp16b[139:0], temp5b};
+//      end
+
+//      //$display("%d %d %d %d %d %d %d %d", result[t][0], result[t][1], result[t][2], result[t][3], result[t][4], result[t][5], result[t][6], result[t][7]);
+//      $write("prd @cycle%2d: Q%0d*K[n] = [", t, t);
+//      for (q=0; q<col; q=q+1) begin
+// 	$write("%d ", result[t][q]);	
+//      end
+//      $display("]");
+//   end
+
+// //////////////////////////////////////////////
+
 /////////////// Estimated result printing /////////////////
 
 
@@ -175,22 +211,27 @@ $display("##### Estimated multiplication result #####");
   end
 
   for (t=0; t<total_cycle; t=t+1) begin
+     sum[t] = 0;
      for (q=0; q<col; q=q+1) begin
          for (k=0; k<pr; k=k+1) begin
             result[t][q] = result[t][q] + Q[t][k] * K[q][k];
          end
 
-         //temp5b = result[t][q];
-         //temp16b = {temp16b[139:0], temp5b};
+         temp5b = result[t][q];//Qt*Kq (Q0*K0)
+         temp16b = {temp16b[139:0], temp5b};
+	        abs_temp5b = temp5b[bw_psum-1] ? ~temp5b[bw_psum-1:0] + 1 : temp5b[bw_psum-1:0]; //absolute value
+	        sum[t] = sum[t] + temp5b;//sum for normalization
      end
-
-     //$display("%d %d %d %d %d %d %d %d", result[t][0], result[t][1], result[t][2], result[t][3], result[t][4], result[t][5], result[t][6], result[t][7]);
-     $write("prd @cycle%2d: Q%0d*K[n] = [", t, t);
+     
+     $display("prd @cycle%2d: %40h", t, temp16b);//before normalization
      for (q=0; q<col; q=q+1) begin
-	$write("%d ", result[t][q]);	
+	      result[t][q] = {result[t][q], 8'b00000000} / sum[t];
      end
-     $display("]");
+     $display("normalized: %5h %5h %5h %5h %5h %5h %5h %5h", result[t][0], result[t][1], result[t][2], result[t][3], result[t][4], result[t][5], result[t][6], result[t][7]);//after normalization
   end
+
+	  
+
 
 //////////////////////////////////////////////
 
@@ -217,7 +258,7 @@ $display("##### Qmem writing  #####");
     mem_in[7*bw-1:6*bw] = Q[q][6];
     mem_in[8*bw-1:7*bw] = Q[q][7];
 
-    $write("Clock Cycle = %0d: Q%0d = [", counter, q);
+    // $write("Clock Cycle = %0d: Q%0d = [", counter, q);
     for (i=0; i<col; i=i+1) begin
       $write("%d", Q[q][i]);	
     end
@@ -256,7 +297,7 @@ $display("##### Kmem writing #####");
     mem_in[7*bw-1:6*bw] = K[q][6];
     mem_in[8*bw-1:7*bw] = K[q][7];
 
-    $write("Clock Cycle = %0d: K%0d = [", counter, q);
+    // $write("Clock Cycle = %0d: K%0d = [", counter, q);
     for (i=0; i<col; i=i+1) begin
       $write("%d", K[q][i]);	
     end
@@ -368,30 +409,51 @@ $display("##### move ofifo to pmem #####");
 ///////////////////////////////////////////
 
 
+// assign get_sum = inst[19];
+// assign div = inst[18];
+// assign acc = inst[17];
 
 
-  #10 $finish;
+for (q=0; q<total_cycle; q=q+1) begin
+  #0.5 clk = 1'b0;  
+  acc = 1;
+  pmem_rd = 1;
+  #0.5 clk = 1'b1;  
+  #0.5 clk = 1'b0;  
+  pmem_add = pmem_add + 1;
+  pmem_rd = 0;
+  div = 1;
+  acc = 0;
+  #0.5 clk = 1'b1;  
+end
 
+#0.5 clk = 1'b0;  
+div = 0; pmem_add = 0;
+#0.5 clk = 1'b1;  
+
+
+#10 $finish;
 
 end
 
-always@(posedge clk) begin
-  counter = counter + 1; // To keep track of clock cycles elapsed
-end
 
-//////////// For printing purpose ////////////
-  always @(posedge clk) begin
-      if(fullchip_tb.fullchip_instance.core_instance.pmem_wr) begin
-          $write("Memory write to PSUM mem add %x Hex: %x -> Dec: [", `core.pmem_add, `core.pmem_in);
-	  temp = pr; 
- 	  repeat(pr) begin
-	      mask = (`core.pmem_in >> (temp-1)*bw_psum) & ({bw_psum{1'b1}}); 
-	      $write("%d ", mask);
-	      temp = temp - 1;
-	  end
-	  $display("]");
-      end
-  end
+// always@(posedge clk) begin
+//   counter = counter + 1; // To keep track of clock cycles elapsed
+// end
+
+// //////////// For printing purpose ////////////
+//   always @(posedge clk) begin
+//       if(fullchip_tb.fullchip_instance.core_instance.pmem_wr) begin
+//           $write("Memory write to PSUM mem add %x Hex: %x -> Dec: [", `core.pmem_add, `core.pmem_in);
+// 	  temp = pr; 
+//  	  repeat(pr) begin
+// 	      mask = (`core.pmem_in >> (temp-1)*bw_psum) & ({bw_psum{1'b1}}); 
+// 	      $write("%d ", mask);
+// 	      temp = temp - 1;
+// 	  end
+// 	  $display("]");
+//       end
+//   end
 
 endmodule
 
