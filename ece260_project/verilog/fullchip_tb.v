@@ -80,6 +80,7 @@ assign inst[0] = pmem_wr;
 reg [bw_psum-1:0] temp5b;
 reg [bw_psum+3:0] temp_sum;
 reg [bw_psum*col-1:0] temp16b;
+reg [bw_psum-1:0] abs_temp5b;
 
 
 
@@ -321,7 +322,8 @@ $display("##### Kmem writing #####");
   end
 
 
-
+div = 0;
+acc = 0;
 
 /////  K data loading  /////
 $display("##### K data loading to processor #####");
@@ -412,23 +414,34 @@ $display("##### move ofifo to pmem #####");
 // assign get_sum = inst[19];
 // assign div = inst[18];
 // assign acc = inst[17];
-
-
-for (q=0; q<total_cycle; q=q+1) begin
-  #0.5 clk = 1'b0;  
-  acc = 1;
-  pmem_rd = 1;
-  #0.5 clk = 1'b1;  
-  #0.5 clk = 1'b0;  
-  pmem_add = pmem_add + 1;
-  pmem_rd = 0;
-  div = 1;
-  acc = 0;
-  #0.5 clk = 1'b1;  
-end
+$display("##### division in SFP #####");
 
 #0.5 clk = 1'b0;  
-div = 0; pmem_add = 0;
+
+for (q=0; q<total_cycle; q=q+1) begin
+
+  #0.5 clk = 1'b1;  #0.5 clk = 1'b0;
+  pmem_rd = 1;
+  pmem_wr = 0;
+  
+  #0.5 clk = 1'b1; #0.5 clk = 1'b0; 
+  div = 0;
+  acc = 1;
+
+  #0.5 clk = 1'b1; #0.5 clk = 1'b0; 
+  div = 1;
+
+  #0.5 clk = 1'b1; #0.5 clk = 1'b0; 
+  div = 0;
+  pmem_rd = 0;
+  pmem_wr = 1;
+  #0.5 clk = 1'b1; #0.5 clk = 1'b0; 
+  pmem_wr = 0;
+  pmem_add = pmem_add + 1;
+
+end
+#0.5 clk = 1'b0;  
+pmem_rd = 0; pmem_add = 0; div = 0;
 #0.5 clk = 1'b1;  
 
 

@@ -21,6 +21,8 @@ wire  [pr*bw-1:0] qmem_out;
 wire  [bw_psum*col-1:0] pmem_in;
 wire  [bw_psum*col-1:0] fifo_out;
 wire  [bw_psum*col-1:0] sfp_out;
+wire  [bw_psum*col-1:0] sfp_in;
+
 wire  [bw_psum*col-1:0] array_out;
 wire  [col-1:0] fifo_wr;
 wire  ofifo_rd;
@@ -52,7 +54,7 @@ assign pmem_rd = inst[1];
 assign pmem_wr = inst[0];
 
 assign mac_in  = inst[6] ? kmem_out : qmem_out;
-assign pmem_in = div ? sfp_out : fifo_out;
+assign pmem_in = (div||acc) ? sfp_out : fifo_out;
 assign sfp_in  = pmem_out;
 assign sum_out = pmem_out;
 
@@ -107,7 +109,7 @@ sfp_row #(.col(col), .bw(bw), .bw_psum(bw_psum)) sfp_instance (
 	.div(div),
 	.acc(acc),
 	.fifo_ext_rd(get_sum),
-	.sum_in(0),
+	.sum_in(24'b0),
 	.sum_out(core_sum),
 	.sfp_in(sfp_in),
 	.sfp_out(sfp_out)

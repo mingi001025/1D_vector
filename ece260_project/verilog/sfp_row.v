@@ -5,7 +5,7 @@ module sfp_row (clk, acc, div, fifo_ext_rd, sum_in, sum_out, sfp_in, sfp_out);
   parameter col = 8;
   parameter bw = 8;
   parameter bw_psum = 2*bw+4;
-
+  parameter bw_psum_shift = 2*bw+12;
  
   input  clk, div, acc, fifo_ext_rd;
   input  [bw_psum+3:0] sum_in;
@@ -17,33 +17,38 @@ module sfp_row (clk, acc, div, fifo_ext_rd, sum_in, sum_out, sfp_in, sfp_out);
   wire [bw_psum+3:0] sum_this_core;
   wire signed [bw_psum-1:0] sum_2core;
 
-
-  reg signed [bw_psum-1:0] sfp_out_0;
-  reg signed [bw_psum-1:0] sfp_out_1;
-  reg signed [bw_psum-1:0] sfp_out_2;
-  reg signed [bw_psum-1:0] sfp_out_3;
-  reg signed [bw_psum-1:0] sfp_out_4;
-  reg signed [bw_psum-1:0] sfp_out_5;
-  reg signed [bw_psum-1:0] sfp_out_6;
-  reg signed [bw_psum-1:0] sfp_out_7;
+  reg signed [bw_psum_shift-1:0] sfp_out_0;
+  reg signed [bw_psum_shift-1:0] sfp_out_1;
+  reg signed [bw_psum_shift-1:0] sfp_out_2;
+  reg signed [bw_psum_shift-1:0] sfp_out_3;
+  reg signed [bw_psum_shift-1:0] sfp_out_4;
+  reg signed [bw_psum_shift-1:0] sfp_out_5;
+  reg signed [bw_psum_shift-1:0] sfp_out_6;
+  reg signed [bw_psum_shift-1:0] sfp_out_7;
 
   reg [bw_psum+3:0] sum_q;
   reg fifo_wr;
+  
 
+  // assign sfp_out[bw_psum*1-1 : bw_psum*0] = (sfp_out_0 >> 8);
+  // assign sfp_out[bw_psum*2-1 : bw_psum*1] = (sfp_out_1 >> 8);
+  // assign sfp_out[bw_psum*3-1 : bw_psum*2] = (sfp_out_2 >> 8);
+  // assign sfp_out[bw_psum*4-1 : bw_psum*3] = (sfp_out_3 >> 8);
+  // assign sfp_out[bw_psum*5-1 : bw_psum*4] = (sfp_out_4 >> 8);
+  // assign sfp_out[bw_psum*6-1 : bw_psum*5] = (sfp_out_5 >> 8);
+  // assign sfp_out[bw_psum*7-1 : bw_psum*6] = (sfp_out_6 >> 8);
+  // assign sfp_out[bw_psum*8-1 : bw_psum*7] = (sfp_out_7 >> 8);
 
+  assign sfp_out[bw_psum*1-1 : bw_psum*0] = sfp_out_0[bw_psum-1:0];
+  assign sfp_out[bw_psum*2-1 : bw_psum*1] = sfp_out_1[bw_psum-1:0];
+  assign sfp_out[bw_psum*3-1 : bw_psum*2] = sfp_out_2[bw_psum-1:0];
+  assign sfp_out[bw_psum*4-1 : bw_psum*3] = sfp_out_3[bw_psum-1:0];
+  assign sfp_out[bw_psum*5-1 : bw_psum*4] = sfp_out_4[bw_psum-1:0];
+  assign sfp_out[bw_psum*6-1 : bw_psum*5] = sfp_out_5[bw_psum-1:0];
+  assign sfp_out[bw_psum*7-1 : bw_psum*6] = sfp_out_6[bw_psum-1:0];
+  assign sfp_out[bw_psum*8-1 : bw_psum*7] = sfp_out_7[bw_psum-1:0];
 
-  assign sfp_out[bw_psum*1-1 : bw_psum*0] = sfp_out_0;
-  assign sfp_out[bw_psum*2-1 : bw_psum*1] = sfp_out_1;
-  assign sfp_out[bw_psum*3-1 : bw_psum*2] = sfp_out_2;
-  assign sfp_out[bw_psum*4-1 : bw_psum*3] = sfp_out_3;
-  assign sfp_out[bw_psum*5-1 : bw_psum*4] = sfp_out_4;
-  assign sfp_out[bw_psum*6-1 : bw_psum*5] = sfp_out_5;
-  assign sfp_out[bw_psum*7-1 : bw_psum*6] = sfp_out_6;
-  assign sfp_out[bw_psum*8-1 : bw_psum*7] = sfp_out_7;
-
-
-  assign sum_2core = sum_this_core[bw_psum+3:7] + sum_in[bw_psum+3:7];
-
+  // assign sum_2core = sum_this_core[bw_psum+3:7] + sum_in[bw_psum+3:7];
   assign abs[bw_psum*1-1 : bw_psum*0] = (sfp_in[bw_psum*1-1]) ?  (~sfp_in[bw_psum*1-1 : bw_psum*0] + 1)  :  sfp_in[bw_psum*1-1 : bw_psum*0];
   assign abs[bw_psum*2-1 : bw_psum*1] = (sfp_in[bw_psum*2-1]) ?  (~sfp_in[bw_psum*2-1 : bw_psum*1] + 1)  :  sfp_in[bw_psum*2-1 : bw_psum*1];
   assign abs[bw_psum*3-1 : bw_psum*2] = (sfp_in[bw_psum*3-1]) ?  (~sfp_in[bw_psum*3-1 : bw_psum*2] + 1)  :  sfp_in[bw_psum*3-1 : bw_psum*2];
@@ -77,6 +82,7 @@ module sfp_row (clk, acc, div, fifo_ext_rd, sum_in, sum_out, sfp_in, sfp_out);
 
     if (reset) begin
       fifo_wr <= 0;
+      cnt <= 0;
     end
     else begin
        div_q <= div ;
@@ -93,25 +99,29 @@ module sfp_row (clk, acc, div, fifo_ext_rd, sum_in, sum_out, sfp_in, sfp_out);
            {4'b0, abs[bw_psum*8-1 : bw_psum*7]} ;
          fifo_wr <= 1;
        end
-       else begin
-         fifo_wr <= 0;
-   
-         if (div) begin
-           sfp_out_0 <= abs[bw_psum*1-1 : bw_psum*0] / sum_2core;
-           sfp_out_1 <= abs[bw_psum*2-1 : bw_psum*1] / sum_2core;
-           sfp_out_2 <= abs[bw_psum*3-1 : bw_psum*2] / sum_2core;
-           sfp_out_3 <= abs[bw_psum*4-1 : bw_psum*3] / sum_2core;
-           sfp_out_4 <= abs[bw_psum*5-1 : bw_psum*4] / sum_2core;
-           sfp_out_5 <= abs[bw_psum*6-1 : bw_psum*5] / sum_2core;
-           sfp_out_6 <= abs[bw_psum*7-1 : bw_psum*6] / sum_2core;
-           sfp_out_7 <= abs[bw_psum*8-1 : bw_psum*7] / sum_2core;
-           $display("%d %d %d %d %d %d %d %d, sum_2core %d",sfp_out_0,sfp_out_1,sfp_out_2,sfp_out_3,sfp_out_4,sfp_out_5, sfp_out_6, sfp_out_7, sum_2core);
+        
+      fifo_wr <= 0;
 
-
-
-
-         end
+      if (div) begin
+      //  sfp_out_0 <= abs[bw_psum*1-1 : bw_psum*0] / sum_2core;
+      //  sfp_out_1 <= abs[bw_psum*2-1 : bw_psum*1] / sum_2core;
+      //  sfp_out_2 <= abs[bw_psum*3-1 : bw_psum*2] / sum_2core;
+      //  sfp_out_3 <= abs[bw_psum*4-1 : bw_psum*3] / sum_2core;
+      //  sfp_out_4 <= abs[bw_psum*5-1 : bw_psum*4] / sum_2core;
+      //  sfp_out_5 <= abs[bw_psum*6-1 : bw_psum*5] / sum_2core;
+      //  sfp_out_6 <= abs[bw_psum*7-1 : bw_psum*6] / sum_2core;
+      //  sfp_out_7 <= abs[bw_psum*8-1 : bw_psum*7] / sum_2core;
+        sfp_out_0 <= (abs[bw_psum*1-1 : bw_psum*0]<<8) / sum_q;
+        sfp_out_1 <= (abs[bw_psum*2-1 : bw_psum*1]<<8) / sum_q;
+        sfp_out_2 <= (abs[bw_psum*3-1 : bw_psum*2]<<8) / sum_q;
+        sfp_out_3 <= (abs[bw_psum*4-1 : bw_psum*3]<<8) / sum_q;
+        sfp_out_4 <= (abs[bw_psum*5-1 : bw_psum*4]<<8) / sum_q;
+        sfp_out_5 <= (abs[bw_psum*6-1 : bw_psum*5]<<8) / sum_q;
+        sfp_out_6 <= (abs[bw_psum*7-1 : bw_psum*6]<<8) / sum_q;
+        sfp_out_7 <= (abs[bw_psum*8-1 : bw_psum*7]<<8) / sum_q;
+        $display("%d %d %d %d %d %d %d %d",sfp_out_7,sfp_out_6,sfp_out_5,sfp_out_4,sfp_out_3,sfp_out_2, sfp_out_1, sfp_out_0);
        end
+       
    end
  end
 
