@@ -26,6 +26,15 @@ module sfp_row (clk, acc, div, fifo_ext_rd, sum_in, sum_out, sfp_in, sfp_out);
   reg signed [bw_psum_shift-1:0] sfp_out_6;
   reg signed [bw_psum_shift-1:0] sfp_out_7;
 
+  wire signed [bw_psum_shift-1:0] sfp_out_0_w;
+  wire signed [bw_psum_shift-1:0] sfp_out_1_w;
+  wire signed [bw_psum_shift-1:0] sfp_out_2_w;
+  wire signed [bw_psum_shift-1:0] sfp_out_3_w;
+  wire signed [bw_psum_shift-1:0] sfp_out_4_w;
+  wire signed [bw_psum_shift-1:0] sfp_out_5_w;
+  wire signed [bw_psum_shift-1:0] sfp_out_6_w;
+  wire signed [bw_psum_shift-1:0] sfp_out_7_w;
+
   reg [bw_psum+3:0] sum_q;
   reg fifo_wr;
   
@@ -58,6 +67,16 @@ module sfp_row (clk, acc, div, fifo_ext_rd, sum_in, sum_out, sfp_in, sfp_out);
   assign abs[bw_psum*7-1 : bw_psum*6] = (sfp_in[bw_psum*7-1]) ?  (~sfp_in[bw_psum*7-1 : bw_psum*6] + 1)  :  sfp_in[bw_psum*7-1 : bw_psum*6];
   assign abs[bw_psum*8-1 : bw_psum*7] = (sfp_in[bw_psum*8-1]) ?  (~sfp_in[bw_psum*8-1 : bw_psum*7] + 1)  :  sfp_in[bw_psum*8-1 : bw_psum*7];
 
+  assign sfp_out_0_w = (abs[bw_psum*1-1 : bw_psum*0]<<8) / sum_q;
+  assign sfp_out_1_w = (abs[bw_psum*2-1 : bw_psum*1]<<8) / sum_q;
+  assign sfp_out_2_w = (abs[bw_psum*3-1 : bw_psum*2]<<8) / sum_q;
+  assign sfp_out_3_w = (abs[bw_psum*4-1 : bw_psum*3]<<8) / sum_q;
+  assign sfp_out_4_w = (abs[bw_psum*5-1 : bw_psum*4]<<8) / sum_q;
+  assign sfp_out_5_w = (abs[bw_psum*6-1 : bw_psum*5]<<8) / sum_q;
+  assign sfp_out_6_w = (abs[bw_psum*7-1 : bw_psum*6]<<8) / sum_q;
+  assign sfp_out_7_w = (abs[bw_psum*8-1 : bw_psum*7]<<8) / sum_q;
+  
+
   fifo_depth16 #(.bw(bw_psum+4)) fifo_inst_int (
      .rd_clk(clk), 
      .wr_clk(clk), 
@@ -82,7 +101,6 @@ module sfp_row (clk, acc, div, fifo_ext_rd, sum_in, sum_out, sfp_in, sfp_out);
 
     if (reset) begin
       fifo_wr <= 0;
-      cnt <= 0;
     end
     else begin
        div_q <= div ;
@@ -119,7 +137,7 @@ module sfp_row (clk, acc, div, fifo_ext_rd, sum_in, sum_out, sfp_in, sfp_out);
         sfp_out_5 <= (abs[bw_psum*6-1 : bw_psum*5]<<8) / sum_q;
         sfp_out_6 <= (abs[bw_psum*7-1 : bw_psum*6]<<8) / sum_q;
         sfp_out_7 <= (abs[bw_psum*8-1 : bw_psum*7]<<8) / sum_q;
-        $display("%d %d %d %d %d %d %d %d",sfp_out_7,sfp_out_6,sfp_out_5,sfp_out_4,sfp_out_3,sfp_out_2, sfp_out_1, sfp_out_0);
+        $display("%d %d %d %d %d %d %d %d",sfp_out_7_w,sfp_out_6_w,sfp_out_5_w,sfp_out_4_w,sfp_out_3_w,sfp_out_2_w, sfp_out_1_w, sfp_out_0_w);
        end
        
    end
