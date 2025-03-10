@@ -1,5 +1,5 @@
 # Floorplan
-floorPlan -site core -r 1 0.60 10.0 10.0 10.0 10.0
+floorPlan -site core -r 1 0.50 10.0 10.0 10.0 10.0
 
 globalNetConnect VDD -type pgpin -pin VDD -inst * -verbose
 globalNetConnect VSS -type pgpin -pin VSS -inst * -verbose
@@ -13,7 +13,7 @@ setAddStripeMode -break_at {block_ring}
 # addStripe -number_of_sets 2  -spacing 1 -layer M4 -width 1 -nets { VSS VDD }
 #################################################
 
-addStripe -nets {VDD VSS} -layer M4 -direction vertical -width 2 -spacing 6 -number_of_sets 25
+addStripe -nets {VDD VSS} -layer M4 -direction vertical -width 2 -spacing 6 -number_of_sets 22
 
 sroute
 

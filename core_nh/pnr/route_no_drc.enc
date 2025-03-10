@@ -1,0 +1,1 @@
+restoreDesign [file dirname [file normalize [info script]]]/route_no_drc.enc.dat core
