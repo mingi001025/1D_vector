@@ -381,7 +381,7 @@ end
 
 //////////// For printing purpose ////////////
   always @(posedge clk) begin
-      if(fullchip_tb.fullchip_instance.core_instance.pmem_wr) begin
+      if(`core.pmem_wr) begin
           $write("Memory write to PSUM mem add %x Hex: %x -> Dec: [", `core.pmem_add, `core.pmem_in);
 	  temp = pr; 
  	  repeat(pr) begin
