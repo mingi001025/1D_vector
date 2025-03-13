@@ -1,0 +1,1 @@
+/home/linux/ieng6/ee260bwi25/nbalasubramanian/project1/sram/pnr/constraints/sram_160b_w16.sdc

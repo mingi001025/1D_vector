@@ -1,0 +1,2416 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -nets
+        -max_paths 100
+        -transition_time
+        -capacitance
+Design : aes_cipher_top
+Version: K-2015.06-SP2
+Date   : Fri Mar  7 16:54:33 2025
+****************************************
+
+Operating Conditions: WCCOM   Library: tcbn65gpluswc
+Wire Load Model Mode: segmented
+
+  Startpoint: done_reg (rising edge-triggered flip-flop)
+  Endpoint: done (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  aes_rcon           ZeroWireload          tcbn65gpluswc
+  aes_cipher_top     ZeroWireload          tcbn65gpluswc
+  aes_key_expand_128 ZeroWireload          tcbn65gpluswc
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  done_reg/CP (DFQD1)                               0.485     0.000      0.000 r
+  done_reg/Q (DFQD1)                                0.429     0.408      0.408 r
+  done (net)                     1        0.050               0.000      0.408 r
+  done (out)                                        0.429     0.000      0.408 r
+  data arrival time                                                      0.408
+  -------------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: text_out_reg_127_
+              (rising edge-triggered flip-flop)
+  Endpoint: text_out[127]
+            (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  aes_rcon           ZeroWireload          tcbn65gpluswc
+  aes_cipher_top     ZeroWireload          tcbn65gpluswc
+  aes_key_expand_128 ZeroWireload          tcbn65gpluswc
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  text_out_reg_127_/CP (DFQD1)                      0.485     0.000      0.000 r
+  text_out_reg_127_/Q (DFQD1)                       0.429     0.408      0.408 r
+  text_out[127] (net)            1        0.050               0.000      0.408 r
+  text_out[127] (out)                               0.429     0.000      0.408 r
+  data arrival time                                                      0.408
+  -------------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: text_out_reg_126_
+              (rising edge-triggered flip-flop)
+  Endpoint: text_out[126]
+            (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  aes_rcon           ZeroWireload          tcbn65gpluswc
+  aes_cipher_top     ZeroWireload          tcbn65gpluswc
+  aes_key_expand_128 ZeroWireload          tcbn65gpluswc
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  text_out_reg_126_/CP (DFQD1)                      0.485     0.000      0.000 r
+  text_out_reg_126_/Q (DFQD1)                       0.429     0.408      0.408 r
+  text_out[126] (net)            1        0.050               0.000      0.408 r
+  text_out[126] (out)                               0.429     0.000      0.408 r
+  data arrival time                                                      0.408
+  -------------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: text_out_reg_125_
+              (rising edge-triggered flip-flop)
+  Endpoint: text_out[125]
+            (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  aes_rcon           ZeroWireload          tcbn65gpluswc
+  aes_cipher_top     ZeroWireload          tcbn65gpluswc
+  aes_key_expand_128 ZeroWireload          tcbn65gpluswc
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  text_out_reg_125_/CP (DFQD1)                      0.485     0.000      0.000 r
+  text_out_reg_125_/Q (DFQD1)                       0.429     0.408      0.408 r
+  text_out[125] (net)            1        0.050               0.000      0.408 r
+  text_out[125] (out)                               0.429     0.000      0.408 r
+  data arrival time                                                      0.408
+  -------------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: text_out_reg_124_
+              (rising edge-triggered flip-flop)
+  Endpoint: text_out[124]
+            (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  aes_rcon           ZeroWireload          tcbn65gpluswc
+  aes_cipher_top     ZeroWireload          tcbn65gpluswc
+  aes_key_expand_128 ZeroWireload          tcbn65gpluswc
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  text_out_reg_124_/CP (DFQD1)                      0.485     0.000      0.000 r
+  text_out_reg_124_/Q (DFQD1)                       0.429     0.408      0.408 r
+  text_out[124] (net)            1        0.050               0.000      0.408 r
+  text_out[124] (out)                               0.429     0.000      0.408 r
+  data arrival time                                                      0.408
+  -------------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: text_out_reg_123_
+              (rising edge-triggered flip-flop)
+  Endpoint: text_out[123]
+            (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  aes_rcon           ZeroWireload          tcbn65gpluswc
+  aes_cipher_top     ZeroWireload          tcbn65gpluswc
+  aes_key_expand_128 ZeroWireload          tcbn65gpluswc
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  text_out_reg_123_/CP (DFQD1)                      0.485     0.000      0.000 r
+  text_out_reg_123_/Q (DFQD1)                       0.429     0.408      0.408 r
+  text_out[123] (net)            1        0.050               0.000      0.408 r
+  text_out[123] (out)                               0.429     0.000      0.408 r
+  data arrival time                                                      0.408
+  -------------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: text_out_reg_122_
+              (rising edge-triggered flip-flop)
+  Endpoint: text_out[122]
+            (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  aes_rcon           ZeroWireload          tcbn65gpluswc
+  aes_cipher_top     ZeroWireload          tcbn65gpluswc
+  aes_key_expand_128 ZeroWireload          tcbn65gpluswc
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  text_out_reg_122_/CP (DFQD1)                      0.485     0.000      0.000 r
+  text_out_reg_122_/Q (DFQD1)                       0.429     0.408      0.408 r
+  text_out[122] (net)            1        0.050               0.000      0.408 r
+  text_out[122] (out)                               0.429     0.000      0.408 r
+  data arrival time                                                      0.408
+  -------------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: text_out_reg_121_
+              (rising edge-triggered flip-flop)
+  Endpoint: text_out[121]
+            (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  aes_rcon           ZeroWireload          tcbn65gpluswc
+  aes_cipher_top     ZeroWireload          tcbn65gpluswc
+  aes_key_expand_128 ZeroWireload          tcbn65gpluswc
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  text_out_reg_121_/CP (DFQD1)                      0.485     0.000      0.000 r
+  text_out_reg_121_/Q (DFQD1)                       0.429     0.408      0.408 r
+  text_out[121] (net)            1        0.050               0.000      0.408 r
+  text_out[121] (out)                               0.429     0.000      0.408 r
+  data arrival time                                                      0.408
+  -------------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: text_out_reg_120_
+              (rising edge-triggered flip-flop)
+  Endpoint: text_out[120]
+            (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  aes_rcon           ZeroWireload          tcbn65gpluswc
+  aes_cipher_top     ZeroWireload          tcbn65gpluswc
+  aes_key_expand_128 ZeroWireload          tcbn65gpluswc
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  text_out_reg_120_/CP (DFQD1)                      0.485     0.000      0.000 r
+  text_out_reg_120_/Q (DFQD1)                       0.429     0.408      0.408 r
+  text_out[120] (net)            1        0.050               0.000      0.408 r
+  text_out[120] (out)                               0.429     0.000      0.408 r
+  data arrival time                                                      0.408
+  -------------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: text_out_reg_119_
+              (rising edge-triggered flip-flop)
+  Endpoint: text_out[119]
+            (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  aes_rcon           ZeroWireload          tcbn65gpluswc
+  aes_cipher_top     ZeroWireload          tcbn65gpluswc
+  aes_key_expand_128 ZeroWireload          tcbn65gpluswc
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  text_out_reg_119_/CP (DFQD1)                      0.485     0.000      0.000 r
+  text_out_reg_119_/Q (DFQD1)                       0.429     0.408      0.408 r
+  text_out[119] (net)            1        0.050               0.000      0.408 r
+  text_out[119] (out)                               0.429     0.000      0.408 r
+  data arrival time                                                      0.408
+  -------------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: text_out_reg_118_
+              (rising edge-triggered flip-flop)
+  Endpoint: text_out[118]
+            (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  aes_rcon           ZeroWireload          tcbn65gpluswc
+  aes_cipher_top     ZeroWireload          tcbn65gpluswc
+  aes_key_expand_128 ZeroWireload          tcbn65gpluswc
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  text_out_reg_118_/CP (DFQD1)                      0.485     0.000      0.000 r
+  text_out_reg_118_/Q (DFQD1)                       0.429     0.408      0.408 r
+  text_out[118] (net)            1        0.050               0.000      0.408 r
+  text_out[118] (out)                               0.429     0.000      0.408 r
+  data arrival time                                                      0.408
+  -------------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: text_out_reg_117_
+              (rising edge-triggered flip-flop)
+  Endpoint: text_out[117]
+            (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  aes_rcon           ZeroWireload          tcbn65gpluswc
+  aes_cipher_top     ZeroWireload          tcbn65gpluswc
+  aes_key_expand_128 ZeroWireload          tcbn65gpluswc
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  text_out_reg_117_/CP (DFQD1)                      0.485     0.000      0.000 r
+  text_out_reg_117_/Q (DFQD1)                       0.429     0.408      0.408 r
+  text_out[117] (net)            1        0.050               0.000      0.408 r
+  text_out[117] (out)                               0.429     0.000      0.408 r
+  data arrival time                                                      0.408
+  -------------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: text_out_reg_116_
+              (rising edge-triggered flip-flop)
+  Endpoint: text_out[116]
+            (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  aes_rcon           ZeroWireload          tcbn65gpluswc
+  aes_cipher_top     ZeroWireload          tcbn65gpluswc
+  aes_key_expand_128 ZeroWireload          tcbn65gpluswc
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  text_out_reg_116_/CP (DFQD1)                      0.485     0.000      0.000 r
+  text_out_reg_116_/Q (DFQD1)                       0.429     0.408      0.408 r
+  text_out[116] (net)            1        0.050               0.000      0.408 r
+  text_out[116] (out)                               0.429     0.000      0.408 r
+  data arrival time                                                      0.408
+  -------------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: text_out_reg_115_
+              (rising edge-triggered flip-flop)
+  Endpoint: text_out[115]
+            (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  aes_rcon           ZeroWireload          tcbn65gpluswc
+  aes_cipher_top     ZeroWireload          tcbn65gpluswc
+  aes_key_expand_128 ZeroWireload          tcbn65gpluswc
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  text_out_reg_115_/CP (DFQD1)                      0.485     0.000      0.000 r
+  text_out_reg_115_/Q (DFQD1)                       0.429     0.408      0.408 r
+  text_out[115] (net)            1        0.050               0.000      0.408 r
+  text_out[115] (out)                               0.429     0.000      0.408 r
+  data arrival time                                                      0.408
+  -------------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: text_out_reg_114_
+              (rising edge-triggered flip-flop)
+  Endpoint: text_out[114]
+            (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  aes_rcon           ZeroWireload          tcbn65gpluswc
+  aes_cipher_top     ZeroWireload          tcbn65gpluswc
+  aes_key_expand_128 ZeroWireload          tcbn65gpluswc
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  text_out_reg_114_/CP (DFQD1)                      0.485     0.000      0.000 r
+  text_out_reg_114_/Q (DFQD1)                       0.429     0.408      0.408 r
+  text_out[114] (net)            1        0.050               0.000      0.408 r
+  text_out[114] (out)                               0.429     0.000      0.408 r
+  data arrival time                                                      0.408
+  -------------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: text_out_reg_113_
+              (rising edge-triggered flip-flop)
+  Endpoint: text_out[113]
+            (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  aes_rcon           ZeroWireload          tcbn65gpluswc
+  aes_cipher_top     ZeroWireload          tcbn65gpluswc
+  aes_key_expand_128 ZeroWireload          tcbn65gpluswc
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  text_out_reg_113_/CP (DFQD1)                      0.485     0.000      0.000 r
+  text_out_reg_113_/Q (DFQD1)                       0.429     0.408      0.408 r
+  text_out[113] (net)            1        0.050               0.000      0.408 r
+  text_out[113] (out)                               0.429     0.000      0.408 r
+  data arrival time                                                      0.408
+  -------------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: text_out_reg_112_
+              (rising edge-triggered flip-flop)
+  Endpoint: text_out[112]
+            (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  aes_rcon           ZeroWireload          tcbn65gpluswc
+  aes_cipher_top     ZeroWireload          tcbn65gpluswc
+  aes_key_expand_128 ZeroWireload          tcbn65gpluswc
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  text_out_reg_112_/CP (DFQD1)                      0.485     0.000      0.000 r
+  text_out_reg_112_/Q (DFQD1)                       0.429     0.408      0.408 r
+  text_out[112] (net)            1        0.050               0.000      0.408 r
+  text_out[112] (out)                               0.429     0.000      0.408 r
+  data arrival time                                                      0.408
+  -------------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: text_out_reg_111_
+              (rising edge-triggered flip-flop)
+  Endpoint: text_out[111]
+            (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  aes_rcon           ZeroWireload          tcbn65gpluswc
+  aes_cipher_top     ZeroWireload          tcbn65gpluswc
+  aes_key_expand_128 ZeroWireload          tcbn65gpluswc
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  text_out_reg_111_/CP (DFQD1)                      0.485     0.000      0.000 r
+  text_out_reg_111_/Q (DFQD1)                       0.429     0.408      0.408 r
+  text_out[111] (net)            1        0.050               0.000      0.408 r
+  text_out[111] (out)                               0.429     0.000      0.408 r
+  data arrival time                                                      0.408
+  -------------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: text_out_reg_110_
+              (rising edge-triggered flip-flop)
+  Endpoint: text_out[110]
+            (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  aes_rcon           ZeroWireload          tcbn65gpluswc
+  aes_cipher_top     ZeroWireload          tcbn65gpluswc
+  aes_key_expand_128 ZeroWireload          tcbn65gpluswc
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  text_out_reg_110_/CP (DFQD1)                      0.485     0.000      0.000 r
+  text_out_reg_110_/Q (DFQD1)                       0.429     0.408      0.408 r
+  text_out[110] (net)            1        0.050               0.000      0.408 r
+  text_out[110] (out)                               0.429     0.000      0.408 r
+  data arrival time                                                      0.408
+  -------------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: text_out_reg_109_
+              (rising edge-triggered flip-flop)
+  Endpoint: text_out[109]
+            (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  aes_rcon           ZeroWireload          tcbn65gpluswc
+  aes_cipher_top     ZeroWireload          tcbn65gpluswc
+  aes_key_expand_128 ZeroWireload          tcbn65gpluswc
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  text_out_reg_109_/CP (DFQD1)                      0.485     0.000      0.000 r
+  text_out_reg_109_/Q (DFQD1)                       0.429     0.408      0.408 r
+  text_out[109] (net)            1        0.050               0.000      0.408 r
+  text_out[109] (out)                               0.429     0.000      0.408 r
+  data arrival time                                                      0.408
+  -------------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: text_out_reg_108_
+              (rising edge-triggered flip-flop)
+  Endpoint: text_out[108]
+            (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  aes_rcon           ZeroWireload          tcbn65gpluswc
+  aes_cipher_top     ZeroWireload          tcbn65gpluswc
+  aes_key_expand_128 ZeroWireload          tcbn65gpluswc
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  text_out_reg_108_/CP (DFQD1)                      0.485     0.000      0.000 r
+  text_out_reg_108_/Q (DFQD1)                       0.429     0.408      0.408 r
+  text_out[108] (net)            1        0.050               0.000      0.408 r
+  text_out[108] (out)                               0.429     0.000      0.408 r
+  data arrival time                                                      0.408
+  -------------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: text_out_reg_107_
+              (rising edge-triggered flip-flop)
+  Endpoint: text_out[107]
+            (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  aes_rcon           ZeroWireload          tcbn65gpluswc
+  aes_cipher_top     ZeroWireload          tcbn65gpluswc
+  aes_key_expand_128 ZeroWireload          tcbn65gpluswc
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  text_out_reg_107_/CP (DFQD1)                      0.485     0.000      0.000 r
+  text_out_reg_107_/Q (DFQD1)                       0.429     0.408      0.408 r
+  text_out[107] (net)            1        0.050               0.000      0.408 r
+  text_out[107] (out)                               0.429     0.000      0.408 r
+  data arrival time                                                      0.408
+  -------------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: text_out_reg_106_
+              (rising edge-triggered flip-flop)
+  Endpoint: text_out[106]
+            (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  aes_rcon           ZeroWireload          tcbn65gpluswc
+  aes_cipher_top     ZeroWireload          tcbn65gpluswc
+  aes_key_expand_128 ZeroWireload          tcbn65gpluswc
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  text_out_reg_106_/CP (DFQD1)                      0.485     0.000      0.000 r
+  text_out_reg_106_/Q (DFQD1)                       0.429     0.408      0.408 r
+  text_out[106] (net)            1        0.050               0.000      0.408 r
+  text_out[106] (out)                               0.429     0.000      0.408 r
+  data arrival time                                                      0.408
+  -------------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: text_out_reg_105_
+              (rising edge-triggered flip-flop)
+  Endpoint: text_out[105]
+            (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  aes_rcon           ZeroWireload          tcbn65gpluswc
+  aes_cipher_top     ZeroWireload          tcbn65gpluswc
+  aes_key_expand_128 ZeroWireload          tcbn65gpluswc
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  text_out_reg_105_/CP (DFQD1)                      0.485     0.000      0.000 r
+  text_out_reg_105_/Q (DFQD1)                       0.429     0.408      0.408 r
+  text_out[105] (net)            1        0.050               0.000      0.408 r
+  text_out[105] (out)                               0.429     0.000      0.408 r
+  data arrival time                                                      0.408
+  -------------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: text_out_reg_104_
+              (rising edge-triggered flip-flop)
+  Endpoint: text_out[104]
+            (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  aes_rcon           ZeroWireload          tcbn65gpluswc
+  aes_cipher_top     ZeroWireload          tcbn65gpluswc
+  aes_key_expand_128 ZeroWireload          tcbn65gpluswc
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  text_out_reg_104_/CP (DFQD1)                      0.485     0.000      0.000 r
+  text_out_reg_104_/Q (DFQD1)                       0.429     0.408      0.408 r
+  text_out[104] (net)            1        0.050               0.000      0.408 r
+  text_out[104] (out)                               0.429     0.000      0.408 r
+  data arrival time                                                      0.408
+  -------------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: text_out_reg_103_
+              (rising edge-triggered flip-flop)
+  Endpoint: text_out[103]
+            (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  aes_rcon           ZeroWireload          tcbn65gpluswc
+  aes_cipher_top     ZeroWireload          tcbn65gpluswc
+  aes_key_expand_128 ZeroWireload          tcbn65gpluswc
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  text_out_reg_103_/CP (DFQD1)                      0.485     0.000      0.000 r
+  text_out_reg_103_/Q (DFQD1)                       0.429     0.408      0.408 r
+  text_out[103] (net)            1        0.050               0.000      0.408 r
+  text_out[103] (out)                               0.429     0.000      0.408 r
+  data arrival time                                                      0.408
+  -------------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: text_out_reg_102_
+              (rising edge-triggered flip-flop)
+  Endpoint: text_out[102]
+            (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  aes_rcon           ZeroWireload          tcbn65gpluswc
+  aes_cipher_top     ZeroWireload          tcbn65gpluswc
+  aes_key_expand_128 ZeroWireload          tcbn65gpluswc
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  text_out_reg_102_/CP (DFQD1)                      0.485     0.000      0.000 r
+  text_out_reg_102_/Q (DFQD1)                       0.429     0.408      0.408 r
+  text_out[102] (net)            1        0.050               0.000      0.408 r
+  text_out[102] (out)                               0.429     0.000      0.408 r
+  data arrival time                                                      0.408
+  -------------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: text_out_reg_101_
+              (rising edge-triggered flip-flop)
+  Endpoint: text_out[101]
+            (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  aes_rcon           ZeroWireload          tcbn65gpluswc
+  aes_cipher_top     ZeroWireload          tcbn65gpluswc
+  aes_key_expand_128 ZeroWireload          tcbn65gpluswc
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  text_out_reg_101_/CP (DFQD1)                      0.485     0.000      0.000 r
+  text_out_reg_101_/Q (DFQD1)                       0.429     0.408      0.408 r
+  text_out[101] (net)            1        0.050               0.000      0.408 r
+  text_out[101] (out)                               0.429     0.000      0.408 r
+  data arrival time                                                      0.408
+  -------------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: text_out_reg_100_
+              (rising edge-triggered flip-flop)
+  Endpoint: text_out[100]
+            (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  aes_rcon           ZeroWireload          tcbn65gpluswc
+  aes_cipher_top     ZeroWireload          tcbn65gpluswc
+  aes_key_expand_128 ZeroWireload          tcbn65gpluswc
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  text_out_reg_100_/CP (DFQD1)                      0.485     0.000      0.000 r
+  text_out_reg_100_/Q (DFQD1)                       0.429     0.408      0.408 r
+  text_out[100] (net)            1        0.050               0.000      0.408 r
+  text_out[100] (out)                               0.429     0.000      0.408 r
+  data arrival time                                                      0.408
+  -------------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: text_out_reg_99_
+              (rising edge-triggered flip-flop)
+  Endpoint: text_out[99]
+            (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  aes_rcon           ZeroWireload          tcbn65gpluswc
+  aes_cipher_top     ZeroWireload          tcbn65gpluswc
+  aes_key_expand_128 ZeroWireload          tcbn65gpluswc
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  text_out_reg_99_/CP (DFQD1)                       0.485     0.000      0.000 r
+  text_out_reg_99_/Q (DFQD1)                        0.429     0.408      0.408 r
+  text_out[99] (net)             1        0.050               0.000      0.408 r
+  text_out[99] (out)                                0.429     0.000      0.408 r
+  data arrival time                                                      0.408
+  -------------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: text_out_reg_98_
+              (rising edge-triggered flip-flop)
+  Endpoint: text_out[98]
+            (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  aes_rcon           ZeroWireload          tcbn65gpluswc
+  aes_cipher_top     ZeroWireload          tcbn65gpluswc
+  aes_key_expand_128 ZeroWireload          tcbn65gpluswc
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  text_out_reg_98_/CP (DFQD1)                       0.485     0.000      0.000 r
+  text_out_reg_98_/Q (DFQD1)                        0.429     0.408      0.408 r
+  text_out[98] (net)             1        0.050               0.000      0.408 r
+  text_out[98] (out)                                0.429     0.000      0.408 r
+  data arrival time                                                      0.408
+  -------------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: text_out_reg_97_
+              (rising edge-triggered flip-flop)
+  Endpoint: text_out[97]
+            (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  aes_rcon           ZeroWireload          tcbn65gpluswc
+  aes_cipher_top     ZeroWireload          tcbn65gpluswc
+  aes_key_expand_128 ZeroWireload          tcbn65gpluswc
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  text_out_reg_97_/CP (DFQD1)                       0.485     0.000      0.000 r
+  text_out_reg_97_/Q (DFQD1)                        0.429     0.408      0.408 r
+  text_out[97] (net)             1        0.050               0.000      0.408 r
+  text_out[97] (out)                                0.429     0.000      0.408 r
+  data arrival time                                                      0.408
+  -------------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: text_out_reg_96_
+              (rising edge-triggered flip-flop)
+  Endpoint: text_out[96]
+            (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  aes_rcon           ZeroWireload          tcbn65gpluswc
+  aes_cipher_top     ZeroWireload          tcbn65gpluswc
+  aes_key_expand_128 ZeroWireload          tcbn65gpluswc
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  text_out_reg_96_/CP (DFQD1)                       0.485     0.000      0.000 r
+  text_out_reg_96_/Q (DFQD1)                        0.429     0.408      0.408 r
+  text_out[96] (net)             1        0.050               0.000      0.408 r
+  text_out[96] (out)                                0.429     0.000      0.408 r
+  data arrival time                                                      0.408
+  -------------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: text_out_reg_95_
+              (rising edge-triggered flip-flop)
+  Endpoint: text_out[95]
+            (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  aes_rcon           ZeroWireload          tcbn65gpluswc
+  aes_cipher_top     ZeroWireload          tcbn65gpluswc
+  aes_key_expand_128 ZeroWireload          tcbn65gpluswc
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  text_out_reg_95_/CP (DFQD1)                       0.485     0.000      0.000 r
+  text_out_reg_95_/Q (DFQD1)                        0.429     0.408      0.408 r
+  text_out[95] (net)             1        0.050               0.000      0.408 r
+  text_out[95] (out)                                0.429     0.000      0.408 r
+  data arrival time                                                      0.408
+  -------------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: text_out_reg_94_
+              (rising edge-triggered flip-flop)
+  Endpoint: text_out[94]
+            (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  aes_rcon           ZeroWireload          tcbn65gpluswc
+  aes_cipher_top     ZeroWireload          tcbn65gpluswc
+  aes_key_expand_128 ZeroWireload          tcbn65gpluswc
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  text_out_reg_94_/CP (DFQD1)                       0.485     0.000      0.000 r
+  text_out_reg_94_/Q (DFQD1)                        0.429     0.408      0.408 r
+  text_out[94] (net)             1        0.050               0.000      0.408 r
+  text_out[94] (out)                                0.429     0.000      0.408 r
+  data arrival time                                                      0.408
+  -------------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: text_out_reg_93_
+              (rising edge-triggered flip-flop)
+  Endpoint: text_out[93]
+            (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  aes_rcon           ZeroWireload          tcbn65gpluswc
+  aes_cipher_top     ZeroWireload          tcbn65gpluswc
+  aes_key_expand_128 ZeroWireload          tcbn65gpluswc
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  text_out_reg_93_/CP (DFQD1)                       0.485     0.000      0.000 r
+  text_out_reg_93_/Q (DFQD1)                        0.429     0.408      0.408 r
+  text_out[93] (net)             1        0.050               0.000      0.408 r
+  text_out[93] (out)                                0.429     0.000      0.408 r
+  data arrival time                                                      0.408
+  -------------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: text_out_reg_92_
+              (rising edge-triggered flip-flop)
+  Endpoint: text_out[92]
+            (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  aes_rcon           ZeroWireload          tcbn65gpluswc
+  aes_cipher_top     ZeroWireload          tcbn65gpluswc
+  aes_key_expand_128 ZeroWireload          tcbn65gpluswc
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  text_out_reg_92_/CP (DFQD1)                       0.485     0.000      0.000 r
+  text_out_reg_92_/Q (DFQD1)                        0.429     0.408      0.408 r
+  text_out[92] (net)             1        0.050               0.000      0.408 r
+  text_out[92] (out)                                0.429     0.000      0.408 r
+  data arrival time                                                      0.408
+  -------------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: text_out_reg_91_
+              (rising edge-triggered flip-flop)
+  Endpoint: text_out[91]
+            (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  aes_rcon           ZeroWireload          tcbn65gpluswc
+  aes_cipher_top     ZeroWireload          tcbn65gpluswc
+  aes_key_expand_128 ZeroWireload          tcbn65gpluswc
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  text_out_reg_91_/CP (DFQD1)                       0.485     0.000      0.000 r
+  text_out_reg_91_/Q (DFQD1)                        0.429     0.408      0.408 r
+  text_out[91] (net)             1        0.050               0.000      0.408 r
+  text_out[91] (out)                                0.429     0.000      0.408 r
+  data arrival time                                                      0.408
+  -------------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: text_out_reg_90_
+              (rising edge-triggered flip-flop)
+  Endpoint: text_out[90]
+            (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  aes_rcon           ZeroWireload          tcbn65gpluswc
+  aes_cipher_top     ZeroWireload          tcbn65gpluswc
+  aes_key_expand_128 ZeroWireload          tcbn65gpluswc
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  text_out_reg_90_/CP (DFQD1)                       0.485     0.000      0.000 r
+  text_out_reg_90_/Q (DFQD1)                        0.429     0.408      0.408 r
+  text_out[90] (net)             1        0.050               0.000      0.408 r
+  text_out[90] (out)                                0.429     0.000      0.408 r
+  data arrival time                                                      0.408
+  -------------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: text_out_reg_89_
+              (rising edge-triggered flip-flop)
+  Endpoint: text_out[89]
+            (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  aes_rcon           ZeroWireload          tcbn65gpluswc
+  aes_cipher_top     ZeroWireload          tcbn65gpluswc
+  aes_key_expand_128 ZeroWireload          tcbn65gpluswc
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  text_out_reg_89_/CP (DFQD1)                       0.485     0.000      0.000 r
+  text_out_reg_89_/Q (DFQD1)                        0.429     0.408      0.408 r
+  text_out[89] (net)             1        0.050               0.000      0.408 r
+  text_out[89] (out)                                0.429     0.000      0.408 r
+  data arrival time                                                      0.408
+  -------------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: text_out_reg_88_
+              (rising edge-triggered flip-flop)
+  Endpoint: text_out[88]
+            (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  aes_rcon           ZeroWireload          tcbn65gpluswc
+  aes_cipher_top     ZeroWireload          tcbn65gpluswc
+  aes_key_expand_128 ZeroWireload          tcbn65gpluswc
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  text_out_reg_88_/CP (DFQD1)                       0.485     0.000      0.000 r
+  text_out_reg_88_/Q (DFQD1)                        0.429     0.408      0.408 r
+  text_out[88] (net)             1        0.050               0.000      0.408 r
+  text_out[88] (out)                                0.429     0.000      0.408 r
+  data arrival time                                                      0.408
+  -------------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: text_out_reg_87_
+              (rising edge-triggered flip-flop)
+  Endpoint: text_out[87]
+            (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  aes_rcon           ZeroWireload          tcbn65gpluswc
+  aes_cipher_top     ZeroWireload          tcbn65gpluswc
+  aes_key_expand_128 ZeroWireload          tcbn65gpluswc
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  text_out_reg_87_/CP (DFQD1)                       0.485     0.000      0.000 r
+  text_out_reg_87_/Q (DFQD1)                        0.429     0.408      0.408 r
+  text_out[87] (net)             1        0.050               0.000      0.408 r
+  text_out[87] (out)                                0.429     0.000      0.408 r
+  data arrival time                                                      0.408
+  -------------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: text_out_reg_86_
+              (rising edge-triggered flip-flop)
+  Endpoint: text_out[86]
+            (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  aes_rcon           ZeroWireload          tcbn65gpluswc
+  aes_cipher_top     ZeroWireload          tcbn65gpluswc
+  aes_key_expand_128 ZeroWireload          tcbn65gpluswc
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  text_out_reg_86_/CP (DFQD1)                       0.485     0.000      0.000 r
+  text_out_reg_86_/Q (DFQD1)                        0.429     0.408      0.408 r
+  text_out[86] (net)             1        0.050               0.000      0.408 r
+  text_out[86] (out)                                0.429     0.000      0.408 r
+  data arrival time                                                      0.408
+  -------------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: text_out_reg_85_
+              (rising edge-triggered flip-flop)
+  Endpoint: text_out[85]
+            (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  aes_rcon           ZeroWireload          tcbn65gpluswc
+  aes_cipher_top     ZeroWireload          tcbn65gpluswc
+  aes_key_expand_128 ZeroWireload          tcbn65gpluswc
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  text_out_reg_85_/CP (DFQD1)                       0.485     0.000      0.000 r
+  text_out_reg_85_/Q (DFQD1)                        0.429     0.408      0.408 r
+  text_out[85] (net)             1        0.050               0.000      0.408 r
+  text_out[85] (out)                                0.429     0.000      0.408 r
+  data arrival time                                                      0.408
+  -------------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: text_out_reg_84_
+              (rising edge-triggered flip-flop)
+  Endpoint: text_out[84]
+            (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  aes_rcon           ZeroWireload          tcbn65gpluswc
+  aes_cipher_top     ZeroWireload          tcbn65gpluswc
+  aes_key_expand_128 ZeroWireload          tcbn65gpluswc
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  text_out_reg_84_/CP (DFQD1)                       0.485     0.000      0.000 r
+  text_out_reg_84_/Q (DFQD1)                        0.429     0.408      0.408 r
+  text_out[84] (net)             1        0.050               0.000      0.408 r
+  text_out[84] (out)                                0.429     0.000      0.408 r
+  data arrival time                                                      0.408
+  -------------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: text_out_reg_83_
+              (rising edge-triggered flip-flop)
+  Endpoint: text_out[83]
+            (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  aes_rcon           ZeroWireload          tcbn65gpluswc
+  aes_cipher_top     ZeroWireload          tcbn65gpluswc
+  aes_key_expand_128 ZeroWireload          tcbn65gpluswc
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  text_out_reg_83_/CP (DFQD1)                       0.485     0.000      0.000 r
+  text_out_reg_83_/Q (DFQD1)                        0.429     0.408      0.408 r
+  text_out[83] (net)             1        0.050               0.000      0.408 r
+  text_out[83] (out)                                0.429     0.000      0.408 r
+  data arrival time                                                      0.408
+  -------------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: text_out_reg_82_
+              (rising edge-triggered flip-flop)
+  Endpoint: text_out[82]
+            (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  aes_rcon           ZeroWireload          tcbn65gpluswc
+  aes_cipher_top     ZeroWireload          tcbn65gpluswc
+  aes_key_expand_128 ZeroWireload          tcbn65gpluswc
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  text_out_reg_82_/CP (DFQD1)                       0.485     0.000      0.000 r
+  text_out_reg_82_/Q (DFQD1)                        0.429     0.408      0.408 r
+  text_out[82] (net)             1        0.050               0.000      0.408 r
+  text_out[82] (out)                                0.429     0.000      0.408 r
+  data arrival time                                                      0.408
+  -------------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: text_out_reg_81_
+              (rising edge-triggered flip-flop)
+  Endpoint: text_out[81]
+            (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  aes_rcon           ZeroWireload          tcbn65gpluswc
+  aes_cipher_top     ZeroWireload          tcbn65gpluswc
+  aes_key_expand_128 ZeroWireload          tcbn65gpluswc
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  text_out_reg_81_/CP (DFQD1)                       0.485     0.000      0.000 r
+  text_out_reg_81_/Q (DFQD1)                        0.429     0.408      0.408 r
+  text_out[81] (net)             1        0.050               0.000      0.408 r
+  text_out[81] (out)                                0.429     0.000      0.408 r
+  data arrival time                                                      0.408
+  -------------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: text_out_reg_80_
+              (rising edge-triggered flip-flop)
+  Endpoint: text_out[80]
+            (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  aes_rcon           ZeroWireload          tcbn65gpluswc
+  aes_cipher_top     ZeroWireload          tcbn65gpluswc
+  aes_key_expand_128 ZeroWireload          tcbn65gpluswc
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  text_out_reg_80_/CP (DFQD1)                       0.485     0.000      0.000 r
+  text_out_reg_80_/Q (DFQD1)                        0.429     0.408      0.408 r
+  text_out[80] (net)             1        0.050               0.000      0.408 r
+  text_out[80] (out)                                0.429     0.000      0.408 r
+  data arrival time                                                      0.408
+  -------------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: text_out_reg_79_
+              (rising edge-triggered flip-flop)
+  Endpoint: text_out[79]
+            (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  aes_rcon           ZeroWireload          tcbn65gpluswc
+  aes_cipher_top     ZeroWireload          tcbn65gpluswc
+  aes_key_expand_128 ZeroWireload          tcbn65gpluswc
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  text_out_reg_79_/CP (DFQD1)                       0.485     0.000      0.000 r
+  text_out_reg_79_/Q (DFQD1)                        0.429     0.408      0.408 r
+  text_out[79] (net)             1        0.050               0.000      0.408 r
+  text_out[79] (out)                                0.429     0.000      0.408 r
+  data arrival time                                                      0.408
+  -------------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: text_out_reg_78_
+              (rising edge-triggered flip-flop)
+  Endpoint: text_out[78]
+            (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  aes_rcon           ZeroWireload          tcbn65gpluswc
+  aes_cipher_top     ZeroWireload          tcbn65gpluswc
+  aes_key_expand_128 ZeroWireload          tcbn65gpluswc
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  text_out_reg_78_/CP (DFQD1)                       0.485     0.000      0.000 r
+  text_out_reg_78_/Q (DFQD1)                        0.429     0.408      0.408 r
+  text_out[78] (net)             1        0.050               0.000      0.408 r
+  text_out[78] (out)                                0.429     0.000      0.408 r
+  data arrival time                                                      0.408
+  -------------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: text_out_reg_77_
+              (rising edge-triggered flip-flop)
+  Endpoint: text_out[77]
+            (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  aes_rcon           ZeroWireload          tcbn65gpluswc
+  aes_cipher_top     ZeroWireload          tcbn65gpluswc
+  aes_key_expand_128 ZeroWireload          tcbn65gpluswc
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  text_out_reg_77_/CP (DFQD1)                       0.485     0.000      0.000 r
+  text_out_reg_77_/Q (DFQD1)                        0.429     0.408      0.408 r
+  text_out[77] (net)             1        0.050               0.000      0.408 r
+  text_out[77] (out)                                0.429     0.000      0.408 r
+  data arrival time                                                      0.408
+  -------------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: text_out_reg_76_
+              (rising edge-triggered flip-flop)
+  Endpoint: text_out[76]
+            (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  aes_rcon           ZeroWireload          tcbn65gpluswc
+  aes_cipher_top     ZeroWireload          tcbn65gpluswc
+  aes_key_expand_128 ZeroWireload          tcbn65gpluswc
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  text_out_reg_76_/CP (DFQD1)                       0.485     0.000      0.000 r
+  text_out_reg_76_/Q (DFQD1)                        0.429     0.408      0.408 r
+  text_out[76] (net)             1        0.050               0.000      0.408 r
+  text_out[76] (out)                                0.429     0.000      0.408 r
+  data arrival time                                                      0.408
+  -------------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: text_out_reg_75_
+              (rising edge-triggered flip-flop)
+  Endpoint: text_out[75]
+            (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  aes_rcon           ZeroWireload          tcbn65gpluswc
+  aes_cipher_top     ZeroWireload          tcbn65gpluswc
+  aes_key_expand_128 ZeroWireload          tcbn65gpluswc
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  text_out_reg_75_/CP (DFQD1)                       0.485     0.000      0.000 r
+  text_out_reg_75_/Q (DFQD1)                        0.429     0.408      0.408 r
+  text_out[75] (net)             1        0.050               0.000      0.408 r
+  text_out[75] (out)                                0.429     0.000      0.408 r
+  data arrival time                                                      0.408
+  -------------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: text_out_reg_74_
+              (rising edge-triggered flip-flop)
+  Endpoint: text_out[74]
+            (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  aes_rcon           ZeroWireload          tcbn65gpluswc
+  aes_cipher_top     ZeroWireload          tcbn65gpluswc
+  aes_key_expand_128 ZeroWireload          tcbn65gpluswc
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  text_out_reg_74_/CP (DFQD1)                       0.485     0.000      0.000 r
+  text_out_reg_74_/Q (DFQD1)                        0.429     0.408      0.408 r
+  text_out[74] (net)             1        0.050               0.000      0.408 r
+  text_out[74] (out)                                0.429     0.000      0.408 r
+  data arrival time                                                      0.408
+  -------------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: text_out_reg_73_
+              (rising edge-triggered flip-flop)
+  Endpoint: text_out[73]
+            (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  aes_rcon           ZeroWireload          tcbn65gpluswc
+  aes_cipher_top     ZeroWireload          tcbn65gpluswc
+  aes_key_expand_128 ZeroWireload          tcbn65gpluswc
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  text_out_reg_73_/CP (DFQD1)                       0.485     0.000      0.000 r
+  text_out_reg_73_/Q (DFQD1)                        0.429     0.408      0.408 r
+  text_out[73] (net)             1        0.050               0.000      0.408 r
+  text_out[73] (out)                                0.429     0.000      0.408 r
+  data arrival time                                                      0.408
+  -------------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: text_out_reg_72_
+              (rising edge-triggered flip-flop)
+  Endpoint: text_out[72]
+            (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  aes_rcon           ZeroWireload          tcbn65gpluswc
+  aes_cipher_top     ZeroWireload          tcbn65gpluswc
+  aes_key_expand_128 ZeroWireload          tcbn65gpluswc
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  text_out_reg_72_/CP (DFQD1)                       0.485     0.000      0.000 r
+  text_out_reg_72_/Q (DFQD1)                        0.429     0.408      0.408 r
+  text_out[72] (net)             1        0.050               0.000      0.408 r
+  text_out[72] (out)                                0.429     0.000      0.408 r
+  data arrival time                                                      0.408
+  -------------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: text_out_reg_71_
+              (rising edge-triggered flip-flop)
+  Endpoint: text_out[71]
+            (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  aes_rcon           ZeroWireload          tcbn65gpluswc
+  aes_cipher_top     ZeroWireload          tcbn65gpluswc
+  aes_key_expand_128 ZeroWireload          tcbn65gpluswc
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  text_out_reg_71_/CP (DFQD1)                       0.485     0.000      0.000 r
+  text_out_reg_71_/Q (DFQD1)                        0.429     0.408      0.408 r
+  text_out[71] (net)             1        0.050               0.000      0.408 r
+  text_out[71] (out)                                0.429     0.000      0.408 r
+  data arrival time                                                      0.408
+  -------------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: text_out_reg_70_
+              (rising edge-triggered flip-flop)
+  Endpoint: text_out[70]
+            (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  aes_rcon           ZeroWireload          tcbn65gpluswc
+  aes_cipher_top     ZeroWireload          tcbn65gpluswc
+  aes_key_expand_128 ZeroWireload          tcbn65gpluswc
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  text_out_reg_70_/CP (DFQD1)                       0.485     0.000      0.000 r
+  text_out_reg_70_/Q (DFQD1)                        0.429     0.408      0.408 r
+  text_out[70] (net)             1        0.050               0.000      0.408 r
+  text_out[70] (out)                                0.429     0.000      0.408 r
+  data arrival time                                                      0.408
+  -------------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: text_out_reg_69_
+              (rising edge-triggered flip-flop)
+  Endpoint: text_out[69]
+            (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  aes_rcon           ZeroWireload          tcbn65gpluswc
+  aes_cipher_top     ZeroWireload          tcbn65gpluswc
+  aes_key_expand_128 ZeroWireload          tcbn65gpluswc
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  text_out_reg_69_/CP (DFQD1)                       0.485     0.000      0.000 r
+  text_out_reg_69_/Q (DFQD1)                        0.429     0.408      0.408 r
+  text_out[69] (net)             1        0.050               0.000      0.408 r
+  text_out[69] (out)                                0.429     0.000      0.408 r
+  data arrival time                                                      0.408
+  -------------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: text_out_reg_68_
+              (rising edge-triggered flip-flop)
+  Endpoint: text_out[68]
+            (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  aes_rcon           ZeroWireload          tcbn65gpluswc
+  aes_cipher_top     ZeroWireload          tcbn65gpluswc
+  aes_key_expand_128 ZeroWireload          tcbn65gpluswc
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  text_out_reg_68_/CP (DFQD1)                       0.485     0.000      0.000 r
+  text_out_reg_68_/Q (DFQD1)                        0.429     0.408      0.408 r
+  text_out[68] (net)             1        0.050               0.000      0.408 r
+  text_out[68] (out)                                0.429     0.000      0.408 r
+  data arrival time                                                      0.408
+  -------------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: text_out_reg_67_
+              (rising edge-triggered flip-flop)
+  Endpoint: text_out[67]
+            (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  aes_rcon           ZeroWireload          tcbn65gpluswc
+  aes_cipher_top     ZeroWireload          tcbn65gpluswc
+  aes_key_expand_128 ZeroWireload          tcbn65gpluswc
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  text_out_reg_67_/CP (DFQD1)                       0.485     0.000      0.000 r
+  text_out_reg_67_/Q (DFQD1)                        0.429     0.408      0.408 r
+  text_out[67] (net)             1        0.050               0.000      0.408 r
+  text_out[67] (out)                                0.429     0.000      0.408 r
+  data arrival time                                                      0.408
+  -------------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: text_out_reg_66_
+              (rising edge-triggered flip-flop)
+  Endpoint: text_out[66]
+            (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  aes_rcon           ZeroWireload          tcbn65gpluswc
+  aes_cipher_top     ZeroWireload          tcbn65gpluswc
+  aes_key_expand_128 ZeroWireload          tcbn65gpluswc
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  text_out_reg_66_/CP (DFQD1)                       0.485     0.000      0.000 r
+  text_out_reg_66_/Q (DFQD1)                        0.429     0.408      0.408 r
+  text_out[66] (net)             1        0.050               0.000      0.408 r
+  text_out[66] (out)                                0.429     0.000      0.408 r
+  data arrival time                                                      0.408
+  -------------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: text_out_reg_65_
+              (rising edge-triggered flip-flop)
+  Endpoint: text_out[65]
+            (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  aes_rcon           ZeroWireload          tcbn65gpluswc
+  aes_cipher_top     ZeroWireload          tcbn65gpluswc
+  aes_key_expand_128 ZeroWireload          tcbn65gpluswc
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  text_out_reg_65_/CP (DFQD1)                       0.485     0.000      0.000 r
+  text_out_reg_65_/Q (DFQD1)                        0.429     0.408      0.408 r
+  text_out[65] (net)             1        0.050               0.000      0.408 r
+  text_out[65] (out)                                0.429     0.000      0.408 r
+  data arrival time                                                      0.408
+  -------------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: text_out_reg_64_
+              (rising edge-triggered flip-flop)
+  Endpoint: text_out[64]
+            (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  aes_rcon           ZeroWireload          tcbn65gpluswc
+  aes_cipher_top     ZeroWireload          tcbn65gpluswc
+  aes_key_expand_128 ZeroWireload          tcbn65gpluswc
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  text_out_reg_64_/CP (DFQD1)                       0.485     0.000      0.000 r
+  text_out_reg_64_/Q (DFQD1)                        0.429     0.408      0.408 r
+  text_out[64] (net)             1        0.050               0.000      0.408 r
+  text_out[64] (out)                                0.429     0.000      0.408 r
+  data arrival time                                                      0.408
+  -------------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: text_out_reg_63_
+              (rising edge-triggered flip-flop)
+  Endpoint: text_out[63]
+            (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  aes_rcon           ZeroWireload          tcbn65gpluswc
+  aes_cipher_top     ZeroWireload          tcbn65gpluswc
+  aes_key_expand_128 ZeroWireload          tcbn65gpluswc
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  text_out_reg_63_/CP (DFQD1)                       0.485     0.000      0.000 r
+  text_out_reg_63_/Q (DFQD1)                        0.429     0.408      0.408 r
+  text_out[63] (net)             1        0.050               0.000      0.408 r
+  text_out[63] (out)                                0.429     0.000      0.408 r
+  data arrival time                                                      0.408
+  -------------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: text_out_reg_62_
+              (rising edge-triggered flip-flop)
+  Endpoint: text_out[62]
+            (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  aes_rcon           ZeroWireload          tcbn65gpluswc
+  aes_cipher_top     ZeroWireload          tcbn65gpluswc
+  aes_key_expand_128 ZeroWireload          tcbn65gpluswc
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  text_out_reg_62_/CP (DFQD1)                       0.485     0.000      0.000 r
+  text_out_reg_62_/Q (DFQD1)                        0.429     0.408      0.408 r
+  text_out[62] (net)             1        0.050               0.000      0.408 r
+  text_out[62] (out)                                0.429     0.000      0.408 r
+  data arrival time                                                      0.408
+  -------------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: text_out_reg_61_
+              (rising edge-triggered flip-flop)
+  Endpoint: text_out[61]
+            (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  aes_rcon           ZeroWireload          tcbn65gpluswc
+  aes_cipher_top     ZeroWireload          tcbn65gpluswc
+  aes_key_expand_128 ZeroWireload          tcbn65gpluswc
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  text_out_reg_61_/CP (DFQD1)                       0.485     0.000      0.000 r
+  text_out_reg_61_/Q (DFQD1)                        0.429     0.408      0.408 r
+  text_out[61] (net)             1        0.050               0.000      0.408 r
+  text_out[61] (out)                                0.429     0.000      0.408 r
+  data arrival time                                                      0.408
+  -------------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: text_out_reg_60_
+              (rising edge-triggered flip-flop)
+  Endpoint: text_out[60]
+            (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  aes_rcon           ZeroWireload          tcbn65gpluswc
+  aes_cipher_top     ZeroWireload          tcbn65gpluswc
+  aes_key_expand_128 ZeroWireload          tcbn65gpluswc
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  text_out_reg_60_/CP (DFQD1)                       0.485     0.000      0.000 r
+  text_out_reg_60_/Q (DFQD1)                        0.429     0.408      0.408 r
+  text_out[60] (net)             1        0.050               0.000      0.408 r
+  text_out[60] (out)                                0.429     0.000      0.408 r
+  data arrival time                                                      0.408
+  -------------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: text_out_reg_59_
+              (rising edge-triggered flip-flop)
+  Endpoint: text_out[59]
+            (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  aes_rcon           ZeroWireload          tcbn65gpluswc
+  aes_cipher_top     ZeroWireload          tcbn65gpluswc
+  aes_key_expand_128 ZeroWireload          tcbn65gpluswc
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  text_out_reg_59_/CP (DFQD1)                       0.485     0.000      0.000 r
+  text_out_reg_59_/Q (DFQD1)                        0.429     0.408      0.408 r
+  text_out[59] (net)             1        0.050               0.000      0.408 r
+  text_out[59] (out)                                0.429     0.000      0.408 r
+  data arrival time                                                      0.408
+  -------------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: text_out_reg_58_
+              (rising edge-triggered flip-flop)
+  Endpoint: text_out[58]
+            (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  aes_rcon           ZeroWireload          tcbn65gpluswc
+  aes_cipher_top     ZeroWireload          tcbn65gpluswc
+  aes_key_expand_128 ZeroWireload          tcbn65gpluswc
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  text_out_reg_58_/CP (DFQD1)                       0.485     0.000      0.000 r
+  text_out_reg_58_/Q (DFQD1)                        0.429     0.408      0.408 r
+  text_out[58] (net)             1        0.050               0.000      0.408 r
+  text_out[58] (out)                                0.429     0.000      0.408 r
+  data arrival time                                                      0.408
+  -------------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: text_out_reg_57_
+              (rising edge-triggered flip-flop)
+  Endpoint: text_out[57]
+            (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  aes_rcon           ZeroWireload          tcbn65gpluswc
+  aes_cipher_top     ZeroWireload          tcbn65gpluswc
+  aes_key_expand_128 ZeroWireload          tcbn65gpluswc
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  text_out_reg_57_/CP (DFQD1)                       0.485     0.000      0.000 r
+  text_out_reg_57_/Q (DFQD1)                        0.429     0.408      0.408 r
+  text_out[57] (net)             1        0.050               0.000      0.408 r
+  text_out[57] (out)                                0.429     0.000      0.408 r
+  data arrival time                                                      0.408
+  -------------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: text_out_reg_56_
+              (rising edge-triggered flip-flop)
+  Endpoint: text_out[56]
+            (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  aes_rcon           ZeroWireload          tcbn65gpluswc
+  aes_cipher_top     ZeroWireload          tcbn65gpluswc
+  aes_key_expand_128 ZeroWireload          tcbn65gpluswc
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  text_out_reg_56_/CP (DFQD1)                       0.485     0.000      0.000 r
+  text_out_reg_56_/Q (DFQD1)                        0.429     0.408      0.408 r
+  text_out[56] (net)             1        0.050               0.000      0.408 r
+  text_out[56] (out)                                0.429     0.000      0.408 r
+  data arrival time                                                      0.408
+  -------------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: text_out_reg_55_
+              (rising edge-triggered flip-flop)
+  Endpoint: text_out[55]
+            (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  aes_rcon           ZeroWireload          tcbn65gpluswc
+  aes_cipher_top     ZeroWireload          tcbn65gpluswc
+  aes_key_expand_128 ZeroWireload          tcbn65gpluswc
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  text_out_reg_55_/CP (DFQD1)                       0.485     0.000      0.000 r
+  text_out_reg_55_/Q (DFQD1)                        0.429     0.408      0.408 r
+  text_out[55] (net)             1        0.050               0.000      0.408 r
+  text_out[55] (out)                                0.429     0.000      0.408 r
+  data arrival time                                                      0.408
+  -------------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: text_out_reg_54_
+              (rising edge-triggered flip-flop)
+  Endpoint: text_out[54]
+            (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  aes_rcon           ZeroWireload          tcbn65gpluswc
+  aes_cipher_top     ZeroWireload          tcbn65gpluswc
+  aes_key_expand_128 ZeroWireload          tcbn65gpluswc
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  text_out_reg_54_/CP (DFQD1)                       0.485     0.000      0.000 r
+  text_out_reg_54_/Q (DFQD1)                        0.429     0.408      0.408 r
+  text_out[54] (net)             1        0.050               0.000      0.408 r
+  text_out[54] (out)                                0.429     0.000      0.408 r
+  data arrival time                                                      0.408
+  -------------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: text_out_reg_53_
+              (rising edge-triggered flip-flop)
+  Endpoint: text_out[53]
+            (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  aes_rcon           ZeroWireload          tcbn65gpluswc
+  aes_cipher_top     ZeroWireload          tcbn65gpluswc
+  aes_key_expand_128 ZeroWireload          tcbn65gpluswc
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  text_out_reg_53_/CP (DFQD1)                       0.485     0.000      0.000 r
+  text_out_reg_53_/Q (DFQD1)                        0.429     0.408      0.408 r
+  text_out[53] (net)             1        0.050               0.000      0.408 r
+  text_out[53] (out)                                0.429     0.000      0.408 r
+  data arrival time                                                      0.408
+  -------------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: text_out_reg_52_
+              (rising edge-triggered flip-flop)
+  Endpoint: text_out[52]
+            (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  aes_rcon           ZeroWireload          tcbn65gpluswc
+  aes_cipher_top     ZeroWireload          tcbn65gpluswc
+  aes_key_expand_128 ZeroWireload          tcbn65gpluswc
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  text_out_reg_52_/CP (DFQD1)                       0.485     0.000      0.000 r
+  text_out_reg_52_/Q (DFQD1)                        0.429     0.408      0.408 r
+  text_out[52] (net)             1        0.050               0.000      0.408 r
+  text_out[52] (out)                                0.429     0.000      0.408 r
+  data arrival time                                                      0.408
+  -------------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: text_out_reg_51_
+              (rising edge-triggered flip-flop)
+  Endpoint: text_out[51]
+            (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  aes_rcon           ZeroWireload          tcbn65gpluswc
+  aes_cipher_top     ZeroWireload          tcbn65gpluswc
+  aes_key_expand_128 ZeroWireload          tcbn65gpluswc
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  text_out_reg_51_/CP (DFQD1)                       0.485     0.000      0.000 r
+  text_out_reg_51_/Q (DFQD1)                        0.429     0.408      0.408 r
+  text_out[51] (net)             1        0.050               0.000      0.408 r
+  text_out[51] (out)                                0.429     0.000      0.408 r
+  data arrival time                                                      0.408
+  -------------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: text_out_reg_50_
+              (rising edge-triggered flip-flop)
+  Endpoint: text_out[50]
+            (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  aes_rcon           ZeroWireload          tcbn65gpluswc
+  aes_cipher_top     ZeroWireload          tcbn65gpluswc
+  aes_key_expand_128 ZeroWireload          tcbn65gpluswc
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  text_out_reg_50_/CP (DFQD1)                       0.485     0.000      0.000 r
+  text_out_reg_50_/Q (DFQD1)                        0.429     0.408      0.408 r
+  text_out[50] (net)             1        0.050               0.000      0.408 r
+  text_out[50] (out)                                0.429     0.000      0.408 r
+  data arrival time                                                      0.408
+  -------------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: text_out_reg_49_
+              (rising edge-triggered flip-flop)
+  Endpoint: text_out[49]
+            (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  aes_rcon           ZeroWireload          tcbn65gpluswc
+  aes_cipher_top     ZeroWireload          tcbn65gpluswc
+  aes_key_expand_128 ZeroWireload          tcbn65gpluswc
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  text_out_reg_49_/CP (DFQD1)                       0.485     0.000      0.000 r
+  text_out_reg_49_/Q (DFQD1)                        0.429     0.408      0.408 r
+  text_out[49] (net)             1        0.050               0.000      0.408 r
+  text_out[49] (out)                                0.429     0.000      0.408 r
+  data arrival time                                                      0.408
+  -------------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: text_out_reg_48_
+              (rising edge-triggered flip-flop)
+  Endpoint: text_out[48]
+            (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  aes_rcon           ZeroWireload          tcbn65gpluswc
+  aes_cipher_top     ZeroWireload          tcbn65gpluswc
+  aes_key_expand_128 ZeroWireload          tcbn65gpluswc
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  text_out_reg_48_/CP (DFQD1)                       0.485     0.000      0.000 r
+  text_out_reg_48_/Q (DFQD1)                        0.429     0.408      0.408 r
+  text_out[48] (net)             1        0.050               0.000      0.408 r
+  text_out[48] (out)                                0.429     0.000      0.408 r
+  data arrival time                                                      0.408
+  -------------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: text_out_reg_47_
+              (rising edge-triggered flip-flop)
+  Endpoint: text_out[47]
+            (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  aes_rcon           ZeroWireload          tcbn65gpluswc
+  aes_cipher_top     ZeroWireload          tcbn65gpluswc
+  aes_key_expand_128 ZeroWireload          tcbn65gpluswc
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  text_out_reg_47_/CP (DFQD1)                       0.485     0.000      0.000 r
+  text_out_reg_47_/Q (DFQD1)                        0.429     0.408      0.408 r
+  text_out[47] (net)             1        0.050               0.000      0.408 r
+  text_out[47] (out)                                0.429     0.000      0.408 r
+  data arrival time                                                      0.408
+  -------------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: text_out_reg_46_
+              (rising edge-triggered flip-flop)
+  Endpoint: text_out[46]
+            (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  aes_rcon           ZeroWireload          tcbn65gpluswc
+  aes_cipher_top     ZeroWireload          tcbn65gpluswc
+  aes_key_expand_128 ZeroWireload          tcbn65gpluswc
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  text_out_reg_46_/CP (DFQD1)                       0.485     0.000      0.000 r
+  text_out_reg_46_/Q (DFQD1)                        0.429     0.408      0.408 r
+  text_out[46] (net)             1        0.050               0.000      0.408 r
+  text_out[46] (out)                                0.429     0.000      0.408 r
+  data arrival time                                                      0.408
+  -------------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: text_out_reg_45_
+              (rising edge-triggered flip-flop)
+  Endpoint: text_out[45]
+            (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  aes_rcon           ZeroWireload          tcbn65gpluswc
+  aes_cipher_top     ZeroWireload          tcbn65gpluswc
+  aes_key_expand_128 ZeroWireload          tcbn65gpluswc
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  text_out_reg_45_/CP (DFQD1)                       0.485     0.000      0.000 r
+  text_out_reg_45_/Q (DFQD1)                        0.429     0.408      0.408 r
+  text_out[45] (net)             1        0.050               0.000      0.408 r
+  text_out[45] (out)                                0.429     0.000      0.408 r
+  data arrival time                                                      0.408
+  -------------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: text_out_reg_44_
+              (rising edge-triggered flip-flop)
+  Endpoint: text_out[44]
+            (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  aes_rcon           ZeroWireload          tcbn65gpluswc
+  aes_cipher_top     ZeroWireload          tcbn65gpluswc
+  aes_key_expand_128 ZeroWireload          tcbn65gpluswc
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  text_out_reg_44_/CP (DFQD1)                       0.485     0.000      0.000 r
+  text_out_reg_44_/Q (DFQD1)                        0.429     0.408      0.408 r
+  text_out[44] (net)             1        0.050               0.000      0.408 r
+  text_out[44] (out)                                0.429     0.000      0.408 r
+  data arrival time                                                      0.408
+  -------------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: text_out_reg_43_
+              (rising edge-triggered flip-flop)
+  Endpoint: text_out[43]
+            (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  aes_rcon           ZeroWireload          tcbn65gpluswc
+  aes_cipher_top     ZeroWireload          tcbn65gpluswc
+  aes_key_expand_128 ZeroWireload          tcbn65gpluswc
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  text_out_reg_43_/CP (DFQD1)                       0.485     0.000      0.000 r
+  text_out_reg_43_/Q (DFQD1)                        0.429     0.408      0.408 r
+  text_out[43] (net)             1        0.050               0.000      0.408 r
+  text_out[43] (out)                                0.429     0.000      0.408 r
+  data arrival time                                                      0.408
+  -------------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: text_out_reg_42_
+              (rising edge-triggered flip-flop)
+  Endpoint: text_out[42]
+            (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  aes_rcon           ZeroWireload          tcbn65gpluswc
+  aes_cipher_top     ZeroWireload          tcbn65gpluswc
+  aes_key_expand_128 ZeroWireload          tcbn65gpluswc
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  text_out_reg_42_/CP (DFQD1)                       0.485     0.000      0.000 r
+  text_out_reg_42_/Q (DFQD1)                        0.429     0.408      0.408 r
+  text_out[42] (net)             1        0.050               0.000      0.408 r
+  text_out[42] (out)                                0.429     0.000      0.408 r
+  data arrival time                                                      0.408
+  -------------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: text_out_reg_41_
+              (rising edge-triggered flip-flop)
+  Endpoint: text_out[41]
+            (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  aes_rcon           ZeroWireload          tcbn65gpluswc
+  aes_cipher_top     ZeroWireload          tcbn65gpluswc
+  aes_key_expand_128 ZeroWireload          tcbn65gpluswc
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  text_out_reg_41_/CP (DFQD1)                       0.485     0.000      0.000 r
+  text_out_reg_41_/Q (DFQD1)                        0.429     0.408      0.408 r
+  text_out[41] (net)             1        0.050               0.000      0.408 r
+  text_out[41] (out)                                0.429     0.000      0.408 r
+  data arrival time                                                      0.408
+  -------------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: text_out_reg_40_
+              (rising edge-triggered flip-flop)
+  Endpoint: text_out[40]
+            (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  aes_rcon           ZeroWireload          tcbn65gpluswc
+  aes_cipher_top     ZeroWireload          tcbn65gpluswc
+  aes_key_expand_128 ZeroWireload          tcbn65gpluswc
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  text_out_reg_40_/CP (DFQD1)                       0.485     0.000      0.000 r
+  text_out_reg_40_/Q (DFQD1)                        0.429     0.408      0.408 r
+  text_out[40] (net)             1        0.050               0.000      0.408 r
+  text_out[40] (out)                                0.429     0.000      0.408 r
+  data arrival time                                                      0.408
+  -------------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: text_out_reg_39_
+              (rising edge-triggered flip-flop)
+  Endpoint: text_out[39]
+            (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  aes_rcon           ZeroWireload          tcbn65gpluswc
+  aes_cipher_top     ZeroWireload          tcbn65gpluswc
+  aes_key_expand_128 ZeroWireload          tcbn65gpluswc
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  text_out_reg_39_/CP (DFQD1)                       0.485     0.000      0.000 r
+  text_out_reg_39_/Q (DFQD1)                        0.429     0.408      0.408 r
+  text_out[39] (net)             1        0.050               0.000      0.408 r
+  text_out[39] (out)                                0.429     0.000      0.408 r
+  data arrival time                                                      0.408
+  -------------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: text_out_reg_38_
+              (rising edge-triggered flip-flop)
+  Endpoint: text_out[38]
+            (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  aes_rcon           ZeroWireload          tcbn65gpluswc
+  aes_cipher_top     ZeroWireload          tcbn65gpluswc
+  aes_key_expand_128 ZeroWireload          tcbn65gpluswc
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  text_out_reg_38_/CP (DFQD1)                       0.485     0.000      0.000 r
+  text_out_reg_38_/Q (DFQD1)                        0.429     0.408      0.408 r
+  text_out[38] (net)             1        0.050               0.000      0.408 r
+  text_out[38] (out)                                0.429     0.000      0.408 r
+  data arrival time                                                      0.408
+  -------------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: text_out_reg_37_
+              (rising edge-triggered flip-flop)
+  Endpoint: text_out[37]
+            (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  aes_rcon           ZeroWireload          tcbn65gpluswc
+  aes_cipher_top     ZeroWireload          tcbn65gpluswc
+  aes_key_expand_128 ZeroWireload          tcbn65gpluswc
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  text_out_reg_37_/CP (DFQD1)                       0.485     0.000      0.000 r
+  text_out_reg_37_/Q (DFQD1)                        0.429     0.408      0.408 r
+  text_out[37] (net)             1        0.050               0.000      0.408 r
+  text_out[37] (out)                                0.429     0.000      0.408 r
+  data arrival time                                                      0.408
+  -------------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: text_out_reg_36_
+              (rising edge-triggered flip-flop)
+  Endpoint: text_out[36]
+            (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  aes_rcon           ZeroWireload          tcbn65gpluswc
+  aes_cipher_top     ZeroWireload          tcbn65gpluswc
+  aes_key_expand_128 ZeroWireload          tcbn65gpluswc
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  text_out_reg_36_/CP (DFQD1)                       0.485     0.000      0.000 r
+  text_out_reg_36_/Q (DFQD1)                        0.429     0.408      0.408 r
+  text_out[36] (net)             1        0.050               0.000      0.408 r
+  text_out[36] (out)                                0.429     0.000      0.408 r
+  data arrival time                                                      0.408
+  -------------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: text_out_reg_35_
+              (rising edge-triggered flip-flop)
+  Endpoint: text_out[35]
+            (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  aes_rcon           ZeroWireload          tcbn65gpluswc
+  aes_cipher_top     ZeroWireload          tcbn65gpluswc
+  aes_key_expand_128 ZeroWireload          tcbn65gpluswc
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  text_out_reg_35_/CP (DFQD1)                       0.485     0.000      0.000 r
+  text_out_reg_35_/Q (DFQD1)                        0.429     0.408      0.408 r
+  text_out[35] (net)             1        0.050               0.000      0.408 r
+  text_out[35] (out)                                0.429     0.000      0.408 r
+  data arrival time                                                      0.408
+  -------------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: text_out_reg_34_
+              (rising edge-triggered flip-flop)
+  Endpoint: text_out[34]
+            (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  aes_rcon           ZeroWireload          tcbn65gpluswc
+  aes_cipher_top     ZeroWireload          tcbn65gpluswc
+  aes_key_expand_128 ZeroWireload          tcbn65gpluswc
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  text_out_reg_34_/CP (DFQD1)                       0.485     0.000      0.000 r
+  text_out_reg_34_/Q (DFQD1)                        0.429     0.408      0.408 r
+  text_out[34] (net)             1        0.050               0.000      0.408 r
+  text_out[34] (out)                                0.429     0.000      0.408 r
+  data arrival time                                                      0.408
+  -------------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: text_out_reg_33_
+              (rising edge-triggered flip-flop)
+  Endpoint: text_out[33]
+            (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  aes_rcon           ZeroWireload          tcbn65gpluswc
+  aes_cipher_top     ZeroWireload          tcbn65gpluswc
+  aes_key_expand_128 ZeroWireload          tcbn65gpluswc
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  text_out_reg_33_/CP (DFQD1)                       0.485     0.000      0.000 r
+  text_out_reg_33_/Q (DFQD1)                        0.429     0.408      0.408 r
+  text_out[33] (net)             1        0.050               0.000      0.408 r
+  text_out[33] (out)                                0.429     0.000      0.408 r
+  data arrival time                                                      0.408
+  -------------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: text_out_reg_32_
+              (rising edge-triggered flip-flop)
+  Endpoint: text_out[32]
+            (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  aes_rcon           ZeroWireload          tcbn65gpluswc
+  aes_cipher_top     ZeroWireload          tcbn65gpluswc
+  aes_key_expand_128 ZeroWireload          tcbn65gpluswc
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  text_out_reg_32_/CP (DFQD1)                       0.485     0.000      0.000 r
+  text_out_reg_32_/Q (DFQD1)                        0.429     0.408      0.408 r
+  text_out[32] (net)             1        0.050               0.000      0.408 r
+  text_out[32] (out)                                0.429     0.000      0.408 r
+  data arrival time                                                      0.408
+  -------------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: text_out_reg_31_
+              (rising edge-triggered flip-flop)
+  Endpoint: text_out[31]
+            (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  aes_rcon           ZeroWireload          tcbn65gpluswc
+  aes_cipher_top     ZeroWireload          tcbn65gpluswc
+  aes_key_expand_128 ZeroWireload          tcbn65gpluswc
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  text_out_reg_31_/CP (DFQD1)                       0.485     0.000      0.000 r
+  text_out_reg_31_/Q (DFQD1)                        0.429     0.408      0.408 r
+  text_out[31] (net)             1        0.050               0.000      0.408 r
+  text_out[31] (out)                                0.429     0.000      0.408 r
+  data arrival time                                                      0.408
+  -------------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: text_out_reg_30_
+              (rising edge-triggered flip-flop)
+  Endpoint: text_out[30]
+            (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  aes_rcon           ZeroWireload          tcbn65gpluswc
+  aes_cipher_top     ZeroWireload          tcbn65gpluswc
+  aes_key_expand_128 ZeroWireload          tcbn65gpluswc
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  text_out_reg_30_/CP (DFQD1)                       0.485     0.000      0.000 r
+  text_out_reg_30_/Q (DFQD1)                        0.429     0.408      0.408 r
+  text_out[30] (net)             1        0.050               0.000      0.408 r
+  text_out[30] (out)                                0.429     0.000      0.408 r
+  data arrival time                                                      0.408
+  -------------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: text_out_reg_29_
+              (rising edge-triggered flip-flop)
+  Endpoint: text_out[29]
+            (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  aes_rcon           ZeroWireload          tcbn65gpluswc
+  aes_cipher_top     ZeroWireload          tcbn65gpluswc
+  aes_key_expand_128 ZeroWireload          tcbn65gpluswc
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  text_out_reg_29_/CP (DFQD1)                       0.485     0.000      0.000 r
+  text_out_reg_29_/Q (DFQD1)                        0.429     0.408      0.408 r
+  text_out[29] (net)             1        0.050               0.000      0.408 r
+  text_out[29] (out)                                0.429     0.000      0.408 r
+  data arrival time                                                      0.408
+  -------------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+1
