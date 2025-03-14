@@ -87,6 +87,7 @@ module sram_w16 (CLK, D, Q, CEN, WEN, A);
       // 4'b1110: memory14 <= D; 
       // 4'b1111: memory15 <= D; 
     endcase
+    $display("%40h", D);
   end
 end
 
