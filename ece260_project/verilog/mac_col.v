@@ -58,6 +58,12 @@ always @ (posedge clk) begin
       //out     <= psum;
       query_q <= q_in;
     end
+    else begin
+      query_q <= query_q;
+      cnt_q <= cnt_q;
+      key_q <= key_q;
+      load_ready_q <= load_ready_q;
+    end
   end
 end
 
