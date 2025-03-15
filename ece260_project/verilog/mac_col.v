@@ -36,10 +36,10 @@ mac_16in #(.bw(bw), .bw_psum(bw_psum), .pr(pr)) mac_16in_instance (
 
 always @ (posedge clk) begin
   if (reset) begin
-    cnt_q <= 0;
-    load_ready_q <= 1;
-    inst_q <= 0;
-    inst_2q <= 0;
+    cnt_q <= 4'b0;
+    load_ready_q <= 1'b1;
+    inst_q <= 2'b0;
+    inst_2q <= 2'b0;
   end
   else begin
     inst_q <= i_inst;
