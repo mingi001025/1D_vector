@@ -1,19 +1,21 @@
 // Created by prof. Mingu Kang @VVIP Lab in UCSD ECE department
 // Please do not spread this code without permission 
-module core (clk, sum_out, mem_in, out, inst, reset);
+module core (clk, sum_in, sum_out, mem_in, out, inst, reset);
 
 parameter col = 8;
 parameter bw = 8;
 parameter bw_psum = 2*bw+4;
 parameter pr = 8;
 
-output [bw_psum*col-1:0] sum_out;
+output [bw_psum+3:0] sum_out;
 output [bw_psum*col-1:0] out;
 wire   [bw_psum*col-1:0] pmem_out;
+input  [bw_psum+3:0] sum_in;
 input  [pr*bw-1:0] mem_in;
 input  clk;
 input  [19:0] inst; 
 input  reset;
+
 
 wire  [pr*bw-1:0] mac_in;
 wire  [pr*bw-1:0] kmem_out;
@@ -38,7 +40,6 @@ wire  kmem_wr;
 wire  pmem_rd;
 wire  pmem_wr; 
 
-
 assign get_sum = inst[19];
 assign div = inst[18];
 assign acc = inst[17];
@@ -56,7 +57,8 @@ assign pmem_wr = inst[0];
 assign mac_in  = inst[6] ? kmem_out : qmem_out;
 assign pmem_in = (div||acc) ? sfp_out : fifo_out;
 assign sfp_in  = pmem_out;
-assign sum_out = pmem_out;
+assign out = pmem_out;
+assign sum_out = core_sum;
 
 mac_array #(.bw(bw), .bw_psum(bw_psum), .col(col), .pr(pr)) mac_array_instance (
         .in(mac_in), 
@@ -109,7 +111,7 @@ sfp_row #(.col(col), .bw(bw), .bw_psum(bw_psum)) sfp_instance (
 	.div(div),
 	.acc(acc),
 	.fifo_ext_rd(get_sum),
-	.sum_in(24'b0),
+	.sum_in(sum_in),
 	.sum_out(core_sum),
 	.sfp_in(sfp_in),
 	.sfp_out(sfp_out)

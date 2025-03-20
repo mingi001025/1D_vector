@@ -25,7 +25,7 @@ integer  weight [col*pr-1:0];
 
 
 
-integer  K[col-1:0][pr-1:0];
+integer  K[col-1:0][2*pr-1:0];
 integer  Q[total_cycle-1:0][pr-1:0];
 integer  result[total_cycle-1:0][col-1:0];
 integer  rtlResult[total_cycle-1:0][col-1:0];
@@ -43,7 +43,7 @@ reg [7:0] tempHex = 0;
 
 reg reset = 1;
 reg clk = 0;
-reg [pr*bw-1:0] mem_in; 
+reg [2*pr*bw-1:0] mem_in; 
 reg ofifo_rd = 0;
 wire [19:0] inst; 
 reg qmem_rd = 0;
@@ -58,9 +58,9 @@ reg [3:0] qkmem_add = 0;
 reg [3:0] pmem_add = 0;
 reg acc;
 reg div;
-reg get_sum;
+reg fifo_ext_rd;
 
-assign inst[19] = get_sum;
+assign inst[19] = fifo_ext_rd;
 assign inst[18] = div;
 assign inst[17] = acc;
 assign inst[16] = ofifo_rd;
@@ -81,6 +81,7 @@ reg [bw_psum-1:0] temp5b;
 reg [bw_psum+3:0] temp_sum;
 reg [bw_psum*col-1:0] temp16b;
 reg [bw_psum-1:0] abs_temp5b;
+wire [2*col*bw_psum-1:0] rtl_out;
 
 
 
@@ -88,7 +89,8 @@ fullchip #(.bw(bw), .bw_psum(bw_psum), .col(col), .pr(pr)) fullchip_instance (
       .reset(reset),
       .clk(clk), 
       .mem_in(mem_in), 
-      .inst(inst)
+      .inst(inst),
+      .out(rtl_out)
 );
 
 
@@ -136,7 +138,7 @@ $display("##### Q data txt reading #####");
 
 ///// K data txt reading /////
 
-$display("##### K data txt reading #####");
+$display("##### K data 0 txt reading #####");
 
   for (q=0; q<10; q=q+1) begin
     #0.5 clk = 1'b0;   
@@ -144,7 +146,7 @@ $display("##### K data txt reading #####");
   end
   reset = 0;
 
-  qk_file = $fopen("kdata.txt", "r");
+  qk_file = $fopen("kdata_core0.txt", "r");
 
   for (q=0; q<col; q=q+1) begin
     $write("K%0d = [", q);
@@ -156,6 +158,25 @@ $display("##### K data txt reading #####");
     $write("] Hex: ");
     for (j=0; j<pr; j=j+1) begin
         tempHex = K[q][j] & 'hff;	    
+        $write("%h", tempHex);
+    end
+    $display();
+  end
+
+$display("##### K data 1 txt reading #####");
+
+  qk_file = $fopen("kdata_core1.txt", "r");
+
+  for (q=0; q<col; q=q+1) begin
+    $write("K%0d = [", q);
+    for (j=0; j<pr; j=j+1) begin
+          qk_scan_file = $fscanf(qk_file, "%d\n", captured_data);
+          K[q][j+8] = captured_data;
+          $write("%d", K[q][j+8]);
+    end
+    $write("] Hex: ");
+    for (j=0; j<pr; j=j+1) begin
+        tempHex = K[q][j+8] & 'hff;	    
         $write("%h", tempHex);
     end
     $display();
@@ -202,7 +223,7 @@ $display("##### K data txt reading #####");
 
 /////////////// Estimated result printing /////////////////
 
-
+/*
 $display("##### Estimated multiplication result #####");
 
   for (t=0; t<total_cycle; t=t+1) begin
@@ -220,28 +241,25 @@ $display("##### Estimated multiplication result #####");
 
          temp5b = result[t][q];//Qt*Kq (Q0*K0)
          temp16b = {temp16b[139:0], temp5b};
-	        abs_temp5b = temp5b[bw_psum-1] ? ~temp5b[bw_psum-1:0] + 1 : temp5b[bw_psum-1:0]; //absolute value
-	        sum[t] = sum[t] + temp5b;//sum for normalization
+	 abs_temp5b = temp5b[bw_psum-1] ? ~temp5b[bw_psum-1:0] + 1 : temp5b[bw_psum-1:0]; //absolute value
+	 sum[t] = sum[t] + temp5b;//sum for normalization
      end
      
      $display("prd @cycle%2d: %40h", t, temp16b);//before normalization
      for (q=0; q<col; q=q+1) begin
-	      result[t][q] = {result[t][q], 8'b00000000} / sum[t];
+	      result[t][q] = (result[t][q]<<8) / sum[t];
      end
      $display("normalized: %5h %5h %5h %5h %5h %5h %5h %5h", result[t][0], result[t][1], result[t][2], result[t][3], result[t][4], result[t][5], result[t][6], result[t][7]);//after normalization
   end
 
-	  
-
+*/	  
 
 //////////////////////////////////////////////
 
 
 
 
-
-
-///// Qmem writing  /////
+//// Qmem writing  /////
 
 $display("##### Qmem writing  #####");
 
@@ -258,8 +276,20 @@ $display("##### Qmem writing  #####");
     mem_in[6*bw-1:5*bw] = Q[q][5];
     mem_in[7*bw-1:6*bw] = Q[q][6];
     mem_in[8*bw-1:7*bw] = Q[q][7];
+    mem_in[9*bw-1:8*bw] = Q[q][0];
+    mem_in[10*bw-1:9*bw] = Q[q][1];
+    mem_in[11*bw-1:10*bw] = Q[q][2];
+    mem_in[12*bw-1:11*bw] = Q[q][3];
+    mem_in[13*bw-1:12*bw] = Q[q][4];
+    mem_in[14*bw-1:13*bw] = Q[q][5];
+    mem_in[15*bw-1:14*bw] = Q[q][6];
+    mem_in[16*bw-1:15*bw] = Q[q][7];
 
-    // $write("Clock Cycle = %0d: Q%0d = [", counter, q);
+    $write("Q%0d = [", q);
+    for (i=0; i<col; i=i+1) begin
+      $write("%d", Q[q][i]);	
+    end
+    $write(" |");
     for (i=0; i<col; i=i+1) begin
       $write("%d", Q[q][i]);	
     end
@@ -297,10 +327,22 @@ $display("##### Kmem writing #####");
     mem_in[6*bw-1:5*bw] = K[q][5];
     mem_in[7*bw-1:6*bw] = K[q][6];
     mem_in[8*bw-1:7*bw] = K[q][7];
+    mem_in[9*bw-1:8*bw] = K[q][8];
+    mem_in[10*bw-1:9*bw] = K[q][9];
+    mem_in[11*bw-1:10*bw] = K[q][10];
+    mem_in[12*bw-1:11*bw] = K[q][11];
+    mem_in[13*bw-1:12*bw] = K[q][12];
+    mem_in[14*bw-1:13*bw] = K[q][13];
+    mem_in[15*bw-1:14*bw] = K[q][14];
+    mem_in[16*bw-1:15*bw] = K[q][15];
 
-    // $write("Clock Cycle = %0d: K%0d = [", counter, q);
+    $write("K%0d = [", q);
     for (i=0; i<col; i=i+1) begin
       $write("%d", K[q][i]);	
+    end
+    $write(" |");
+    for (i=0; i<col; i=i+1) begin
+      $write("%d", K[q][i+8]);	
     end
     $display("]");
 
@@ -410,7 +452,6 @@ $display("##### move ofifo to pmem #####");
 
 ///////////////////////////////////////////
 
-
 // assign get_sum = inst[19];
 // assign div = inst[18];
 // assign acc = inst[17];
@@ -420,24 +461,30 @@ $display("##### division in SFP #####");
 
 for (q=0; q<total_cycle; q=q+1) begin
 
-  #0.5 clk = 1'b1;  #0.5 clk = 1'b0;
+  #0.5 clk = 1'b1;  #0.5 clk = 1'b0;//pmem_shift, fifo_ext_rd
+  div = 0;
   pmem_rd = 1;
   pmem_wr = 0;
+  fifo_ext_rd = 0;
   
-  #0.5 clk = 1'b1; #0.5 clk = 1'b0; 
-  div = 0;
+  #0.5 clk = 1'b1; #0.5 clk = 1'b0; //pmem_rd
   acc = 1;
 
-  #0.5 clk = 1'b1; #0.5 clk = 1'b0; 
+  #0.5 clk = 1'b1; #0.5 clk = 1'b0; //pmem_rd, acc
+  acc = 0;
+
+  #0.5 clk = 1'b1; #0.5 clk = 1'b0; //pmem_rd
   div = 1;
 
-  #0.5 clk = 1'b1; #0.5 clk = 1'b0; 
-  div = 0;
+  #0.5 clk = 1'b1; #0.5 clk = 1'b0;//pmem_rd, div
   pmem_rd = 0;
   pmem_wr = 1;
-  #0.5 clk = 1'b1; #0.5 clk = 1'b0; 
+  
+  #0.5 clk = 1'b1; #0.5 clk = 1'b0; //pmem_wr
   pmem_wr = 0;
   pmem_add = pmem_add + 1;
+  fifo_ext_rd = 1;//fifo_ext_rd
+  
 
 end
 #0.5 clk = 1'b0;  

@@ -2,7 +2,7 @@
 // Please do not spread this code without permission 
 module sram_w16 (CLK, D, Q, CEN, WEN, A);
 
-  parameter sram_bit = 128;
+  parameter sram_bit = 256;
   input  CLK;
   input  WEN;
   input  CEN;
@@ -18,14 +18,14 @@ module sram_w16 (CLK, D, Q, CEN, WEN, A);
   reg [sram_bit-1:0] memory5;
   reg [sram_bit-1:0] memory6;
   reg [sram_bit-1:0] memory7;
-  // reg [sram_bit-1:0] memory8;
-  // reg [sram_bit-1:0] memory9;
-  // reg [sram_bit-1:0] memory10;
-  // reg [sram_bit-1:0] memory11;
-  // reg [sram_bit-1:0] memory12;
-  // reg [sram_bit-1:0] memory13;
-  // reg [sram_bit-1:0] memory14;
-  // reg [sram_bit-1:0] memory15;
+  reg [sram_bit-1:0] memory8;
+  reg [sram_bit-1:0] memory9;
+  reg [sram_bit-1:0] memory10;
+  reg [sram_bit-1:0] memory11;
+  reg [sram_bit-1:0] memory12;
+  reg [sram_bit-1:0] memory13;
+  reg [sram_bit-1:0] memory14;
+  reg [sram_bit-1:0] memory15;
 
 /*
   assign Q = (add_q == 0)  ? memory0 : (
@@ -48,7 +48,7 @@ module sram_w16 (CLK, D, Q, CEN, WEN, A);
   always @ (posedge CLK) begin
 
    if (!CEN && WEN) begin // read 
-     case (A)
+     case (A) 
       4'b0000: Q <= memory0; 
       4'b0001: Q <= memory1; 
       4'b0010: Q <= memory2; 
@@ -57,14 +57,14 @@ module sram_w16 (CLK, D, Q, CEN, WEN, A);
       4'b0101: Q <= memory5; 
       4'b0110: Q <= memory6; 
       4'b0111: Q <= memory7; 
-      // 4'b1000: Q <= memory8; 
-      // 4'b1001: Q <= memory9; 
-      // 4'b1010: Q <= memory10; 
-      // 4'b1011: Q <= memory11; 
-      // 4'b1100: Q <= memory12; 
-      // 4'b1101: Q <= memory13; 
-      // 4'b1110: Q <= memory14; 
-      // 4'b1111: Q <= memory15; 
+      4'b1000: Q <= memory8; 
+      4'b1001: Q <= memory9; 
+      4'b1010: Q <= memory10; 
+      4'b1011: Q <= memory11; 
+      4'b1100: Q <= memory12; 
+      4'b1101: Q <= memory13; 
+      4'b1110: Q <= memory14; 
+      4'b1111: Q <= memory15; 
     endcase
    end
 
@@ -78,16 +78,17 @@ module sram_w16 (CLK, D, Q, CEN, WEN, A);
       4'b0101: memory5  <= D; 
       4'b0110: memory6  <= D; 
       4'b0111: memory7  <= D; 
-      // 4'b1000: memory8  <= D; 
-      // 4'b1001: memory9  <= D; 
-      // 4'b1010: memory10 <= D; 
-      // 4'b1011: memory11 <= D; 
-      // 4'b1100: memory12 <= D; 
-      // 4'b1101: memory13 <= D; 
-      // 4'b1110: memory14 <= D; 
-      // 4'b1111: memory15 <= D; 
+      4'b1000: memory8  <= D; 
+      4'b1001: memory9  <= D; 
+      4'b1010: memory10 <= D; 
+      4'b1011: memory11 <= D; 
+      4'b1100: memory12 <= D; 
+      4'b1101: memory13 <= D; 
+      4'b1110: memory14 <= D; 
+      4'b1111: memory15 <= D; 
     endcase
     $display("%40h", D);
+    //$display("[%d %d %d %d %d %d %d %d]", D[127:112], D[111:96], D[95:80], D[79:64], D[63:48], D[47:32], D[31:16], D[15:0]);
   end
 end
 
