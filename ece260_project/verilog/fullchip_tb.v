@@ -81,6 +81,7 @@ reg [bw_psum-1:0] temp5b;
 reg [bw_psum+3:0] temp_sum;
 reg [bw_psum*col-1:0] temp16b;
 reg [bw_psum-1:0] abs_temp5b;
+reg [bw_psum+7:0] norm_element;
 
 
 
@@ -221,20 +222,20 @@ $display("##### Estimated multiplication result #####");
          temp5b = result[t][q];//Qt*Kq (Q0*K0)
          temp16b = {temp16b[139:0], temp5b};
 	        abs_temp5b = temp5b[bw_psum-1] ? ~temp5b[bw_psum-1:0] + 1 : temp5b[bw_psum-1:0]; //absolute value
-	        sum[t] = sum[t] + temp5b;//sum for normalization
+	        sum[t] = sum[t] + abs_temp5b;//sum for normalization
      end
      
      $display("prd @cycle%2d: %40h", t, temp16b);//before normalization
      for (q=0; q<col; q=q+1) begin
-	      result[t][q] = {result[t][q], 8'b00000000} / sum[t];
+	      result[t][q] = (result[t][q] > 0) ? (result[t][q] << 8) / sum[t]: -((result[t][q] << 8) / sum[t]);
      end
-     $display("normalized: %5h %5h %5h %5h %5h %5h %5h %5h", result[t][0], result[t][1], result[t][2], result[t][3], result[t][4], result[t][5], result[t][6], result[t][7]);//after normalization
+  end
+$display("##### Estimated normalization result #####");
+
+  for (t=0; t<total_cycle; t=t+1) begin
+    $display("@cycle%2d: %2d %2d %2d %2d %2d %2d %2d %2d", t, result[t][0], result[t][1], result[t][2], result[t][3], result[t][4], result[t][5], result[t][6], result[t][7]);//after normalization
   end
 
-	  
-
-
-//////////////////////////////////////////////
 
 
 
@@ -260,10 +261,10 @@ $display("##### Qmem writing  #####");
     mem_in[8*bw-1:7*bw] = Q[q][7];
 
     // $write("Clock Cycle = %0d: Q%0d = [", counter, q);
-    for (i=0; i<col; i=i+1) begin
-      $write("%d", Q[q][i]);	
-    end
-    $display("]"); 
+    // for (i=0; i<col; i=i+1) begin
+    //   $write("%d", Q[q][i]);	
+    // end
+    // $display("]"); 
 
     #0.5 clk = 1'b1;  
 
@@ -298,11 +299,11 @@ $display("##### Kmem writing #####");
     mem_in[7*bw-1:6*bw] = K[q][6];
     mem_in[8*bw-1:7*bw] = K[q][7];
 
-    // $write("Clock Cycle = %0d: K%0d = [", counter, q);
-    for (i=0; i<col; i=i+1) begin
-      $write("%d", K[q][i]);	
-    end
-    $display("]");
+    // // $write("Clock Cycle = %0d: K%0d = [", counter, q);
+    // for (i=0; i<col; i=i+1) begin
+    //   $write("%d", K[q][i]);	
+    // end
+    // $display("]");
 
     #0.5 clk = 1'b1;  
 
@@ -414,7 +415,7 @@ $display("##### move ofifo to pmem #####");
 // assign get_sum = inst[19];
 // assign div = inst[18];
 // assign acc = inst[17];
-$display("##### division in SFP #####");
+$display("##### normalization result in SFP #####");
 
 #0.5 clk = 1'b0;  
 
