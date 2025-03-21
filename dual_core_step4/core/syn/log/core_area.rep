@@ -1,0 +1,92 @@
+Warning: Design 'core' has '9' unresolved references. For more detailed information, use the "link" command. (UID-341)
+ 
+****************************************
+Report : reference
+Design : core
+Version: K-2015.06-SP2
+Date   : Fri Mar 21 15:50:24 2025
+****************************************
+
+Attributes:
+    b - black box (unknown)
+   bo - allows boundary optimization
+    d - dont_touch
+   mo - map_only
+    h - hierarchical
+    n - noncombinational
+    r - removable
+    s - synthetic operator
+    u - contains unmapped logic
+
+Reference          Library       Unit Area   Count    Total Area   Attributes
+-----------------------------------------------------------------------------
+BUFFD2             tcbn65gpluswc
+                                  2.160000       2      4.320000  
+BUFFD3             tcbn65gpluswc
+                                  2.520000       1      2.520000  
+CKMUX2D1           tcbn65gpluswc
+                                  3.600000     126    453.599988  
+INVD1              tcbn65gpluswc
+                                  1.080000       3      3.240000  
+MUX2D0             tcbn65gpluswc
+                                  3.240000      98    317.520001  
+NR2D1              tcbn65gpluswc
+                                  1.440000       3      4.320000  
+NR2D3              tcbn65gpluswc
+                                  3.240000       1      3.240000  
+mac_array_col8_bw8_bw_psum20_pr8
+                              10410.839655       1  10410.839655  b, h, n
+ofifo_col8_bw20               34057.439957       1  34057.439957  h, n
+sfp_row                           0.000000       1      0.000000  b
+sram_w16_sram_bit64_0         12181.319877       1  12181.319877  h, n
+sram_w16_sram_bit64_1         12170.879880       1  12170.879880  h, n
+sram_w16_sram_bit160          30138.119095       1  30138.119095  h, n
+-----------------------------------------------------------------------------
+Total 13 references                                 99747.358454
+1
+Warning: Design 'core' has '9' unresolved references. For more detailed information, use the "link" command. (UID-341)
+ 
+****************************************
+Report : reference
+Design : core
+Version: K-2015.06-SP2
+Date   : Fri Mar 21 16:08:49 2025
+****************************************
+
+Attributes:
+    b - black box (unknown)
+   bo - allows boundary optimization
+    d - dont_touch
+   mo - map_only
+    h - hierarchical
+    n - noncombinational
+    r - removable
+    s - synthetic operator
+    u - contains unmapped logic
+
+Reference          Library       Unit Area   Count    Total Area   Attributes
+-----------------------------------------------------------------------------
+BUFFD2             tcbn65gpluswc
+                                  2.160000       2      4.320000  
+BUFFD3             tcbn65gpluswc
+                                  2.520000       1      2.520000  
+CKMUX2D1           tcbn65gpluswc
+                                  3.600000     126    453.599988  
+INVD1              tcbn65gpluswc
+                                  1.080000       3      3.240000  
+MUX2D0             tcbn65gpluswc
+                                  3.240000      98    317.520001  
+NR2D1              tcbn65gpluswc
+                                  1.440000       3      4.320000  
+NR2D3              tcbn65gpluswc
+                                  3.240000       1      3.240000  
+mac_array_col8_bw8_bw_psum20_pr8
+                              10410.839655       1  10410.839655  b, h, n
+ofifo_col8_bw20               34057.439957       1  34057.439957  h, n
+sfp_row                           0.000000       1      0.000000  b
+sram_w16_sram_bit64_0         12181.319877       1  12181.319877  h, n
+sram_w16_sram_bit64_1         12170.879880       1  12170.879880  h, n
+sram_w16_sram_bit160          30138.119095       1  30138.119095  h, n
+-----------------------------------------------------------------------------
+Total 13 references                                 99747.358454
+1
