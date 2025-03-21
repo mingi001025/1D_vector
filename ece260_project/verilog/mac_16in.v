@@ -19,15 +19,6 @@ wire		[2*bw-1:0]	product4	;
 wire		[2*bw-1:0]	product5	;
 wire		[2*bw-1:0]	product6	;
 wire		[2*bw-1:0]	product7	;
-wire		[2*bw-1:0]	product8	;
-wire	        [2*bw-1:0]	product9	;
-wire		[2*bw-1:0]	product10	;
-wire		[2*bw-1:0]	product11	;
-wire		[2*bw-1:0]	product12	;
-wire		[2*bw-1:0]	product13	;
-wire		[2*bw-1:0]	product14	;
-wire		[2*bw-1:0]	product15	;
-
 
 genvar i;
 
