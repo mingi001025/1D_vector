@@ -1,0 +1,1 @@
+/home/linux/ieng6/ee260bwi25/vsivaramakrishnan/1D_vector/deliverables/step1/pnr/constraints/core.sdc

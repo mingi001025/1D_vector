@@ -1,0 +1,82 @@
+#######################################################
+#                                                     
+#  Innovus Command Logging File                     
+#  Created on Fri Mar 21 01:33:16 2025                
+#                                                     
+#######################################################
+
+#@(#)CDS: Innovus v15.23-s045_1 (64bit) 04/22/2016 12:32 (Linux 2.6.18-194.el5)
+#@(#)CDS: NanoRoute 15.23-s045_1 NR160414-1105/15_23-UB (database version 2.30, 317.6.1) {superthreading v1.26}
+#@(#)CDS: AAE 15.23-s014 (64bit) 04/22/2016 (Linux 2.6.18-194.el5)
+#@(#)CDS: CTE 15.23-s022_1 () Apr 22 2016 09:38:45 ( )
+#@(#)CDS: SYNTECH 15.23-s008_1 () Apr 12 2016 21:52:59 ( )
+#@(#)CDS: CPE v15.23-s045
+#@(#)CDS: IQRC/TQRC 15.1.4-s213 (64bit) Tue Feb  9 17:31:28 PST 2016 (Linux 2.6.18-194.el5)
+
+set_global _enable_mmmc_by_default_flow      $CTE::mmmc_default
+suppressMessage ENCEXT-2799
+getDrawView
+loadWorkspace -name Physical
+win
+set init_pwr_net VDD
+set init_gnd_net VSS
+set init_verilog ./netlist/core.v
+set init_design_netlisttype Verilog
+set init_design_settop 1
+set init_top_cell core
+set init_lef_file /home/linux/ieng6/ee260bwi25/public/PDKdata/lef/tcbn65gplus_8lmT2.lef
+create_library_set -name WC_LIB -timing $worst_timing_lib
+create_library_set -name BC_LIB -timing $best_timing_lib
+create_rc_corner -name Cmax -cap_table $worst_captbl -T 125
+create_rc_corner -name Cmin -cap_table $best_captbl -T -40
+create_delay_corner -name WC -library_set WC_LIB -rc_corner Cmax
+create_delay_corner -name BC -library_set BC_LIB -rc_corner Cmin
+create_constraint_mode -name CON -sdc_file [list $sdc]
+create_analysis_view -name WC_VIEW -delay_corner WC -constraint_mode CON
+create_analysis_view -name BC_VIEW -delay_corner BC -constraint_mode CON
+init_design -setup WC_VIEW -hold BC_VIEW
+set_interactive_constraint_modes {CON}
+setDesignMode -process 65
+restoreDesign /home/linux/ieng6/ee260bwi25/vsivaramakrishnan/1D_vector/deliverables/step1/pnr/route.enc.dat core
+verifyGeometry
+verifyConnectivity
+selectWire 10.0000 274.4350 444.6000 274.7650 1 VSS
+optDesign -postroute -drv
+verifyGeometry
+optDesign -postroute -inc
+verifyGeometry
+optDesign -postroute -drv
+verifyGeometry
+deselectAll
+selectInst qmem_instance/memory1_reg_9_
+panPage -1 0
+panPage -1 0
+optDesign -postroute -drv
+verifyGeometry
+optDesign --help
+optDesign -postroute -incr
+verifyGeometry
+deselectAll
+selectWire 288.8500 425.5500 288.9500 426.8500 2 mac_array_instance/col_idx_3__mac_col_inst/mac_16in_instance/n1090
+optDesign --help
+gui_select -rect {401.101 342.566 322.745 406.968}
+deselectAll
+selectVia 291.0400 424.1400 292.2600 424.6600 7 {mac_array_instance/col_idx_3__mac_col_inst/key_q[47]}
+panPage 0 1
+panPage 0 1
+panPage 0 1
+deselectAll
+panPage 0 -1
+optDesign -help
+optDesign -incr
+optDesign -selectedNets
+optDesign -setup
+optDesign -postRoute -setup
+verifyGeometry
+selectWire 47.0500 170.5500 47.1500 175.6500 2 {mem_in[9]}
+deselectAll
+selectMarker 48.6100 168.7500 48.9900 168.8500 1 1 6
+setDrawView fplan
+setDrawView ameba
+setDrawView place
+setDrawView ameba

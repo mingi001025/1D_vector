@@ -1,0 +1,543 @@
+xrun(64): 20.09-s017: (c) Copyright 1995-2021 Cadence Design Systems, Inc.
+TOOL:	xrun(64)	20.09-s017: Started on Mar 21, 2025 at 12:31:20 PDT
+xrun
+	+gui
+	+access+rwc
+	+xm64bit
+	+xmstatus
+	+xmtimescale+1ns/1ps
+	+xmoveride_timescale
+	+xmseq_udp_delay+20ps
+	-xminitialize 1
+	-v ./netlist/verilog/core.pnr.v
+	-v /home/linux/ieng6/ee260bwi25/public/PDKdata/verilog/tcbn65gplus.v
+	-incdir ./netlist/verilog/
+	./netlist/verilog/fullchip_tb.v
+
+   User defined plus("+") options:
+	+xmoveride_timescale
+
+Recompiling... reason: file './netlist/verilog/core.pnr.v' is newer than expected.
+	expected: Thu Mar 20 22:20:47 2025
+	actual:   Fri Mar 21 12:31:01 2025
+file: ./netlist/verilog/core.pnr.v
+	module core.core:v
+		errors: 0, warnings: 0
+file: ./netlist/verilog/core.pnr.v
+	module core.mac_array_col8_bw8_bw_psum19_pr8:v
+		errors: 0, warnings: 0
+	module core.ofifo_col8_bw19:v
+		errors: 0, warnings: 0
+	module core.sram_w16_sram_bit64_1:v
+		errors: 0, warnings: 0
+	module core.sram_w16_sram_bit152:v
+		errors: 0, warnings: 0
+	module core.sram_w16_sram_bit64_0:v
+		errors: 0, warnings: 0
+file: ./netlist/verilog/core.pnr.v
+	module core.mac_col_bw8_bw_psum19_pr8_col_id1:v
+		errors: 0, warnings: 0
+	module core.mac_col_bw8_bw_psum19_pr8_col_id2:v
+		errors: 0, warnings: 0
+	module core.mac_col_bw8_bw_psum19_pr8_col_id3:v
+		errors: 0, warnings: 0
+	module core.mac_col_bw8_bw_psum19_pr8_col_id4:v
+		errors: 0, warnings: 0
+	module core.mac_col_bw8_bw_psum19_pr8_col_id5:v
+		errors: 0, warnings: 0
+	module core.mac_col_bw8_bw_psum19_pr8_col_id6:v
+		errors: 0, warnings: 0
+	module core.mac_col_bw8_bw_psum19_pr8_col_id7:v
+		errors: 0, warnings: 0
+	module core.mac_col_bw8_bw_psum19_pr8_col_id8:v
+		errors: 0, warnings: 0
+	module core.fifo_depth8_bw19_simd1_7:v
+		errors: 0, warnings: 0
+	module core.fifo_depth8_bw19_simd1_6:v
+		errors: 0, warnings: 0
+	module core.fifo_depth8_bw19_simd1_0:v
+		errors: 0, warnings: 0
+	module core.fifo_depth8_bw19_simd1_1:v
+		errors: 0, warnings: 0
+	module core.fifo_depth8_bw19_simd1_2:v
+		errors: 0, warnings: 0
+	module core.fifo_depth8_bw19_simd1_3:v
+		errors: 0, warnings: 0
+	module core.fifo_depth8_bw19_simd1_4:v
+		errors: 0, warnings: 0
+	module core.fifo_depth8_bw19_simd1_5:v
+		errors: 0, warnings: 0
+file: ./netlist/verilog/core.pnr.v
+	module core.mac_16in_bw8_bw_psum19_pr8_7:v
+		errors: 0, warnings: 0
+	module core.mac_16in_bw8_bw_psum19_pr8_6:v
+		errors: 0, warnings: 0
+	module core.mac_16in_bw8_bw_psum19_pr8_5:v
+		errors: 0, warnings: 0
+	module core.mac_16in_bw8_bw_psum19_pr8_4:v
+		errors: 0, warnings: 0
+	module core.mac_16in_bw8_bw_psum19_pr8_3:v
+		errors: 0, warnings: 0
+	module core.mac_16in_bw8_bw_psum19_pr8_2:v
+		errors: 0, warnings: 0
+	module core.mac_16in_bw8_bw_psum19_pr8_1:v
+		errors: 0, warnings: 0
+	module core.mac_16in_bw8_bw_psum19_pr8_0:v
+		errors: 0, warnings: 0
+	module core.fifo_mux_8_1_bw19_simd1_7:v
+		errors: 0, warnings: 0
+	module core.fifo_mux_8_1_bw19_simd1_6:v
+		errors: 0, warnings: 0
+	module core.fifo_mux_8_1_bw19_simd1_0:v
+		errors: 0, warnings: 0
+	module core.fifo_mux_8_1_bw19_simd1_1:v
+		errors: 0, warnings: 0
+	module core.fifo_mux_8_1_bw19_simd1_2:v
+		errors: 0, warnings: 0
+	module core.fifo_mux_8_1_bw19_simd1_3:v
+		errors: 0, warnings: 0
+	module core.fifo_mux_8_1_bw19_simd1_4:v
+		errors: 0, warnings: 0
+	module core.fifo_mux_8_1_bw19_simd1_5:v
+		errors: 0, warnings: 0
+file: ./netlist/verilog/core.pnr.v
+	module core.fifo_mux_2_1_bw19_simd1_55:v
+		errors: 0, warnings: 0
+	module core.fifo_mux_2_1_bw19_simd1_49:v
+		errors: 0, warnings: 0
+	module core.fifo_mux_2_1_bw19_simd1_50:v
+		errors: 0, warnings: 0
+	module core.fifo_mux_2_1_bw19_simd1_51:v
+		errors: 0, warnings: 0
+	module core.fifo_mux_2_1_bw19_simd1_52:v
+		errors: 0, warnings: 0
+	module core.fifo_mux_2_1_bw19_simd1_53:v
+		errors: 0, warnings: 0
+	module core.fifo_mux_2_1_bw19_simd1_54:v
+		errors: 0, warnings: 0
+	module core.fifo_mux_2_1_bw19_simd1_42:v
+		errors: 0, warnings: 0
+	module core.fifo_mux_2_1_bw19_simd1_43:v
+		errors: 0, warnings: 0
+	module core.fifo_mux_2_1_bw19_simd1_44:v
+		errors: 0, warnings: 0
+	module core.fifo_mux_2_1_bw19_simd1_45:v
+		errors: 0, warnings: 0
+	module core.fifo_mux_2_1_bw19_simd1_46:v
+		errors: 0, warnings: 0
+	module core.fifo_mux_2_1_bw19_simd1_47:v
+		errors: 0, warnings: 0
+	module core.fifo_mux_2_1_bw19_simd1_48:v
+		errors: 0, warnings: 0
+	module core.fifo_mux_2_1_bw19_simd1_0:v
+		errors: 0, warnings: 0
+	module core.fifo_mux_2_1_bw19_simd1_1:v
+		errors: 0, warnings: 0
+	module core.fifo_mux_2_1_bw19_simd1_2:v
+		errors: 0, warnings: 0
+	module core.fifo_mux_2_1_bw19_simd1_3:v
+		errors: 0, warnings: 0
+	module core.fifo_mux_2_1_bw19_simd1_4:v
+		errors: 0, warnings: 0
+	module core.fifo_mux_2_1_bw19_simd1_5:v
+		errors: 0, warnings: 0
+	module core.fifo_mux_2_1_bw19_simd1_6:v
+		errors: 0, warnings: 0
+	module core.fifo_mux_2_1_bw19_simd1_7:v
+		errors: 0, warnings: 0
+	module core.fifo_mux_2_1_bw19_simd1_8:v
+		errors: 0, warnings: 0
+	module core.fifo_mux_2_1_bw19_simd1_9:v
+		errors: 0, warnings: 0
+	module core.fifo_mux_2_1_bw19_simd1_10:v
+		errors: 0, warnings: 0
+	module core.fifo_mux_2_1_bw19_simd1_11:v
+		errors: 0, warnings: 0
+	module core.fifo_mux_2_1_bw19_simd1_12:v
+		errors: 0, warnings: 0
+	module core.fifo_mux_2_1_bw19_simd1_13:v
+		errors: 0, warnings: 0
+	module core.fifo_mux_2_1_bw19_simd1_14:v
+		errors: 0, warnings: 0
+	module core.fifo_mux_2_1_bw19_simd1_15:v
+		errors: 0, warnings: 0
+	module core.fifo_mux_2_1_bw19_simd1_16:v
+		errors: 0, warnings: 0
+	module core.fifo_mux_2_1_bw19_simd1_17:v
+		errors: 0, warnings: 0
+	module core.fifo_mux_2_1_bw19_simd1_18:v
+		errors: 0, warnings: 0
+	module core.fifo_mux_2_1_bw19_simd1_19:v
+		errors: 0, warnings: 0
+	module core.fifo_mux_2_1_bw19_simd1_20:v
+		errors: 0, warnings: 0
+	module core.fifo_mux_2_1_bw19_simd1_21:v
+		errors: 0, warnings: 0
+	module core.fifo_mux_2_1_bw19_simd1_22:v
+		errors: 0, warnings: 0
+	module core.fifo_mux_2_1_bw19_simd1_23:v
+		errors: 0, warnings: 0
+	module core.fifo_mux_2_1_bw19_simd1_24:v
+		errors: 0, warnings: 0
+	module core.fifo_mux_2_1_bw19_simd1_25:v
+		errors: 0, warnings: 0
+	module core.fifo_mux_2_1_bw19_simd1_26:v
+		errors: 0, warnings: 0
+	module core.fifo_mux_2_1_bw19_simd1_27:v
+		errors: 0, warnings: 0
+	module core.fifo_mux_2_1_bw19_simd1_28:v
+		errors: 0, warnings: 0
+	module core.fifo_mux_2_1_bw19_simd1_29:v
+		errors: 0, warnings: 0
+	module core.fifo_mux_2_1_bw19_simd1_30:v
+		errors: 0, warnings: 0
+	module core.fifo_mux_2_1_bw19_simd1_31:v
+		errors: 0, warnings: 0
+	module core.fifo_mux_2_1_bw19_simd1_32:v
+		errors: 0, warnings: 0
+	module core.fifo_mux_2_1_bw19_simd1_33:v
+		errors: 0, warnings: 0
+	module core.fifo_mux_2_1_bw19_simd1_34:v
+		errors: 0, warnings: 0
+	module core.fifo_mux_2_1_bw19_simd1_35:v
+		errors: 0, warnings: 0
+	module core.fifo_mux_2_1_bw19_simd1_36:v
+		errors: 0, warnings: 0
+	module core.fifo_mux_2_1_bw19_simd1_37:v
+		errors: 0, warnings: 0
+	module core.fifo_mux_2_1_bw19_simd1_38:v
+		errors: 0, warnings: 0
+	module core.fifo_mux_2_1_bw19_simd1_39:v
+		errors: 0, warnings: 0
+	module core.fifo_mux_2_1_bw19_simd1_40:v
+		errors: 0, warnings: 0
+	module core.fifo_mux_2_1_bw19_simd1_41:v
+		errors: 0, warnings: 0
+file: /home/linux/ieng6/ee260bwi25/public/PDKdata/verilog/tcbn65gplus.v
+	module tcbn65gplus.AN2D8:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.CKMUX2D0:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.EDFQD2:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.EDFQD4:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.IAO22D1:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.INR3D4:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.IOA22D4:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.MUX2D4:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.MUX2ND4:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.NR3D3:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.OA22D2:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.OA22D4:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.OAI31D1:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.OR3D1:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.OR3D4:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.OR3XD1:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.XNR3D0:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.XOR3D4:v
+		errors: 0, warnings: 0
+xmvlog: Memory Usage - Current physical: 24.1M, Current virtual: 95.7M
+xmvlog: CPU Usage - 0.1s system + 1.2s user = 1.3s total (1.4s, 94.3% cpu)
+xmelab: *N,INFSUD: -NOSPECIFY is automatically used with -SEQ_UDP_DELAY.
+		Caching library 'worklib' ....... Done
+		Caching library 'core' ....... Done
+		Caching library 'tcbn65gplus' ....... Done
+	Elaborating the design hierarchy:
+   DFD1 cnt_q_reg_2_ (.CP(clk),
+                   |
+xmelab: *W,CUVWSP (./netlist/verilog/core.pnr.v,10013|19): 1 output port was not connected:
+xmelab: (/home/linux/ieng6/ee260bwi25/public/PDKdata/verilog/tcbn65gplus.v,5821): Q
+
+   DFD1 cnt_q_reg_0_ (.CP(clk),
+                   |
+xmelab: *W,CUVWSP (./netlist/verilog/core.pnr.v,21209|19): 1 output port was not connected:
+xmelab: (/home/linux/ieng6/ee260bwi25/public/PDKdata/verilog/tcbn65gplus.v,5821): Q
+
+   DFD1 cnt_q_reg_0_ (.CP(clk),
+                   |
+xmelab: *W,CUVWSP (./netlist/verilog/core.pnr.v,31926|19): 1 output port was not connected:
+xmelab: (/home/linux/ieng6/ee260bwi25/public/PDKdata/verilog/tcbn65gplus.v,5821): Q
+
+   DFD1 cnt_q_reg_0_ (.CP(clk),
+                   |
+xmelab: *W,CUVWSP (./netlist/verilog/core.pnr.v,42631|19): 1 output port was not connected:
+xmelab: (/home/linux/ieng6/ee260bwi25/public/PDKdata/verilog/tcbn65gplus.v,5821): Q
+
+   DFD1 cnt_q_reg_0_ (.CP(clk),
+                   |
+xmelab: *W,CUVWSP (./netlist/verilog/core.pnr.v,65762|19): 1 output port was not connected:
+xmelab: (/home/linux/ieng6/ee260bwi25/public/PDKdata/verilog/tcbn65gplus.v,5821): Q
+
+   DFD1 cnt_q_reg_3_ (.CP(clk),
+                   |
+xmelab: *W,CUVWSP (./netlist/verilog/core.pnr.v,65847|19): 1 output port was not connected:
+xmelab: (/home/linux/ieng6/ee260bwi25/public/PDKdata/verilog/tcbn65gplus.v,5821): QN
+
+   DFD1 cnt_q_reg_0_ (.CP(clk),
+                   |
+xmelab: *W,CUVWSP (./netlist/verilog/core.pnr.v,87686|19): 1 output port was not connected:
+xmelab: (/home/linux/ieng6/ee260bwi25/public/PDKdata/verilog/tcbn65gplus.v,5821): Q
+
+   ofifo_col8_bw19 ofifo_inst (.in({ array_out[151],
+                            |
+xmelab: *W,CUVWSP (./netlist/verilog/core.pnr.v,138189|28): 2 output ports were not connected:
+xmelab: (./netlist/verilog/core.pnr.v,108850): o_valid
+xmelab: (./netlist/verilog/core.pnr.v,108852): o_full
+
+   fifo_depth8_bw19_simd1_7 col_idx_0__fifo_instance (.in({ in[18],
+                                                   |
+xmelab: *W,CUVWSP (./netlist/verilog/core.pnr.v,108939|51): 2 output ports were not connected:
+xmelab: (./netlist/verilog/core.pnr.v,91756): o_full
+xmelab: (./netlist/verilog/core.pnr.v,91757): o_empty
+
+   DFD1 rd_ptr_reg_3_ (.CP(CTS_4),
+                    |
+xmelab: *W,CUVWSP (./netlist/verilog/core.pnr.v,92353|20): 1 output port was not connected:
+xmelab: (/home/linux/ieng6/ee260bwi25/public/PDKdata/verilog/tcbn65gplus.v,5821): QN
+
+   fifo_depth8_bw19_simd1_6 col_idx_1__fifo_instance (.in({ in[37],
+                                                   |
+xmelab: *W,CUVWSP (./netlist/verilog/core.pnr.v,108988|51): 2 output ports were not connected:
+xmelab: (./netlist/verilog/core.pnr.v,93973): o_full
+xmelab: (./netlist/verilog/core.pnr.v,93974): o_empty
+
+   DFD1 rd_ptr_reg_3_ (.CP(rd_clk_clone4),
+                    |
+xmelab: *W,CUVWSP (./netlist/verilog/core.pnr.v,94652|20): 1 output port was not connected:
+xmelab: (/home/linux/ieng6/ee260bwi25/public/PDKdata/verilog/tcbn65gplus.v,5821): QN
+
+   fifo_depth8_bw19_simd1_5 col_idx_2__fifo_instance (.in({ in[56],
+                                                   |
+xmelab: *W,CUVWSP (./netlist/verilog/core.pnr.v,109037|51): 2 output ports were not connected:
+xmelab: (./netlist/verilog/core.pnr.v,107315): o_full
+xmelab: (./netlist/verilog/core.pnr.v,107316): o_empty
+
+   DFD1 rd_ptr_reg_3_ (.CP(rd_clk_clone4),
+                    |
+xmelab: *W,CUVWSP (./netlist/verilog/core.pnr.v,107916|20): 1 output port was not connected:
+xmelab: (/home/linux/ieng6/ee260bwi25/public/PDKdata/verilog/tcbn65gplus.v,5821): QN
+
+   fifo_depth8_bw19_simd1_4 col_idx_3__fifo_instance (.in({ in[75],
+                                                   |
+xmelab: *W,CUVWSP (./netlist/verilog/core.pnr.v,109084|51): 2 output ports were not connected:
+xmelab: (./netlist/verilog/core.pnr.v,105099): o_full
+xmelab: (./netlist/verilog/core.pnr.v,105100): o_empty
+
+   DFD1 rd_ptr_reg_3_ (.CP(rd_clk_clone1),
+                    |
+xmelab: *W,CUVWSP (./netlist/verilog/core.pnr.v,105719|20): 1 output port was not connected:
+xmelab: (/home/linux/ieng6/ee260bwi25/public/PDKdata/verilog/tcbn65gplus.v,5821): QN
+
+   fifo_depth8_bw19_simd1_3 col_idx_4__fifo_instance (.in({ in[94],
+                                                   |
+xmelab: *W,CUVWSP (./netlist/verilog/core.pnr.v,109130|51): 2 output ports were not connected:
+xmelab: (./netlist/verilog/core.pnr.v,102891): o_full
+xmelab: (./netlist/verilog/core.pnr.v,102892): o_empty
+
+   DFD1 rd_ptr_reg_3_ (.CP(rd_clk_clone5),
+                    |
+xmelab: *W,CUVWSP (./netlist/verilog/core.pnr.v,103482|20): 1 output port was not connected:
+xmelab: (/home/linux/ieng6/ee260bwi25/public/PDKdata/verilog/tcbn65gplus.v,5821): QN
+
+   fifo_depth8_bw19_simd1_2 col_idx_5__fifo_instance (.in({ in[113],
+                                                   |
+xmelab: *W,CUVWSP (./netlist/verilog/core.pnr.v,109178|51): 2 output ports were not connected:
+xmelab: (./netlist/verilog/core.pnr.v,100681): o_full
+xmelab: (./netlist/verilog/core.pnr.v,100682): o_empty
+
+   DFD1 rd_ptr_reg_3_ (.CP(rd_clk_clone5),
+                    |
+xmelab: *W,CUVWSP (./netlist/verilog/core.pnr.v,101258|20): 1 output port was not connected:
+xmelab: (/home/linux/ieng6/ee260bwi25/public/PDKdata/verilog/tcbn65gplus.v,5821): QN
+
+   fifo_depth8_bw19_simd1_1 col_idx_6__fifo_instance (.rd_clk(clk_clone18),
+                                                   |
+xmelab: *W,CUVWSP (./netlist/verilog/core.pnr.v,109225|51): 2 output ports were not connected:
+xmelab: (./netlist/verilog/core.pnr.v,98435): o_full
+xmelab: (./netlist/verilog/core.pnr.v,98436): o_empty
+
+   DFD1 rd_ptr_reg_3_ (.CP(rd_clk_clone2),
+                    |
+xmelab: *W,CUVWSP (./netlist/verilog/core.pnr.v,99040|20): 1 output port was not connected:
+xmelab: (/home/linux/ieng6/ee260bwi25/public/PDKdata/verilog/tcbn65gplus.v,5821): QN
+
+   fifo_depth8_bw19_simd1_0 col_idx_7__fifo_instance (.in({ in[151],
+                                                   |
+xmelab: *W,CUVWSP (./netlist/verilog/core.pnr.v,109272|51): 2 output ports were not connected:
+xmelab: (./netlist/verilog/core.pnr.v,96218): o_full
+xmelab: (./netlist/verilog/core.pnr.v,96219): o_empty
+
+   DFD1 rd_ptr_reg_3_ (.CP(rd_clk_clone1),
+                    |
+xmelab: *W,CUVWSP (./netlist/verilog/core.pnr.v,96792|20): 1 output port was not connected:
+xmelab: (/home/linux/ieng6/ee260bwi25/public/PDKdata/verilog/tcbn65gplus.v,5821): QN
+
+	Top level design units:
+		fullchip_tb
+      .sum_out(sum_out),
+                     |
+xmelab: *W,CUVMPW (./netlist/verilog/fullchip_tb.v,97|21): port sizes differ in port connection(160/152) for the instance(fullchip_tb) .
+      .out(out)
+             |
+xmelab: *W,CUVMPW (./netlist/verilog/fullchip_tb.v,98|13): port sizes differ in port connection(160/152) for the instance(fullchip_tb) .
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		tcbn65gplus.EDFQD2:v <0x18f7d792>
+			streams:   0, words:     0
+		tcbn65gplus.EDFQD4:v <0x2b2e2727>
+			streams:   0, words:     0
+		tcbn65gplus.CKMUX2D0:v <0x26990b3a>
+			streams:   0, words:     0
+		tcbn65gplus.MUX2ND0:v <0x6702d506>
+			streams:   0, words:     0
+		tcbn65gplus.DFKCNQD4:v <0x630aa401>
+			streams:   0, words:     0
+		tcbn65gplus.XOR3D4:v <0x0bf2f467>
+			streams:   0, words:     0
+		tcbn65gplus.XNR3D1:v <0x07cd28be>
+			streams:   0, words:     0
+		tcbn65gplus.XNR3D0:v <0x6bfefe68>
+			streams:   0, words:     0
+		tcbn65gplus.MUX2ND4:v <0x5b4f0c72>
+			streams:   0, words:     0
+		tcbn65gplus.MUX2D4:v <0x03c62a7b>
+			streams:   0, words:     0
+		tcbn65gplus.DFQD2:v <0x6a2de81e>
+			streams:   0, words:     0
+		worklib.fullchip_tb:v <0x5de77d00>
+			streams:  34, words: 73297
+		core.fifo_depth8_bw19_simd1_0:v <0x7b46d905>
+			streams:   0, words:     0
+		core.fifo_depth8_bw19_simd1_1:v <0x2e665f3f>
+			streams:   0, words:     0
+		core.fifo_depth8_bw19_simd1_2:v <0x072316e0>
+			streams:   0, words:     0
+		core.fifo_depth8_bw19_simd1_3:v <0x13bbd27f>
+			streams:   0, words:     0
+		core.fifo_depth8_bw19_simd1_4:v <0x6ad3df35>
+			streams:   0, words:     0
+		core.fifo_depth8_bw19_simd1_5:v <0x2162c10a>
+			streams:   0, words:     0
+		core.fifo_depth8_bw19_simd1_6:v <0x7374fc40>
+			streams:   0, words:     0
+		core.fifo_depth8_bw19_simd1_7:v <0x6e9be5d1>
+			streams:   0, words:     0
+		core.ofifo_col8_bw19:v <0x0dc06b00>
+			streams:   0, words:     0
+		core.mac_col_bw8_bw_psum19_pr8_col_id7:v <0x49b30814>
+			streams:   0, words:     0
+		core.mac_col_bw8_bw_psum19_pr8_col_id6:v <0x413b3165>
+			streams:   0, words:     0
+		core.mac_col_bw8_bw_psum19_pr8_col_id5:v <0x412a73ed>
+			streams:   0, words:     0
+		core.mac_col_bw8_bw_psum19_pr8_col_id4:v <0x5cd237c5>
+			streams:   0, words:     0
+		core.mac_col_bw8_bw_psum19_pr8_col_id3:v <0x59080f22>
+			streams:   0, words:     0
+		core.mac_col_bw8_bw_psum19_pr8_col_id2:v <0x033c62d6>
+			streams:   0, words:     0
+		core.mac_col_bw8_bw_psum19_pr8_col_id1:v <0x0861b2aa>
+			streams:   0, words:     0
+		core.mac_array_col8_bw8_bw_psum19_pr8:v <0x22eb8006>
+			streams:   0, words:     0
+		core.core:v <0x2b86569f>
+			streams:   0, words:     0
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                   Instances  Unique
+		Modules:               30387     314
+		UDPs:                  10387       3
+		Primitives:            62659       9
+		Registers:              4927      50
+		Scalar wires:           8266       -
+		Expanded wires:           72       3
+		Always blocks:             1       1
+		Initial blocks:           19      19
+		Cont. assignments:        11      11
+		Pseudo assignments:        3       3
+		Simulation timescale:    1ps
+	Writing initial simulation snapshot: worklib.fullchip_tb:v
+xmelab: Memory Usage - Final: 56.1M, Peak: 60.7M, Peak virtual: 184.9M
+xmelab: CPU Usage - 0.2s system + 3.0s user = 3.2s total (3.3s, 95.6% cpu)
+
+-------------------------------------
+Relinquished control to SimVision...
+xcelium> 
+xcelium> source /software/ECE/XCELIUM-2009/tools/xcelium/files/xmsimrc
+xcelium> database -open waves -into waves.shm -default
+Created default SHM database waves
+xcelium> probe -create -shm fullchip_tb.core_instance.clk fullchip_tb.core_instance.array_out fullchip_tb.core_instance.fifo_wr fullchip_tb.core_instance.inst fullchip_tb.core_instance.mac_in fullchip_tb.core_instance.kmem_out fullchip_tb.core_instance.mem_in fullchip_tb.core_instance.out fullchip_tb.core_instance.pmem_in fullchip_tb.core_instance.qmem_out fullchip_tb.core_instance.reset fullchip_tb.core_instance.sum_out
+Created probe 1
+xcelium> run
+##### Q data txt reading #####
+Q0 = [         -5          7         -5         -7         -1          6          1          2] Hex: fb07fbf9ff060102 
+Q1 = [         -4          7         -2         -5         -3          4          1         -3] Hex: fc07fefbfd0401fd 
+Q2 = [         -4         -1         -4         -4          0          5          2          0] Hex: fcfffcfc00050200 
+Q3 = [         -3          3          6         -4          6          2          1          6] Hex: fd0306fc06020106 
+Q4 = [         -8          5         -2          6          2          1         -3          4] Hex: f805fe060201fd04 
+Q5 = [         -2         -1         -2         -6         -1          4          0          2] Hex: fefffefaff040002 
+Q6 = [          5         -7         -1          3          2          1         -7          6] Hex: 05f9ff030201f906 
+Q7 = [          5         -8         -3          6          0         -2          6         -1] Hex: 05f8fd0600fe06ff 
+##### K data txt reading #####
+K0 = [         -6          3         -2         -1         -5          1          0          7] Hex: fa03fefffb010007 
+K1 = [          0         -5         -8          0          6          0         -5         -7] Hex: 00fbf8000600fbf9 
+K2 = [          4         -7         -6          3          7          7          6          6] Hex: 04f9fa0307070606 
+K3 = [         -3          0          0         -7          6          3          4          7] Hex: fd0000f906030407 
+K4 = [          6         -3          4         -7         -4         -3         -2         -5] Hex: 06fd04f9fcfdfefb 
+K5 = [          0         -7          3          3         -2          6          4         -1] Hex: 00f90303fe0604ff 
+K6 = [          7         -5          2          1          3          6          1         -5] Hex: 07fb0201030601fb 
+K7 = [          3         -1          6          3         -6         -2          1         -4] Hex: 03ff0603fafe01fc 
+##### Estimated multiplication result #####
+prd @cycle 0: Q0*K[n] = [         93         -20          -7          94         -48         -45         -63         -86 ]
+prd @cycle 1: Q1*K[n] = [         52         -21         -73          24          -5         -33         -41         -23 ]
+prd @cycle 2: Q2*K[n] = [         38          27          50          63         -28          21          -3         -55 ]
+prd @cycle 3: Q3*K[n] = [         33         -74          17         125         -37         -17         -27         -51 ]
+prd @cycle 4: Q4*K[n] = [         80         -10         -10          13        -138         -37         -90         -56 ]
+prd @cycle 5: Q5*K[n] = [         42           1          26          68           7           7          -8         -45 ]
+prd @cycle 6: Q6*K[n] = [        -19          48          99          -7          -1          23          46         -20 ]
+prd @cycle 7: Q7*K[n] = [        -63          41         128         -46          -1          78          74          37 ]
+##### Qmem writing  #####
+Clock Cycle = 12: Q0 = [         -5          7         -5         -7         -1          6          1          2]
+Clock Cycle = 13: Q1 = [         -4          7         -2         -5         -3          4          1         -3]
+Clock Cycle = 14: Q2 = [         -4         -1         -4         -4          0          5          2          0]
+Clock Cycle = 15: Q3 = [         -3          3          6         -4          6          2          1          6]
+Clock Cycle = 16: Q4 = [         -8          5         -2          6          2          1         -3          4]
+Clock Cycle = 17: Q5 = [         -2         -1         -2         -6         -1          4          0          2]
+Clock Cycle = 18: Q6 = [          5         -7         -1          3          2          1         -7          6]
+Clock Cycle = 19: Q7 = [          5         -8         -3          6          0         -2          6         -1]
+##### Kmem writing #####
+Clock Cycle = 21: K0 = [         -6          3         -2         -1         -5          1          0          7]
+Clock Cycle = 22: K1 = [          0         -5         -8          0          6          0         -5         -7]
+Clock Cycle = 23: K2 = [          4         -7         -6          3          7          7          6          6]
+Clock Cycle = 24: K3 = [         -3          0          0         -7          6          3          4          7]
+Clock Cycle = 25: K4 = [          6         -3          4         -7         -4         -3         -2         -5]
+Clock Cycle = 26: K5 = [          0         -7          3          3         -2          6          4         -1]
+Clock Cycle = 27: K6 = [          7         -5          2          1          3          6          1         -5]
+Clock Cycle = 28: K7 = [          3         -1          6          3         -6         -2          1         -4]
+##### K data loading to processor #####
+##### execute #####
+##### move ofifo to pmem #####
+##### move ofifo to pmem #####
+Simulation complete via $finish(1) at time 111 NS + 0
+./netlist/verilog/fullchip_tb.v:414   #10 $finish;
+xcelium> ^C
+xcelium> exit
+xmsim: Memory Usage - Final: 116.3M, Peak: 123.2M, Peak virtual: 587.9M
+xmsim: Main Thread CPU Usage - 4.9s system + 3.8s user = 8.8s total
+xmsim: CPU Usage - 4.9s system + 3.5s user = 8.4s total (264.5s, 3.2% cpu)
+TOOL:	xrun(64)	20.09-s017: Exiting on Mar 21, 2025 at 12:35:50 PDT  (total: 00:04:30)
