@@ -52,7 +52,7 @@ module sfp_row (clk, acc, div, fifo_ext_rd, sum_in, sum_out, sfp_in, sfp_out);
   assign sfp_out[bw_psum*7-1 : bw_psum*6] = sfp_out_6[bw_psum-1:0];
   assign sfp_out[bw_psum*8-1 : bw_psum*7] = sfp_out_7[bw_psum-1:0];
 
-  assign sum_in_valid = (sum_in === 24'bx) ? 24'b000000000000000000000000 : sum_in;
+  assign sum_in_valid = (acc == 1'b1) ? 24'b0 : sum_in;
   assign sum_div = sum_this_core + sum_ext;
   assign sum_out = sum_q;
 
