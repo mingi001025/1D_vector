@@ -1,5 +1,5 @@
 // Created by prof. Mingu Kang @VVIP Lab in UCSD ECE department
-// Please do not spread this code without permission 
+// Please do not spread this code without permission
 
 `timescale 1ns/1ps
 
@@ -9,8 +9,8 @@ module fullchip_tb;
 
 parameter total_cycle = 8;   // how many streamed Q vectors will be processed
 parameter bw = 8;            // Q & K vector bit precision
-parameter bw_psum = 2*bw+3;  // partial sum bit precision
-parameter pr = 8;           // how many products added in each dot product 
+parameter bw_psum = 2*bw+4;  // partial sum bit precision
+parameter pr = 8;           // how many products added in each dot product
 parameter col = 8;           // how many dot product units are equipped
 
 integer qk_file ; // file handler
@@ -43,15 +43,15 @@ reg [7:0] tempHex = 0;
 
 reg reset = 1;
 reg clk = 0;
-reg [2*pr*bw-1:0] mem_in; 
+reg [2*pr*bw-1:0] mem_in;
 reg ofifo_rd = 0;
-wire [19:0] inst; 
+wire [21:0] inst;
 reg qmem_rd = 0;
-reg qmem_wr = 0; 
-reg kmem_rd = 0; 
+reg qmem_wr = 0;
+reg kmem_rd = 0;
 reg kmem_wr = 0;
-reg pmem_rd = 0; 
-reg pmem_wr = 0; 
+reg pmem_rd = 0;
+reg pmem_wr = 0;
 reg execute = 0;
 reg load = 0;
 reg [3:0] qkmem_add = 0;
@@ -59,7 +59,11 @@ reg [3:0] pmem_add = 0;
 reg acc;
 reg div;
 reg fifo_ext_rd;
+reg fifo_out_rd;
+reg fifo_out_wr;
 
+assign inst[21] = fifo_out_wr;
+assign inst[20] = fifo_out_rd;
 assign inst[19] = fifo_ext_rd;
 assign inst[18] = div;
 assign inst[17] = acc;
@@ -106,14 +110,14 @@ wire [2*col*bw_psum-1:0] rtl_out;
 
 fullchip #(.bw(bw), .bw_psum(bw_psum), .col(col), .pr(pr)) fullchip_instance (
       .reset(reset),
-      .clk(clk), 
-      .mem_in(mem_in), 
+      .clk(clk),
+      .mem_in(mem_in),
       .inst(inst),
       .out(rtl_out)
 );
 
 
-initial begin 
+initial begin
 
   $dumpfile("fullchip_tb.vcd");
   $dumpvars(0,fullchip_tb);
@@ -126,7 +130,7 @@ $display("##### Q data txt reading #####");
 
 
   qk_file = $fopen("qdata.txt", "r");
-  
+ 
   for (q=0; q<total_cycle; q=q+1) begin
     $write("Q%0d = [", q);
     for (j=0; j<pr; j=j+1) begin
@@ -136,7 +140,7 @@ $display("##### Q data txt reading #####");
     end
     $write("] Hex: ");
     for (j=0; j<pr; j=j+1) begin
-        tempHex = Q[q][j] & 'hff;	    
+        tempHex = Q[q][j] & 'hff;    
         $write("%h", tempHex);
     end
     $display();
@@ -148,8 +152,8 @@ $display("##### Q data txt reading #####");
 
 
   for (q=0; q<2; q=q+1) begin
-    #0.5 clk = 1'b0;   
-    #0.5 clk = 1'b1;   
+    #0.5 clk = 1'b0;  
+    #0.5 clk = 1'b1;  
   end
 
 
@@ -160,8 +164,8 @@ $display("##### Q data txt reading #####");
 $display("##### K data 0 txt reading #####");
 
   for (q=0; q<10; q=q+1) begin
-    #0.5 clk = 1'b0;   
-    #0.5 clk = 1'b1;   
+    #0.5 clk = 1'b0;  
+    #0.5 clk = 1'b1;  
   end
   reset = 0;
 
@@ -176,7 +180,7 @@ $display("##### K data 0 txt reading #####");
     end
     $write("] Hex: ");
     for (j=0; j<pr; j=j+1) begin
-        tempHex = K[q][j] & 'hff;	    
+        tempHex = K[q][j] & 'hff;    
         $write("%h", tempHex);
     end
     $display();
@@ -195,7 +199,7 @@ $display("##### K data 1 txt reading #####");
     end
     $write("] Hex: ");
     for (j=0; j<pr; j=j+1) begin
-        tempHex = K[q][j+8] & 'hff;	    
+        tempHex = K[q][j+8] & 'hff;    
         $write("%h", tempHex);
     end
     $display();
@@ -216,7 +220,7 @@ $display("##### Qmem writing  #####");
   for (q=0; q<total_cycle; q=q+1) begin
 
     #0.5 clk = 1'b0;  
-    qmem_wr = 1;  if (q>0) qkmem_add = qkmem_add + 1; 
+    qmem_wr = 1;  if (q>0) qkmem_add = qkmem_add + 1;
 
     mem_in[1*bw-1:0*bw] = Q[q][0];
     mem_in[2*bw-1:1*bw] = Q[q][1];
@@ -237,13 +241,13 @@ $display("##### Qmem writing  #####");
 /*
     $write("Q%0d = [", q);
     for (i=0; i<col; i=i+1) begin
-      $write("%d", Q[q][i]);	
+      $write("%d", Q[q][i]);
     end
     $write(" |");
     for (i=0; i<col; i=i+1) begin
-      $write("%d", Q[q][i]);	
+      $write("%d", Q[q][i]);
     end
-    $display("]"); 
+    $display("]");
 */
     #0.5 clk = 1'b1;  
 
@@ -251,7 +255,7 @@ $display("##### Qmem writing  #####");
 
 
   #0.5 clk = 1'b0;  
-  qmem_wr = 0; 
+  qmem_wr = 0;
   qkmem_add = 0;
   #0.5 clk = 1'b1;  
 ///////////////////////////////////////////
@@ -268,7 +272,7 @@ $display("##### Kmem writing #####");
 
     #0.5 clk = 1'b0;  
     kmem_wr = 1; if (q>0) qkmem_add = qkmem_add + 1;
-    
+   
     mem_in[1*bw-1:0*bw] = K[q][0];
     mem_in[2*bw-1:1*bw] = K[q][1];
     mem_in[3*bw-1:2*bw] = K[q][2];
@@ -288,11 +292,11 @@ $display("##### Kmem writing #####");
 /*
     $write("K%0d = [", q);
     for (i=0; i<col; i=i+1) begin
-      $write("%d", K[q][i]);	
+      $write("%d", K[q][i]);
     end
     $write(" |");
     for (i=0; i<col; i=i+1) begin
-      $write("%d", K[q][i+8]);	
+      $write("%d", K[q][i+8]);
     end
     $display("]");
 */
@@ -310,7 +314,7 @@ $display("##### Kmem writing #####");
 
   for (q=0; q<2; q=q+1) begin
     #0.5 clk = 1'b0;  
-    #0.5 clk = 1'b1;   
+    #0.5 clk = 1'b1;  
   end
 
 
@@ -322,7 +326,7 @@ $display("##### K data loading to processor #####");
 
   for (q=0; q<col+1; q=q+1) begin
     #0.5 clk = 1'b0;  
-    load = 1; 
+    load = 1;
     if (q==1) kmem_rd = 1;
     if (q>1) begin
        qkmem_add = qkmem_add + 1;
@@ -336,14 +340,14 @@ $display("##### K data loading to processor #####");
   #0.5 clk = 1'b1;  
 
   #0.5 clk = 1'b0;  
-  load = 0; 
+  load = 0;
   #0.5 clk = 1'b1;  
 
 ///////////////////////////////////////////
 
  for (q=0; q<10; q=q+1) begin
-    #0.5 clk = 1'b0;   
-    #0.5 clk = 1'b1;   
+    #0.5 clk = 1'b0;  
+    #0.5 clk = 1'b1;  
  end
 
 
@@ -355,7 +359,7 @@ $display("##### execute #####");
 
   for (q=0; q<total_cycle; q=q+1) begin
     #0.5 clk = 1'b0;  
-    execute = 1; 
+    execute = 1;
     qmem_rd = 1;
 
     if (q>0) begin
@@ -373,8 +377,8 @@ $display("##### execute #####");
 ///////////////////////////////////////////
 
  for (q=0; q<10; q=q+1) begin
-    #0.5 clk = 1'b0;   
-    #0.5 clk = 1'b1;   
+    #0.5 clk = 1'b0;  
+    #0.5 clk = 1'b1;  
  end
 
 
@@ -386,8 +390,8 @@ $display("##### move ofifo to pmem #####");
 
   for (q=0; q<total_cycle; q=q+1) begin
     #0.5 clk = 1'b0;  
-    ofifo_rd = 1; 
-    pmem_wr = 1; 
+    ofifo_rd = 1;
+    pmem_wr = 1;
 
     if (q>0) begin
        pmem_add = pmem_add + 1;
@@ -416,7 +420,7 @@ for (q=0; q<total_cycle; q=q+1) begin
   pmem_rd = 1;
   pmem_wr = 0;
   fifo_ext_rd = 0;
-  
+ 
   #0.5 clk = 1'b1; #0.5 clk = 1'b0; //pmem_rd
   acc = 1;
 
@@ -429,12 +433,12 @@ for (q=0; q<total_cycle; q=q+1) begin
   #0.5 clk = 1'b1; #0.5 clk = 1'b0;//pmem_rd, div
   pmem_rd = 0;
   pmem_wr = 1;
-  
+ 
   #0.5 clk = 1'b1; #0.5 clk = 1'b0; //pmem_wr
   pmem_wr = 0;
   pmem_add = pmem_add + 1;
   fifo_ext_rd = 1;//fifo_ext_rd
-  
+ 
 
 end
 
@@ -444,33 +448,41 @@ $display("##### output from chip #####");
 pmem_rd = 1; pmem_add = 0; div = 0;
 #0.5 clk = 1'b1; #0.5 clk = 1'b0;
 #0.5 clk = 1'b1; #0.5 clk = 1'b0;
-pmem_add = pmem_add + 1;
-$display("cycle 0: %40h", rtl_out);
-#0.5 clk = 1'b1; #0.5 clk = 1'b0;
-pmem_add = pmem_add + 1;
-$display("cycle 1: %40h", rtl_out);
-#0.5 clk = 1'b1; #0.5 clk = 1'b0;
-pmem_add = pmem_add + 1;
-$display("cycle 2: %40h", rtl_out);
-#0.5 clk = 1'b1; #0.5 clk = 1'b0;
-pmem_add = pmem_add + 1;
-$display("cycle 3: %40h", rtl_out);
-#0.5 clk = 1'b1; #0.5 clk = 1'b0;
-pmem_add = pmem_add + 1;
-$display("cycle 4: %40h", rtl_out);
-#0.5 clk = 1'b1; #0.5 clk = 1'b0;
-pmem_add = pmem_add + 1;
-$display("cycle 5: %40h", rtl_out);
-#0.5 clk = 1'b1; #0.5 clk = 1'b0;
-pmem_add = pmem_add + 1;
-$display("cycle 6: %40h", rtl_out);
-#0.5 clk = 1'b1; #0.5 clk = 1'b0;
-$display("cycle 7: %40h", rtl_out);
+for (t=0; t<total_cycle; t=t+1) begin
+  #0.5 clk = 1'b1; #0.5 clk = 1'b0;
+  if (t>0) begin
+    fifo_out_wr = 1;
+  end
+  pmem_add = pmem_add + 1;
+end
 pmem_rd = 0;
+pmem_wr = 0;
+#0.5 clk = 1'b1;  #0.5 clk = 1'b0;
+#0.5 clk = 1'b1;  #0.5 clk = 1'b0;
+#0.5 clk = 1'b1;  #0.5 clk = 1'b0;
+fifo_out_rd = 1;
+fifo_out_wr = 0;
+  $display("cycle 0: %40h", rtl_out);
+#0.5 clk = 1'b1;  #0.5 clk = 1'b0;
+  $display("cycle 1: %40h", rtl_out);
+#0.5 clk = 1'b1;  #0.5 clk = 1'b0;
+  $display("cycle 2: %40h", rtl_out);
+#0.5 clk = 1'b1;  #0.5 clk = 1'b0;
+  $display("cycle 3: %40h", rtl_out);
+#0.5 clk = 1'b1;  #0.5 clk = 1'b0;
+  $display("cycle 4: %40h", rtl_out);
+#0.5 clk = 1'b1;  #0.5 clk = 1'b0;
+  $display("cycle 5: %40h", rtl_out);
+#0.5 clk = 1'b1;  #0.5 clk = 1'b0;
+  $display("cycle 6: %40h", rtl_out);
+#0.5 clk = 1'b1;  #0.5 clk = 1'b0;
+  $display("cycle 7: %40h", rtl_out);
+fifo_out_rd = 0;
 #0.5 clk = 1'b1;  #0.5 clk = 1'b0;
 pmem_add = 0; reset = 1;
 #0.5 clk = 1'b1;  #0.5 clk = 1'b0;
 reset = 0;
+
 
 
 
@@ -496,10 +508,10 @@ $display("##### Estimated multiplication result #####");
 
          temp5h = result[t][q];//Qt*Kq (Q0*K0)
          temp40h = {temp40h[139:0], temp5h};
-	 abs_temp5h = temp5h[bw_psum-1] ? ~temp5h[bw_psum-1:0] + 1 : temp5h[bw_psum-1:0]; //absolute value
-	 //$display("core0 cycle%d val: %5h %5h %7h", q, result[t][q], abs_temp5h, sum_temp0);
-	 sum_temp0 = sum_temp0 + abs_temp5h;//core0 sum
-	 result[t][q] = abs_temp5h;
+abs_temp5h = temp5h[bw_psum-1] ? ~temp5h[bw_psum-1:0] + 1 : temp5h[bw_psum-1:0]; //absolute value
+//$display("core0 cycle%d val: %5h %5h %7h", q, result[t][q], abs_temp5h, sum_temp0);
+sum_temp0 = sum_temp0 + abs_temp5h;//core0 sum
+result[t][q] = abs_temp5h;
      end
      for (q=0; q<col; q=q+1) begin//core1
          for (k=0; k<pr; k=k+1) begin
@@ -508,10 +520,10 @@ $display("##### Estimated multiplication result #####");
 
          temp5h = result[t][q+8];//Qt*Kq (Q0*K0)
          temp40h = {temp40h[139:0], temp5h};
-	 abs_temp5h = temp5h[bw_psum-1] ? ~temp5h[bw_psum-1:0] + 1 : temp5h[bw_psum-1:0]; //absolute value
-	 //$display("core1 cycle%d val: %5h %5h %7h", q, result[t][q+8], abs_temp5h, sum_temp1);
-	 sum_temp1 = sum_temp1 + abs_temp5h;//core1 sum
-	 result[t][q+8] = abs_temp5h;
+abs_temp5h = temp5h[bw_psum-1] ? ~temp5h[bw_psum-1:0] + 1 : temp5h[bw_psum-1:0]; //absolute value
+//$display("core1 cycle%d val: %5h %5h %7h", q, result[t][q+8], abs_temp5h, sum_temp1);
+sum_temp1 = sum_temp1 + abs_temp5h;//core1 sum
+result[t][q+8] = abs_temp5h;
      end
      #0.5 clk = 1'b1; #0.5 clk = 1'b0;
      //$display("@cycle%2d: %40h, sum: %d", t, temp40h, sum_temp0+sum_temp1);//before normalization
@@ -545,7 +557,7 @@ $display("##### value data txt reading #####");
 
 
   qk_file = $fopen("vdata.txt", "r");
-  
+ 
   for (q=0; q<total_cycle; q=q+1) begin
     $write("Q%0d = [", q);
     for (j=0; j<pr; j=j+1) begin
@@ -555,7 +567,7 @@ $display("##### value data txt reading #####");
     end
     $write("] Hex: ");
     for (j=0; j<pr; j=j+1) begin
-        tempHex = Q[q][j] & 'hff;	    
+        tempHex = Q[q][j] & 'hff;    
         $write("%h", tempHex);
     end
     $display();
@@ -567,8 +579,8 @@ $display("##### value data txt reading #####");
 
 
   for (q=0; q<2; q=q+1) begin
-    #0.5 clk = 1'b0;   
-    #0.5 clk = 1'b1;   
+    #0.5 clk = 1'b0;  
+    #0.5 clk = 1'b1;  
   end
 
 
@@ -579,8 +591,8 @@ $display("##### value data txt reading #####");
 $display("##### norm data 0 txt reading #####");
 
   for (q=0; q<10; q=q+1) begin
-    #0.5 clk = 1'b0;   
-    #0.5 clk = 1'b1;   
+    #0.5 clk = 1'b0;  
+    #0.5 clk = 1'b1;  
   end
   reset = 0;
 
@@ -595,7 +607,7 @@ $display("##### norm data 0 txt reading #####");
     end
     $write("] Hex: ");
     for (j=0; j<pr; j=j+1) begin
-        tempHex = K[q][j] & 'hff;	    
+        tempHex = K[q][j] & 'hff;    
         $write("%h", tempHex);
     end
     $display();
@@ -614,7 +626,7 @@ $display("##### norm data 1 txt reading #####");
     end
     $write("] Hex: ");
     for (j=0; j<pr; j=j+1) begin
-        tempHex = K[q][j+8] & 'hff;	    
+        tempHex = K[q][j+8] & 'hff;    
         $write("%h", tempHex);
     end
     $display();
@@ -635,7 +647,7 @@ $display("##### Qmem writing  #####");
   for (q=0; q<total_cycle; q=q+1) begin
 
     #0.5 clk = 1'b0;  
-    qmem_wr = 1;  if (q>0) qkmem_add = qkmem_add + 1; 
+    qmem_wr = 1;  if (q>0) qkmem_add = qkmem_add + 1;
 
     mem_in[1*bw-1:0*bw] = Q[q][0];
     mem_in[2*bw-1:1*bw] = Q[q][1];
@@ -656,13 +668,13 @@ $display("##### Qmem writing  #####");
 /*
     $write("Q%0d = [", q);
     for (i=0; i<col; i=i+1) begin
-      $write("%d", Q[q][i]);	
+      $write("%d", Q[q][i]);
     end
     $write(" |");
     for (i=0; i<col; i=i+1) begin
-      $write("%d", Q[q][i]);	
+      $write("%d", Q[q][i]);
     end
-    $display("]"); 
+    $display("]");
 */
     #0.5 clk = 1'b1;  
 
@@ -670,7 +682,7 @@ $display("##### Qmem writing  #####");
 
 
   #0.5 clk = 1'b0;  
-  qmem_wr = 0; 
+  qmem_wr = 0;
   qkmem_add = 0;
   #0.5 clk = 1'b1;  
 ///////////////////////////////////////////
@@ -687,7 +699,7 @@ $display("##### Kmem writing #####");
 
     #0.5 clk = 1'b0;  
     kmem_wr = 1; if (q>0) qkmem_add = qkmem_add + 1;
-    
+   
     mem_in[1*bw-1:0*bw] = K[q][0];
     mem_in[2*bw-1:1*bw] = K[q][1];
     mem_in[3*bw-1:2*bw] = K[q][2];
@@ -707,11 +719,11 @@ $display("##### Kmem writing #####");
 /*
     $write("K%0d = [", q);
     for (i=0; i<col; i=i+1) begin
-      $write("%d", K[q][i]);	
+      $write("%d", K[q][i]);
     end
     $write(" |");
     for (i=0; i<col; i=i+1) begin
-      $write("%d", K[q][i+8]);	
+      $write("%d", K[q][i+8]);
     end
     $display("]");
 */
@@ -729,7 +741,7 @@ $display("##### Kmem writing #####");
 
   for (q=0; q<2; q=q+1) begin
     #0.5 clk = 1'b0;  
-    #0.5 clk = 1'b1;   
+    #0.5 clk = 1'b1;  
   end
 
 
@@ -741,7 +753,7 @@ $display("##### K data loading to processor #####");
 
   for (q=0; q<col+1; q=q+1) begin
     #0.5 clk = 1'b0;  
-    load = 1; 
+    load = 1;
     if (q==1) kmem_rd = 1;
     if (q>1) begin
        qkmem_add = qkmem_add + 1;
@@ -755,14 +767,14 @@ $display("##### K data loading to processor #####");
   #0.5 clk = 1'b1;  
 
   #0.5 clk = 1'b0;  
-  load = 0; 
+  load = 0;
   #0.5 clk = 1'b1;  
 
 ///////////////////////////////////////////
 
  for (q=0; q<10; q=q+1) begin
-    #0.5 clk = 1'b0;   
-    #0.5 clk = 1'b1;   
+    #0.5 clk = 1'b0;  
+    #0.5 clk = 1'b1;  
  end
 
 
@@ -774,7 +786,7 @@ $display("##### execute #####");
 
   for (q=0; q<total_cycle; q=q+1) begin
     #0.5 clk = 1'b0;  
-    execute = 1; 
+    execute = 1;
     qmem_rd = 1;
 
     if (q>0) begin
@@ -792,8 +804,8 @@ $display("##### execute #####");
 ///////////////////////////////////////////
 
  for (q=0; q<10; q=q+1) begin
-    #0.5 clk = 1'b0;   
-    #0.5 clk = 1'b1;   
+    #0.5 clk = 1'b0;  
+    #0.5 clk = 1'b1;  
  end
 
 
@@ -805,8 +817,8 @@ $display("##### move ofifo to pmem #####");
 
   for (q=0; q<total_cycle; q=q+1) begin
     #0.5 clk = 1'b0;  
-    ofifo_rd = 1; 
-    pmem_wr = 1; 
+    ofifo_rd = 1;
+    pmem_wr = 1;
 
     if (q>0) begin
        pmem_add = pmem_add + 1;
@@ -819,7 +831,7 @@ $display("##### move ofifo to pmem #####");
   pmem_wr = 0; pmem_add = 0; ofifo_rd = 0;
   #0.5 clk = 1'b1;  
 
-///////////////////////////////////////////
+//////////////////////////////////////////////////////
 
 $display("##### output from chip #####");
 
@@ -827,30 +839,40 @@ $display("##### output from chip #####");
 pmem_rd = 1; pmem_add = 0; div = 0;
 #0.5 clk = 1'b1; #0.5 clk = 1'b0;
 #0.5 clk = 1'b1; #0.5 clk = 1'b0;
-pmem_add = pmem_add + 1;
-$display("cycle 0: %40h", rtl_out);
-#0.5 clk = 1'b1; #0.5 clk = 1'b0;
-pmem_add = pmem_add + 1;
-$display("cycle 1: %40h", rtl_out);
-#0.5 clk = 1'b1; #0.5 clk = 1'b0;
-pmem_add = pmem_add + 1;
-$display("cycle 2: %40h", rtl_out);
-#0.5 clk = 1'b1; #0.5 clk = 1'b0;
-pmem_add = pmem_add + 1;
-$display("cycle 3: %40h", rtl_out);
-#0.5 clk = 1'b1; #0.5 clk = 1'b0;
-pmem_add = pmem_add + 1;
-$display("cycle 4: %40h", rtl_out);
-#0.5 clk = 1'b1; #0.5 clk = 1'b0;
-pmem_add = pmem_add + 1;
-$display("cycle 5: %40h", rtl_out);
-#0.5 clk = 1'b1; #0.5 clk = 1'b0;
-pmem_add = pmem_add + 1;
-$display("cycle 6: %40h", rtl_out);
-#0.5 clk = 1'b1; #0.5 clk = 1'b0;
-$display("cycle 7: %40h", rtl_out);
+for (t=0; t<total_cycle; t=t+1) begin
+  #0.5 clk = 1'b1; #0.5 clk = 1'b0;
+  if (t>0) begin
+    fifo_out_wr = 1;
+  end
+  pmem_add = pmem_add + 1;
+end
 pmem_rd = 0;
-#0.5 clk = 1'b1; 
+pmem_wr = 0;
+#0.5 clk = 1'b1;  #0.5 clk = 1'b0;
+#0.5 clk = 1'b1;  #0.5 clk = 1'b0;
+#0.5 clk = 1'b1;  #0.5 clk = 1'b0;
+fifo_out_rd = 1;
+fifo_out_wr = 0;
+  $display("cycle 0: %40h", rtl_out);
+#0.5 clk = 1'b1;  #0.5 clk = 1'b0;
+  $display("cycle 1: %40h", rtl_out);
+#0.5 clk = 1'b1;  #0.5 clk = 1'b0;
+  $display("cycle 2: %40h", rtl_out);
+#0.5 clk = 1'b1;  #0.5 clk = 1'b0;
+  $display("cycle 3: %40h", rtl_out);
+#0.5 clk = 1'b1;  #0.5 clk = 1'b0;
+  $display("cycle 4: %40h", rtl_out);
+#0.5 clk = 1'b1;  #0.5 clk = 1'b0;
+  $display("cycle 5: %40h", rtl_out);
+#0.5 clk = 1'b1;  #0.5 clk = 1'b0;
+  $display("cycle 6: %40h", rtl_out);
+#0.5 clk = 1'b1;  #0.5 clk = 1'b0;
+  $display("cycle 7: %40h", rtl_out);
+fifo_out_rd = 0;
+#0.5 clk = 1'b1;  #0.5 clk = 1'b0;
+pmem_add = 0; reset = 1;
+#0.5 clk = 1'b1;  #0.5 clk = 1'b0;
+reset = 0;
 
 
 /////////////// Estimated norm * value printing /////////////////
@@ -897,18 +919,14 @@ end
 //   always @(posedge clk) begin
 //       if(fullchip_tb.fullchip_instance.core_instance.pmem_wr) begin
 //           $write("Memory write to PSUM mem add %x Hex: %x -> Dec: [", `core.pmem_add, `core.pmem_in);
-// 	  temp = pr; 
-//  	  repeat(pr) begin
-// 	      mask = (`core.pmem_in >> (temp-1)*bw_psum) & ({bw_psum{1'b1}}); 
-// 	      $write("%d ", mask);
-// 	      temp = temp - 1;
-// 	  end
-// 	  $display("]");
+//  temp = pr;
+//    repeat(pr) begin
+//      mask = (`core.pmem_in >> (temp-1)*bw_psum) & ({bw_psum{1'b1}});
+//      $write("%d ", mask);
+//      temp = temp - 1;
+//  end
+//  $display("]");
 //       end
 //   end
 
 endmodule
-
-
-
-
