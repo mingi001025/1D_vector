@@ -4,8 +4,8 @@ module fullchip (clk, mem_in, inst, out, reset);
 
 parameter col = 8;
 parameter bw = 8;
-parameter bw_psum = 2*bw+4;
-parameter pr = 16;
+parameter bw_psum = 2*bw+3;
+parameter pr = 8;
 
 input  clk; 
 input  [2*pr*bw-1:0] mem_in; 
