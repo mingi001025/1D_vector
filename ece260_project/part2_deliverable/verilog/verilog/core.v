@@ -109,7 +109,7 @@ sfp_row #(.col(col), .bw(bw), .bw_psum(bw_psum)) sfp_instance (
 	.div(div),
 	.acc(acc),
 	.fifo_ext_rd(get_sum),
-	.sum_in(sum_in),
+	.sum_in(24'b0),
 	.sum_out(core_sum),
 	.sfp_in(sfp_in),
 	.sfp_out(sfp_out)

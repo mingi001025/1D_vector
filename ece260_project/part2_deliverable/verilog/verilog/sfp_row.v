@@ -137,7 +137,7 @@ module sfp_row (clk, acc, div, fifo_ext_rd, sum_in, sum_out, sfp_in, sfp_out);
         sfp_out_5 <= (abs[bw_psum*6-1 : bw_psum*5]<<8) / sum_q;
         sfp_out_6 <= (abs[bw_psum*7-1 : bw_psum*6]<<8) / sum_q;
         sfp_out_7 <= (abs[bw_psum*8-1 : bw_psum*7]<<8) / sum_q;
-        //$display("%d %d %d %d %d %d %d %d",sfp_out_7_w,sfp_out_6_w,sfp_out_5_w,sfp_out_4_w,sfp_out_3_w,sfp_out_2_w, sfp_out_1_w, sfp_out_0_w);
+        $display("%d %d %d %d %d %d %d %d",sfp_out_7_w,sfp_out_6_w,sfp_out_5_w,sfp_out_4_w,sfp_out_3_w,sfp_out_2_w, sfp_out_1_w, sfp_out_0_w);
        end
        
    end

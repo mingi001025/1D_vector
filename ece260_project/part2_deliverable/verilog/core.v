@@ -4,7 +4,7 @@ module core (clk, sum_out, mem_in, out, inst, reset);
 
 parameter col = 8;
 parameter bw = 8;
-parameter bw_psum = 2*bw+3;
+parameter bw_psum = 2*bw+4;
 parameter pr = 8;
 
 output [bw_psum*col-1:0] sum_out;
@@ -109,7 +109,7 @@ sfp_row #(.col(col), .bw(bw), .bw_psum(bw_psum)) sfp_instance (
 	.div(div),
 	.acc(acc),
 	.fifo_ext_rd(get_sum),
-	.sum_in(sum_in),
+	.sum_in({(bw_psum+4){1'b0}}),
 	.sum_out(core_sum),
 	.sfp_in(sfp_in),
 	.sfp_out(sfp_out)
