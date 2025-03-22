@@ -515,22 +515,22 @@ $display("##### Estimated multiplication result #####");
      end
      #0.5 clk = 1'b1; #0.5 clk = 1'b0;
      //$display("@cycle%2d: %40h, sum: %d", t, temp40h, sum_temp0+sum_temp1);//before normalization
-     est_out0 = (result[t][0]<<8) / (sum_temp0+sum_temp1);
-     est_out1 = (result[t][1]<<8) / (sum_temp0+sum_temp1);
-     est_out2 = (result[t][2]<<8) / (sum_temp0+sum_temp1);
-     est_out3 = (result[t][3]<<8) / (sum_temp0+sum_temp1);
-     est_out4 = (result[t][4]<<8) / (sum_temp0+sum_temp1);
-     est_out5 = (result[t][5]<<8) / (sum_temp0+sum_temp1);
-     est_out6 = (result[t][6]<<8) / (sum_temp0+sum_temp1);
-     est_out7 = (result[t][7]<<8) / (sum_temp0+sum_temp1);
-     est_out8 = (result[t][8]<<8) / (sum_temp0+sum_temp1);
-     est_out9 = (result[t][9]<<8) / (sum_temp0+sum_temp1);
-     est_out10 = (result[t][10]<<8) / (sum_temp0+sum_temp1);
-     est_out11 = (result[t][11]<<8) / (sum_temp0+sum_temp1);
-     est_out12 = (result[t][12]<<8) / (sum_temp0+sum_temp1);
-     est_out13 = (result[t][13]<<8) / (sum_temp0+sum_temp1);
-     est_out14 = (result[t][14]<<8) / (sum_temp0+sum_temp1);
-     est_out15 = (result[t][15]<<8) / (sum_temp0+sum_temp1);
+     est_out0 = ((sum_temp0+sum_temp1)!=0)?((result[t][0]<<8) / (sum_temp0+sum_temp1)):({(bw_psum+8){1'b0}});
+     est_out1 = ((sum_temp0+sum_temp1)!=0)?((result[t][1]<<8) / (sum_temp0+sum_temp1)):({(bw_psum+8){1'b0}});
+     est_out2 = ((sum_temp0+sum_temp1)!=0)?((result[t][2]<<8) / (sum_temp0+sum_temp1)):({(bw_psum+8){1'b0}});
+     est_out3 = ((sum_temp0+sum_temp1)!=0)?((result[t][3]<<8) / (sum_temp0+sum_temp1)):({(bw_psum+8){1'b0}});
+     est_out4 = ((sum_temp0+sum_temp1)!=0)?((result[t][4]<<8) / (sum_temp0+sum_temp1)):({(bw_psum+8){1'b0}});
+     est_out5 = ((sum_temp0+sum_temp1)!=0)?((result[t][5]<<8) / (sum_temp0+sum_temp1)):({(bw_psum+8){1'b0}});
+     est_out6 = ((sum_temp0+sum_temp1)!=0)?((result[t][6]<<8) / (sum_temp0+sum_temp1)):({(bw_psum+8){1'b0}});
+     est_out7 = ((sum_temp0+sum_temp1)!=0)?((result[t][7]<<8) / (sum_temp0+sum_temp1)):({(bw_psum+8){1'b0}});
+     est_out8 = ((sum_temp0+sum_temp1)!=0)?((result[t][8]<<8) / (sum_temp0+sum_temp1)):({(bw_psum+8){1'b0}});
+     est_out9 = ((sum_temp0+sum_temp1)!=0)?((result[t][9]<<8) / (sum_temp0+sum_temp1)):({(bw_psum+8){1'b0}});
+     est_out10 = ((sum_temp0+sum_temp1)!=0)?((result[t][10]<<8) / (sum_temp0+sum_temp1)):({(bw_psum+8){1'b0}});
+     est_out11 = ((sum_temp0+sum_temp1)!=0)?((result[t][11]<<8) / (sum_temp0+sum_temp1)):({(bw_psum+8){1'b0}});
+     est_out12 = ((sum_temp0+sum_temp1)!=0)?((result[t][12]<<8) / (sum_temp0+sum_temp1)):({(bw_psum+8){1'b0}});
+     est_out13 = ((sum_temp0+sum_temp1)!=0)?((result[t][13]<<8) / (sum_temp0+sum_temp1)):({(bw_psum+8){1'b0}});
+     est_out14 = ((sum_temp0+sum_temp1)!=0)?((result[t][14]<<8) / (sum_temp0+sum_temp1)):({(bw_psum+8){1'b0}});
+     est_out15 = ((sum_temp0+sum_temp1)!=0)?((result[t][15]<<8) / (sum_temp0+sum_temp1)):({(bw_psum+8){1'b0}});
      $display("normalized: %5h %5h %5h %5h %5h %5h %5h %5h %5h %5h %5h %5h %5h %5h %5h %5h", est_out0, est_out1, est_out2, est_out3, est_out4, est_out5, est_out6, est_out7, est_out8, est_out9, est_out10, est_out11, est_out12, est_out13, est_out14, est_out15);//after normalization
   end
 
