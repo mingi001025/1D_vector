@@ -1,0 +1,7 @@
+rm -rf innovus.log*
+rm -rf innovus.cmd*
+rm -rf timingReports
+rm -rf *enc
+rm -rf *dat
+rm -rf sram*
+rm -rf *tmp
