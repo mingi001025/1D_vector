@@ -3,8 +3,8 @@
 module mac_16in (clk, reset, out, a, b);
 
 parameter bw = 8;
-parameter bw_psum = 2*bw+6;
-parameter pr = 64; // parallel factor: number of inputs = 64
+parameter bw_psum = 2*bw+3;
+parameter pr = 8;
 
 output [bw_psum-1:0] out;
 input clk;
@@ -64,14 +64,14 @@ assign product6 = ((a[bw*7-1:bw*6]!=0)&&(b[bw*7-1:bw*6]!=0))?{{(bw){a[bw*7-1]}},
 assign product7 = ((a[bw*8-1:bw*7]!=0)&&(b[bw*8-1:bw*7]!=0))?{{(bw){a[bw*8-1]}}, a[bw*8-1:bw*7]} * {{(bw){b[bw*8-1]}}, b[bw*8-1:bw*7]}:0;
 
 assign out =
-        {{(4){product0_q[2*bw-1]}},product0_q }
-+ {{(4){product1_q[2*bw-1]}},product1_q }
-+ {{(4){product2_q[2*bw-1]}},product2_q }
-+ {{(4){product3_q[2*bw-1]}},product3_q }
-+ {{(4){product4_q[2*bw-1]}},product4_q }
-+ {{(4){product5_q[2*bw-1]}},product5_q }
-+ {{(4){product6_q[2*bw-1]}},product6_q }
-+ {{(4){product7_q[2*bw-1]}},product7_q };
+        {{(3){product0_q[2*bw-1]}},product0_q }
++ {{(3){product1_q[2*bw-1]}},product1_q }
++ {{(3){product2_q[2*bw-1]}},product2_q }
++ {{(3){product3_q[2*bw-1]}},product3_q }
++ {{(3){product4_q[2*bw-1]}},product4_q }
++ {{(3){product5_q[2*bw-1]}},product5_q }
++ {{(3){product6_q[2*bw-1]}},product6_q }
++ {{(3){product7_q[2*bw-1]}},product7_q };
 
 always @(posedge clk) begin
 if (reset) begin
