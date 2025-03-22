@@ -109,14 +109,14 @@ module sfp_row (clk, acc, div, fifo_ext_rd, sum_in, sum_out, sfp_in, sfp_out);
 	 fifo_wr <= 0;
        end
       if (div) begin
-        sfp_out_0 <= (abs[bw_psum*1-1 : bw_psum*0]<<8) / sum_div;
-        sfp_out_1 <= (abs[bw_psum*2-1 : bw_psum*1]<<8) / sum_div;
-        sfp_out_2 <= (abs[bw_psum*3-1 : bw_psum*2]<<8) / sum_div;
-        sfp_out_3 <= (abs[bw_psum*4-1 : bw_psum*3]<<8) / sum_div;
-        sfp_out_4 <= (abs[bw_psum*5-1 : bw_psum*4]<<8) / sum_div;
-        sfp_out_5 <= (abs[bw_psum*6-1 : bw_psum*5]<<8) / sum_div;
-        sfp_out_6 <= (abs[bw_psum*7-1 : bw_psum*6]<<8) / sum_div;
-        sfp_out_7 <= (abs[bw_psum*8-1 : bw_psum*7]<<8) / sum_div;
+        sfp_out_0 <= (sum_div != {(bw_psum+4){1'b0}})?((abs[bw_psum*1-1 : bw_psum*0]<<8) / sum_div):({(bw_psum_shift){1'b0}});
+        sfp_out_1 <= (sum_div != {(bw_psum+4){1'b0}})?((abs[bw_psum*2-1 : bw_psum*1]<<8) / sum_div):({(bw_psum_shift){1'b0}});
+        sfp_out_2 <= (sum_div != {(bw_psum+4){1'b0}})?((abs[bw_psum*3-1 : bw_psum*2]<<8) / sum_div):({(bw_psum_shift){1'b0}});
+        sfp_out_3 <= (sum_div != {(bw_psum+4){1'b0}})?((abs[bw_psum*4-1 : bw_psum*3]<<8) / sum_div):({(bw_psum_shift){1'b0}});
+        sfp_out_4 <= (sum_div != {(bw_psum+4){1'b0}})?((abs[bw_psum*5-1 : bw_psum*4]<<8) / sum_div):({(bw_psum_shift){1'b0}});
+        sfp_out_5 <= (sum_div != {(bw_psum+4){1'b0}})?((abs[bw_psum*6-1 : bw_psum*5]<<8) / sum_div):({(bw_psum_shift){1'b0}});
+        sfp_out_6 <= (sum_div != {(bw_psum+4){1'b0}})?((abs[bw_psum*7-1 : bw_psum*6]<<8) / sum_div):({(bw_psum_shift){1'b0}});
+        sfp_out_7 <= (sum_div != {(bw_psum+4){1'b0}})?((abs[bw_psum*8-1 : bw_psum*7]<<8) / sum_div):({(bw_psum_shift){1'b0}});
         //sfp_out_0 <= (abs[bw_psum*1-1 : bw_psum*0]<<8) / sum_q;
         //sfp_out_1 <= (abs[bw_psum*2-1 : bw_psum*1]<<8) / sum_q;
         //sfp_out_2 <= (abs[bw_psum*3-1 : bw_psum*2]<<8) / sum_q;

@@ -20,22 +20,32 @@ reg    [1:0] inst_q;
 reg    [1:0] inst_2q;
 reg    [1:0] inst_3q;
 reg   signed [pr*bw-1:0] query_q;
+reg   signed [pr*bw-1:0] query_2q;
 reg   signed [pr*bw-1:0] key_q;
 wire  signed [bw_psum-1:0] psum;
+wire gclk;
+reg en;
+reg en_q;
 
-assign o_inst = inst_q;
+assign o_inst = inst_2q;
 assign fifo_wr = inst_3q[1];
-assign q_out  = query_q;
-assign out = psum;
+assign q_out  = query_2q;
+assign out = (en == 1'b1 & en_q == 1'b0)?{(bw_psum){1'b0}}:psum; //posedge detector
 
 mac_16in #(.bw(bw), .bw_psum(bw_psum), .pr(pr)) mac_16in_instance (
-        .clk(clk),
+        .clk(gclk),
 	.reset(reset),
 	.a(query_q), 
         .b(key_q),
 	.out(psum)
 ); 
 
+clkgate clkgate_inst(
+	.clk(clk),
+	.reset(reset),
+	.en(en),
+	.gclk(gclk)
+);
 
 always @ (posedge clk) begin
   if (reset) begin
@@ -44,11 +54,17 @@ always @ (posedge clk) begin
     inst_q <= 0;
     inst_2q <= 0;
     inst_3q <= 0;
+    query_2q <= 0;
+    en <= 1'b1;
+    en_q <= 1'b1;
   end
   else begin
     inst_q <= i_inst;
     inst_2q <= inst_q;
     inst_3q <= inst_2q;
+    query_2q <= query_q;
+    en_q <= en;
+    en <= 1'b1;
     if (inst_q[0]) begin
        query_q <= q_in;
        if (cnt_q == 9-col_id)begin
@@ -62,6 +78,8 @@ always @ (posedge clk) begin
     else if(inst_q[1]) begin
       //out     <= psum;
       query_q <= q_in;
+      if(q_in == {(bw*pr){1'b0}}) en <= 1'b0;
+      else en <= 1'b1;
     end
   end
 end
