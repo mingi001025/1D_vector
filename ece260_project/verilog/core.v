@@ -4,7 +4,7 @@ module core (clk, sum_in, sum_out, mem_in, out, inst, reset);
 
 parameter col = 8;
 parameter bw = 8;
-parameter bw_psum = 2*bw+3;
+parameter bw_psum = 2*bw+4;
 parameter pr = 8;
 
 output [bw_psum+3:0] sum_out;
