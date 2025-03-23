@@ -1,0 +1,773 @@
+xrun(64): 20.09-s017: (c) Copyright 1995-2021 Cadence Design Systems, Inc.
+TOOL:	xrun(64)	20.09-s017: Started on Mar 22, 2025 at 19:57:28 PDT
+xrun
+	+gui
+	+access+rwc
+	+xm64bit
+	+xmstatus
+	+xmtimescale+1ns/1ps
+	+xmoveride_timescale
+	+xmseq_udp_delay+20ps
+	-xminitialize 1
+	-v ./netlist/verilog/core.pnr.v
+	-v /home/linux/ieng6/ee260bwi25/public/PDKdata/verilog/tcbn65gplus.v
+	-incdir ./netlist/verilog/
+	./netlist/verilog/fullchip_tb.v
+
+   User defined plus("+") options:
+	+xmoveride_timescale
+
+Recompiling... reason: file './netlist/verilog/fullchip_tb.v' is newer than expected.
+	expected: Sat Mar 22 19:32:29 2025
+	actual:   Sat Mar 22 19:57:25 2025
+file: ./netlist/verilog/fullchip_tb.v
+	module worklib.fullchip_tb:v
+		errors: 0, warnings: 0
+xmvlog: Memory Usage - Current physical: 23.5M, Current virtual: 95.8M
+xmvlog: CPU Usage - 0.0s system + 1.0s user = 1.1s total (1.1s, 93.6% cpu)
+xmelab: *N,INFSUD: -NOSPECIFY is automatically used with -SEQ_UDP_DELAY.
+		Caching library 'worklib' ....... Done
+		Caching library 'core' ....... Done
+		Caching library 'tcbn65gplus' ....... Done
+	Elaborating the design hierarchy:
+   FA1D1 U510 (.A(FE_OCPN3378_n725),
+            |
+xmelab: *W,CUVWSP (./netlist/verilog/core.pnr.v,8793|12): 1 output port was not connected:
+xmelab: (/home/linux/ieng6/ee260bwi25/public/PDKdata/verilog/tcbn65gplus.v,9795): CO
+
+   DFD4 cnt_q_reg_2_ (.CP(clk_clone1),
+                   |
+xmelab: *W,CUVWSP (./netlist/verilog/core.pnr.v,12195|19): 1 output port was not connected:
+xmelab: (/home/linux/ieng6/ee260bwi25/public/PDKdata/verilog/tcbn65gplus.v,5899): Q
+
+   DFD4 cnt_q_reg_0_ (.CP(clk_clone1),
+                   |
+xmelab: *W,CUVWSP (./netlist/verilog/core.pnr.v,27060|19): 1 output port was not connected:
+xmelab: (/home/linux/ieng6/ee260bwi25/public/PDKdata/verilog/tcbn65gplus.v,5899): Q
+
+   DFD4 cnt_q_reg_0_ (.CP(clk_clone1),
+                   |
+xmelab: *W,CUVWSP (./netlist/verilog/core.pnr.v,40347|19): 1 output port was not connected:
+xmelab: (/home/linux/ieng6/ee260bwi25/public/PDKdata/verilog/tcbn65gplus.v,5899): Q
+
+   DFD4 cnt_q_reg_0_ (.CP(clk_clone1),
+                   |
+xmelab: *W,CUVWSP (./netlist/verilog/core.pnr.v,53320|19): 1 output port was not connected:
+xmelab: (/home/linux/ieng6/ee260bwi25/public/PDKdata/verilog/tcbn65gplus.v,5899): Q
+
+   DFD1 cnt_q_reg_0_ (.CP(CTS_4),
+                   |
+xmelab: *W,CUVWSP (./netlist/verilog/core.pnr.v,78907|19): 1 output port was not connected:
+xmelab: (/home/linux/ieng6/ee260bwi25/public/PDKdata/verilog/tcbn65gplus.v,5821): Q
+
+   DFD1 cnt_q_reg_3_ (.CP(CTS_4),
+                   |
+xmelab: *W,CUVWSP (./netlist/verilog/core.pnr.v,78989|19): 1 output port was not connected:
+xmelab: (/home/linux/ieng6/ee260bwi25/public/PDKdata/verilog/tcbn65gplus.v,5821): QN
+
+   ofifo_col8_bw20 ofifo_inst (.clk(clk),
+                            |
+xmelab: *W,CUVWSP (./netlist/verilog/core.pnr.v,108941|28): 2 output ports were not connected:
+xmelab: (./netlist/verilog/core.pnr.v,106697): o_valid
+xmelab: (./netlist/verilog/core.pnr.v,106699): o_full
+
+   fifo_depth8_bw20_simd1_7 col_idx_0__fifo_instance (.in({ in[19],
+                                                   |
+xmelab: *W,CUVWSP (./netlist/verilog/core.pnr.v,106945|51): 2 output ports were not connected:
+xmelab: (./netlist/verilog/core.pnr.v,91709): o_full
+xmelab: (./netlist/verilog/core.pnr.v,91710): o_empty
+
+   fifo_depth8_bw20_simd1_6 col_idx_1__fifo_instance (.in({ in[39],
+                                                   |
+xmelab: *W,CUVWSP (./netlist/verilog/core.pnr.v,106992|51): 2 output ports were not connected:
+xmelab: (./netlist/verilog/core.pnr.v,94050): o_full
+xmelab: (./netlist/verilog/core.pnr.v,94051): o_empty
+
+   fifo_depth8_bw20_simd1_5 col_idx_2__fifo_instance (.in({ in[59],
+                                                   |
+xmelab: *W,CUVWSP (./netlist/verilog/core.pnr.v,107039|51): 2 output ports were not connected:
+xmelab: (./netlist/verilog/core.pnr.v,105194): o_full
+xmelab: (./netlist/verilog/core.pnr.v,105195): o_empty
+
+   fifo_depth8_bw20_simd1_4 col_idx_3__fifo_instance (.rd_clk(CTS_27),
+                                                   |
+xmelab: *W,CUVWSP (./netlist/verilog/core.pnr.v,107087|51): 2 output ports were not connected:
+xmelab: (./netlist/verilog/core.pnr.v,102744): o_full
+xmelab: (./netlist/verilog/core.pnr.v,102745): o_empty
+
+   fifo_depth8_bw20_simd1_3 col_idx_4__fifo_instance (.in({ in[99],
+                                                   |
+xmelab: *W,CUVWSP (./netlist/verilog/core.pnr.v,107137|51): 2 output ports were not connected:
+xmelab: (./netlist/verilog/core.pnr.v,100383): o_full
+xmelab: (./netlist/verilog/core.pnr.v,100384): o_empty
+
+   fifo_depth8_bw20_simd1_2 col_idx_5__fifo_instance (.in({ in[118],
+                                                   |
+xmelab: *W,CUVWSP (./netlist/verilog/core.pnr.v,107186|51): 2 output ports were not connected:
+xmelab: (./netlist/verilog/core.pnr.v,98096): o_full
+xmelab: (./netlist/verilog/core.pnr.v,98097): o_empty
+
+   fifo_depth8_bw20_simd1_1 col_idx_6__fifo_instance (.in({ in[139],
+                                                   |
+xmelab: *W,CUVWSP (./netlist/verilog/core.pnr.v,107233|51): 2 output ports were not connected:
+xmelab: (./netlist/verilog/core.pnr.v,96402): o_full
+xmelab: (./netlist/verilog/core.pnr.v,96403): o_empty
+
+   fifo_depth8_bw20_simd1_0 col_idx_7__fifo_instance (.rd_clk(clk),
+                                                   |
+xmelab: *W,CUVWSP (./netlist/verilog/core.pnr.v,107278|51): 2 output ports were not connected:
+xmelab: (./netlist/verilog/core.pnr.v,95813): o_full
+xmelab: (./netlist/verilog/core.pnr.v,95814): o_empty
+
+	Top level design units:
+		fullchip_tb
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		tcbn65gplus.DFQD2:v <0x6a2de81e>
+			streams:   0, words:     0
+		worklib.fullchip_tb:v <0x3f51d4ca>
+			streams:  34, words: 70717
+	Building instance specific data structures.
+		FE_UNCONNECTEDZ_127,
+		                  |
+xmelab: *W,CSINFI (./netlist/verilog/core.pnr.v,109249|20): implicit wire has no fanin (fullchip_tb.core_instance.FE_UNCONNECTEDZ_127).
+		FE_UNCONNECTEDZ_126,
+		                  |
+xmelab: *W,CSINFI (./netlist/verilog/core.pnr.v,109248|20): implicit wire has no fanin (fullchip_tb.core_instance.FE_UNCONNECTEDZ_126).
+		FE_UNCONNECTEDZ_125,
+		                  |
+xmelab: *W,CSINFI (./netlist/verilog/core.pnr.v,109247|20): implicit wire has no fanin (fullchip_tb.core_instance.FE_UNCONNECTEDZ_125).
+		FE_UNCONNECTEDZ_124,
+		                  |
+xmelab: *W,CSINFI (./netlist/verilog/core.pnr.v,109246|20): implicit wire has no fanin (fullchip_tb.core_instance.FE_UNCONNECTEDZ_124).
+		FE_UNCONNECTEDZ_123,
+		                  |
+xmelab: *W,CSINFI (./netlist/verilog/core.pnr.v,109245|20): implicit wire has no fanin (fullchip_tb.core_instance.FE_UNCONNECTEDZ_123).
+		FE_UNCONNECTEDZ_122,
+		                  |
+xmelab: *W,CSINFI (./netlist/verilog/core.pnr.v,109244|20): implicit wire has no fanin (fullchip_tb.core_instance.FE_UNCONNECTEDZ_122).
+		FE_UNCONNECTEDZ_121,
+		                  |
+xmelab: *W,CSINFI (./netlist/verilog/core.pnr.v,109243|20): implicit wire has no fanin (fullchip_tb.core_instance.FE_UNCONNECTEDZ_121).
+		FE_UNCONNECTEDZ_120,
+		                  |
+xmelab: *W,CSINFI (./netlist/verilog/core.pnr.v,109242|20): implicit wire has no fanin (fullchip_tb.core_instance.FE_UNCONNECTEDZ_120).
+		FE_UNCONNECTEDZ_119,
+		                  |
+xmelab: *W,CSINFI (./netlist/verilog/core.pnr.v,109241|20): implicit wire has no fanin (fullchip_tb.core_instance.FE_UNCONNECTEDZ_119).
+		FE_UNCONNECTEDZ_118,
+		                  |
+xmelab: *W,CSINFI (./netlist/verilog/core.pnr.v,109240|20): implicit wire has no fanin (fullchip_tb.core_instance.FE_UNCONNECTEDZ_118).
+		FE_UNCONNECTEDZ_117,
+		                  |
+xmelab: *W,CSINFI (./netlist/verilog/core.pnr.v,109239|20): implicit wire has no fanin (fullchip_tb.core_instance.FE_UNCONNECTEDZ_117).
+		FE_UNCONNECTEDZ_116,
+		                  |
+xmelab: *W,CSINFI (./netlist/verilog/core.pnr.v,109238|20): implicit wire has no fanin (fullchip_tb.core_instance.FE_UNCONNECTEDZ_116).
+		FE_UNCONNECTEDZ_115,
+		                  |
+xmelab: *W,CSINFI (./netlist/verilog/core.pnr.v,109237|20): implicit wire has no fanin (fullchip_tb.core_instance.FE_UNCONNECTEDZ_115).
+		FE_UNCONNECTEDZ_114,
+		                  |
+xmelab: *W,CSINFI (./netlist/verilog/core.pnr.v,109236|20): implicit wire has no fanin (fullchip_tb.core_instance.FE_UNCONNECTEDZ_114).
+		FE_UNCONNECTEDZ_113,
+		                  |
+xmelab: *W,CSINFI (./netlist/verilog/core.pnr.v,109235|20): implicit wire has no fanin (fullchip_tb.core_instance.FE_UNCONNECTEDZ_113).
+		FE_UNCONNECTEDZ_112,
+		                  |
+xmelab: *W,CSINFI (./netlist/verilog/core.pnr.v,109234|20): implicit wire has no fanin (fullchip_tb.core_instance.FE_UNCONNECTEDZ_112).
+		FE_UNCONNECTEDZ_111,
+		                  |
+xmelab: *W,CSINFI (./netlist/verilog/core.pnr.v,109233|20): implicit wire has no fanin (fullchip_tb.core_instance.FE_UNCONNECTEDZ_111).
+		FE_UNCONNECTEDZ_110,
+		                  |
+xmelab: *W,CSINFI (./netlist/verilog/core.pnr.v,109232|20): implicit wire has no fanin (fullchip_tb.core_instance.FE_UNCONNECTEDZ_110).
+		FE_UNCONNECTEDZ_109,
+		                  |
+xmelab: *W,CSINFI (./netlist/verilog/core.pnr.v,109231|20): implicit wire has no fanin (fullchip_tb.core_instance.FE_UNCONNECTEDZ_109).
+		FE_UNCONNECTEDZ_108,
+		                  |
+xmelab: *W,CSINFI (./netlist/verilog/core.pnr.v,109230|20): implicit wire has no fanin (fullchip_tb.core_instance.FE_UNCONNECTEDZ_108).
+		FE_UNCONNECTEDZ_107,
+		                  |
+xmelab: *W,CSINFI (./netlist/verilog/core.pnr.v,109229|20): implicit wire has no fanin (fullchip_tb.core_instance.FE_UNCONNECTEDZ_107).
+		FE_UNCONNECTEDZ_106,
+		                  |
+xmelab: *W,CSINFI (./netlist/verilog/core.pnr.v,109228|20): implicit wire has no fanin (fullchip_tb.core_instance.FE_UNCONNECTEDZ_106).
+		FE_UNCONNECTEDZ_105,
+		                  |
+xmelab: *W,CSINFI (./netlist/verilog/core.pnr.v,109227|20): implicit wire has no fanin (fullchip_tb.core_instance.FE_UNCONNECTEDZ_105).
+		FE_UNCONNECTEDZ_104,
+		                  |
+xmelab: *W,CSINFI (./netlist/verilog/core.pnr.v,109226|20): implicit wire has no fanin (fullchip_tb.core_instance.FE_UNCONNECTEDZ_104).
+		FE_UNCONNECTEDZ_103,
+		                  |
+xmelab: *W,CSINFI (./netlist/verilog/core.pnr.v,109225|20): implicit wire has no fanin (fullchip_tb.core_instance.FE_UNCONNECTEDZ_103).
+		FE_UNCONNECTEDZ_102,
+		                  |
+xmelab: *W,CSINFI (./netlist/verilog/core.pnr.v,109224|20): implicit wire has no fanin (fullchip_tb.core_instance.FE_UNCONNECTEDZ_102).
+		FE_UNCONNECTEDZ_101,
+		                  |
+xmelab: *W,CSINFI (./netlist/verilog/core.pnr.v,109223|20): implicit wire has no fanin (fullchip_tb.core_instance.FE_UNCONNECTEDZ_101).
+		FE_UNCONNECTEDZ_100,
+		                  |
+xmelab: *W,CSINFI (./netlist/verilog/core.pnr.v,109222|20): implicit wire has no fanin (fullchip_tb.core_instance.FE_UNCONNECTEDZ_100).
+		FE_UNCONNECTEDZ_99,
+		                 |
+xmelab: *W,CSINFI (./netlist/verilog/core.pnr.v,109221|19): implicit wire has no fanin (fullchip_tb.core_instance.FE_UNCONNECTEDZ_99).
+		FE_UNCONNECTEDZ_98,
+		                 |
+xmelab: *W,CSINFI (./netlist/verilog/core.pnr.v,109220|19): implicit wire has no fanin (fullchip_tb.core_instance.FE_UNCONNECTEDZ_98).
+		FE_UNCONNECTEDZ_97,
+		                 |
+xmelab: *W,CSINFI (./netlist/verilog/core.pnr.v,109219|19): implicit wire has no fanin (fullchip_tb.core_instance.FE_UNCONNECTEDZ_97).
+		FE_UNCONNECTEDZ_96,
+		                 |
+xmelab: *W,CSINFI (./netlist/verilog/core.pnr.v,109218|19): implicit wire has no fanin (fullchip_tb.core_instance.FE_UNCONNECTEDZ_96).
+		FE_UNCONNECTEDZ_95,
+		                 |
+xmelab: *W,CSINFI (./netlist/verilog/core.pnr.v,109217|19): implicit wire has no fanin (fullchip_tb.core_instance.FE_UNCONNECTEDZ_95).
+		FE_UNCONNECTEDZ_94,
+		                 |
+xmelab: *W,CSINFI (./netlist/verilog/core.pnr.v,109216|19): implicit wire has no fanin (fullchip_tb.core_instance.FE_UNCONNECTEDZ_94).
+		FE_UNCONNECTEDZ_93,
+		                 |
+xmelab: *W,CSINFI (./netlist/verilog/core.pnr.v,109215|19): implicit wire has no fanin (fullchip_tb.core_instance.FE_UNCONNECTEDZ_93).
+		FE_UNCONNECTEDZ_92,
+		                 |
+xmelab: *W,CSINFI (./netlist/verilog/core.pnr.v,109214|19): implicit wire has no fanin (fullchip_tb.core_instance.FE_UNCONNECTEDZ_92).
+		FE_UNCONNECTEDZ_91,
+		                 |
+xmelab: *W,CSINFI (./netlist/verilog/core.pnr.v,109213|19): implicit wire has no fanin (fullchip_tb.core_instance.FE_UNCONNECTEDZ_91).
+		FE_UNCONNECTEDZ_90,
+		                 |
+xmelab: *W,CSINFI (./netlist/verilog/core.pnr.v,109212|19): implicit wire has no fanin (fullchip_tb.core_instance.FE_UNCONNECTEDZ_90).
+		FE_UNCONNECTEDZ_89,
+		                 |
+xmelab: *W,CSINFI (./netlist/verilog/core.pnr.v,109211|19): implicit wire has no fanin (fullchip_tb.core_instance.FE_UNCONNECTEDZ_89).
+		FE_UNCONNECTEDZ_88,
+		                 |
+xmelab: *W,CSINFI (./netlist/verilog/core.pnr.v,109210|19): implicit wire has no fanin (fullchip_tb.core_instance.FE_UNCONNECTEDZ_88).
+		FE_UNCONNECTEDZ_87,
+		                 |
+xmelab: *W,CSINFI (./netlist/verilog/core.pnr.v,109209|19): implicit wire has no fanin (fullchip_tb.core_instance.FE_UNCONNECTEDZ_87).
+		FE_UNCONNECTEDZ_86,
+		                 |
+xmelab: *W,CSINFI (./netlist/verilog/core.pnr.v,109208|19): implicit wire has no fanin (fullchip_tb.core_instance.FE_UNCONNECTEDZ_86).
+		FE_UNCONNECTEDZ_85,
+		                 |
+xmelab: *W,CSINFI (./netlist/verilog/core.pnr.v,109207|19): implicit wire has no fanin (fullchip_tb.core_instance.FE_UNCONNECTEDZ_85).
+		FE_UNCONNECTEDZ_84,
+		                 |
+xmelab: *W,CSINFI (./netlist/verilog/core.pnr.v,109206|19): implicit wire has no fanin (fullchip_tb.core_instance.FE_UNCONNECTEDZ_84).
+		FE_UNCONNECTEDZ_83,
+		                 |
+xmelab: *W,CSINFI (./netlist/verilog/core.pnr.v,109205|19): implicit wire has no fanin (fullchip_tb.core_instance.FE_UNCONNECTEDZ_83).
+		FE_UNCONNECTEDZ_82,
+		                 |
+xmelab: *W,CSINFI (./netlist/verilog/core.pnr.v,109204|19): implicit wire has no fanin (fullchip_tb.core_instance.FE_UNCONNECTEDZ_82).
+		FE_UNCONNECTEDZ_81,
+		                 |
+xmelab: *W,CSINFI (./netlist/verilog/core.pnr.v,109203|19): implicit wire has no fanin (fullchip_tb.core_instance.FE_UNCONNECTEDZ_81).
+		FE_UNCONNECTEDZ_80,
+		                 |
+xmelab: *W,CSINFI (./netlist/verilog/core.pnr.v,109202|19): implicit wire has no fanin (fullchip_tb.core_instance.FE_UNCONNECTEDZ_80).
+		FE_UNCONNECTEDZ_79,
+		                 |
+xmelab: *W,CSINFI (./netlist/verilog/core.pnr.v,109201|19): implicit wire has no fanin (fullchip_tb.core_instance.FE_UNCONNECTEDZ_79).
+		FE_UNCONNECTEDZ_78,
+		                 |
+xmelab: *W,CSINFI (./netlist/verilog/core.pnr.v,109200|19): implicit wire has no fanin (fullchip_tb.core_instance.FE_UNCONNECTEDZ_78).
+		FE_UNCONNECTEDZ_77,
+		                 |
+xmelab: *W,CSINFI (./netlist/verilog/core.pnr.v,109199|19): implicit wire has no fanin (fullchip_tb.core_instance.FE_UNCONNECTEDZ_77).
+		FE_UNCONNECTEDZ_76,
+		                 |
+xmelab: *W,CSINFI (./netlist/verilog/core.pnr.v,109198|19): implicit wire has no fanin (fullchip_tb.core_instance.FE_UNCONNECTEDZ_76).
+		FE_UNCONNECTEDZ_75,
+		                 |
+xmelab: *W,CSINFI (./netlist/verilog/core.pnr.v,109197|19): implicit wire has no fanin (fullchip_tb.core_instance.FE_UNCONNECTEDZ_75).
+		FE_UNCONNECTEDZ_74,
+		                 |
+xmelab: *W,CSINFI (./netlist/verilog/core.pnr.v,109196|19): implicit wire has no fanin (fullchip_tb.core_instance.FE_UNCONNECTEDZ_74).
+		FE_UNCONNECTEDZ_73,
+		                 |
+xmelab: *W,CSINFI (./netlist/verilog/core.pnr.v,109195|19): implicit wire has no fanin (fullchip_tb.core_instance.FE_UNCONNECTEDZ_73).
+		FE_UNCONNECTEDZ_72,
+		                 |
+xmelab: *W,CSINFI (./netlist/verilog/core.pnr.v,109194|19): implicit wire has no fanin (fullchip_tb.core_instance.FE_UNCONNECTEDZ_72).
+		FE_UNCONNECTEDZ_71,
+		                 |
+xmelab: *W,CSINFI (./netlist/verilog/core.pnr.v,109193|19): implicit wire has no fanin (fullchip_tb.core_instance.FE_UNCONNECTEDZ_71).
+		FE_UNCONNECTEDZ_70,
+		                 |
+xmelab: *W,CSINFI (./netlist/verilog/core.pnr.v,109192|19): implicit wire has no fanin (fullchip_tb.core_instance.FE_UNCONNECTEDZ_70).
+		FE_UNCONNECTEDZ_69,
+		                 |
+xmelab: *W,CSINFI (./netlist/verilog/core.pnr.v,109191|19): implicit wire has no fanin (fullchip_tb.core_instance.FE_UNCONNECTEDZ_69).
+		FE_UNCONNECTEDZ_68,
+		                 |
+xmelab: *W,CSINFI (./netlist/verilog/core.pnr.v,109190|19): implicit wire has no fanin (fullchip_tb.core_instance.FE_UNCONNECTEDZ_68).
+		FE_UNCONNECTEDZ_67,
+		                 |
+xmelab: *W,CSINFI (./netlist/verilog/core.pnr.v,109189|19): implicit wire has no fanin (fullchip_tb.core_instance.FE_UNCONNECTEDZ_67).
+		FE_UNCONNECTEDZ_66,
+		                 |
+xmelab: *W,CSINFI (./netlist/verilog/core.pnr.v,109188|19): implicit wire has no fanin (fullchip_tb.core_instance.FE_UNCONNECTEDZ_66).
+		FE_UNCONNECTEDZ_65,
+		                 |
+xmelab: *W,CSINFI (./netlist/verilog/core.pnr.v,109187|19): implicit wire has no fanin (fullchip_tb.core_instance.FE_UNCONNECTEDZ_65).
+	.D({ FE_UNCONNECTEDZ_64,
+	                      |
+xmelab: *W,CSINFI (./netlist/verilog/core.pnr.v,109186|23): implicit wire has no fanin (fullchip_tb.core_instance.FE_UNCONNECTEDZ_64).
+		FE_UNCONNECTEDZ_255,
+		                  |
+xmelab: *W,CSINFI (./netlist/verilog/core.pnr.v,109386|20): implicit wire has no fanin (fullchip_tb.core_instance.FE_UNCONNECTEDZ_255).
+		FE_UNCONNECTEDZ_254,
+		                  |
+xmelab: *W,CSINFI (./netlist/verilog/core.pnr.v,109385|20): implicit wire has no fanin (fullchip_tb.core_instance.FE_UNCONNECTEDZ_254).
+		FE_UNCONNECTEDZ_253,
+		                  |
+xmelab: *W,CSINFI (./netlist/verilog/core.pnr.v,109384|20): implicit wire has no fanin (fullchip_tb.core_instance.FE_UNCONNECTEDZ_253).
+		FE_UNCONNECTEDZ_252,
+		                  |
+xmelab: *W,CSINFI (./netlist/verilog/core.pnr.v,109383|20): implicit wire has no fanin (fullchip_tb.core_instance.FE_UNCONNECTEDZ_252).
+		FE_UNCONNECTEDZ_251,
+		                  |
+xmelab: *W,CSINFI (./netlist/verilog/core.pnr.v,109382|20): implicit wire has no fanin (fullchip_tb.core_instance.FE_UNCONNECTEDZ_251).
+		FE_UNCONNECTEDZ_250,
+		                  |
+xmelab: *W,CSINFI (./netlist/verilog/core.pnr.v,109381|20): implicit wire has no fanin (fullchip_tb.core_instance.FE_UNCONNECTEDZ_250).
+		FE_UNCONNECTEDZ_249,
+		                  |
+xmelab: *W,CSINFI (./netlist/verilog/core.pnr.v,109380|20): implicit wire has no fanin (fullchip_tb.core_instance.FE_UNCONNECTEDZ_249).
+		FE_UNCONNECTEDZ_248,
+		                  |
+xmelab: *W,CSINFI (./netlist/verilog/core.pnr.v,109379|20): implicit wire has no fanin (fullchip_tb.core_instance.FE_UNCONNECTEDZ_248).
+		FE_UNCONNECTEDZ_247,
+		                  |
+xmelab: *W,CSINFI (./netlist/verilog/core.pnr.v,109378|20): implicit wire has no fanin (fullchip_tb.core_instance.FE_UNCONNECTEDZ_247).
+		FE_UNCONNECTEDZ_246,
+		                  |
+xmelab: *W,CSINFI (./netlist/verilog/core.pnr.v,109377|20): implicit wire has no fanin (fullchip_tb.core_instance.FE_UNCONNECTEDZ_246).
+		FE_UNCONNECTEDZ_245,
+		                  |
+xmelab: *W,CSINFI (./netlist/verilog/core.pnr.v,109376|20): implicit wire has no fanin (fullchip_tb.core_instance.FE_UNCONNECTEDZ_245).
+		FE_UNCONNECTEDZ_244,
+		                  |
+xmelab: *W,CSINFI (./netlist/verilog/core.pnr.v,109375|20): implicit wire has no fanin (fullchip_tb.core_instance.FE_UNCONNECTEDZ_244).
+		FE_UNCONNECTEDZ_243,
+		                  |
+xmelab: *W,CSINFI (./netlist/verilog/core.pnr.v,109374|20): implicit wire has no fanin (fullchip_tb.core_instance.FE_UNCONNECTEDZ_243).
+		FE_UNCONNECTEDZ_242,
+		                  |
+xmelab: *W,CSINFI (./netlist/verilog/core.pnr.v,109373|20): implicit wire has no fanin (fullchip_tb.core_instance.FE_UNCONNECTEDZ_242).
+		FE_UNCONNECTEDZ_241,
+		                  |
+xmelab: *W,CSINFI (./netlist/verilog/core.pnr.v,109372|20): implicit wire has no fanin (fullchip_tb.core_instance.FE_UNCONNECTEDZ_241).
+		FE_UNCONNECTEDZ_240,
+		                  |
+xmelab: *W,CSINFI (./netlist/verilog/core.pnr.v,109371|20): implicit wire has no fanin (fullchip_tb.core_instance.FE_UNCONNECTEDZ_240).
+		FE_UNCONNECTEDZ_239,
+		                  |
+xmelab: *W,CSINFI (./netlist/verilog/core.pnr.v,109370|20): implicit wire has no fanin (fullchip_tb.core_instance.FE_UNCONNECTEDZ_239).
+		FE_UNCONNECTEDZ_238,
+		                  |
+xmelab: *W,CSINFI (./netlist/verilog/core.pnr.v,109369|20): implicit wire has no fanin (fullchip_tb.core_instance.FE_UNCONNECTEDZ_238).
+		FE_UNCONNECTEDZ_237,
+		                  |
+xmelab: *W,CSINFI (./netlist/verilog/core.pnr.v,109368|20): implicit wire has no fanin (fullchip_tb.core_instance.FE_UNCONNECTEDZ_237).
+		FE_UNCONNECTEDZ_236,
+		                  |
+xmelab: *W,CSINFI (./netlist/verilog/core.pnr.v,109367|20): implicit wire has no fanin (fullchip_tb.core_instance.FE_UNCONNECTEDZ_236).
+		FE_UNCONNECTEDZ_235,
+		                  |
+xmelab: *W,CSINFI (./netlist/verilog/core.pnr.v,109366|20): implicit wire has no fanin (fullchip_tb.core_instance.FE_UNCONNECTEDZ_235).
+		FE_UNCONNECTEDZ_234,
+		                  |
+xmelab: *W,CSINFI (./netlist/verilog/core.pnr.v,109365|20): implicit wire has no fanin (fullchip_tb.core_instance.FE_UNCONNECTEDZ_234).
+		FE_UNCONNECTEDZ_233,
+		                  |
+xmelab: *W,CSINFI (./netlist/verilog/core.pnr.v,109364|20): implicit wire has no fanin (fullchip_tb.core_instance.FE_UNCONNECTEDZ_233).
+		FE_UNCONNECTEDZ_232,
+		                  |
+xmelab: *W,CSINFI (./netlist/verilog/core.pnr.v,109363|20): implicit wire has no fanin (fullchip_tb.core_instance.FE_UNCONNECTEDZ_232).
+		FE_UNCONNECTEDZ_231,
+		                  |
+xmelab: *W,CSINFI (./netlist/verilog/core.pnr.v,109362|20): implicit wire has no fanin (fullchip_tb.core_instance.FE_UNCONNECTEDZ_231).
+		FE_UNCONNECTEDZ_230,
+		                  |
+xmelab: *W,CSINFI (./netlist/verilog/core.pnr.v,109361|20): implicit wire has no fanin (fullchip_tb.core_instance.FE_UNCONNECTEDZ_230).
+		FE_UNCONNECTEDZ_229,
+		                  |
+xmelab: *W,CSINFI (./netlist/verilog/core.pnr.v,109360|20): implicit wire has no fanin (fullchip_tb.core_instance.FE_UNCONNECTEDZ_229).
+		FE_UNCONNECTEDZ_228,
+		                  |
+xmelab: *W,CSINFI (./netlist/verilog/core.pnr.v,109359|20): implicit wire has no fanin (fullchip_tb.core_instance.FE_UNCONNECTEDZ_228).
+		FE_UNCONNECTEDZ_227,
+		                  |
+xmelab: *W,CSINFI (./netlist/verilog/core.pnr.v,109358|20): implicit wire has no fanin (fullchip_tb.core_instance.FE_UNCONNECTEDZ_227).
+		FE_UNCONNECTEDZ_226,
+		                  |
+xmelab: *W,CSINFI (./netlist/verilog/core.pnr.v,109357|20): implicit wire has no fanin (fullchip_tb.core_instance.FE_UNCONNECTEDZ_226).
+		FE_UNCONNECTEDZ_225,
+		                  |
+xmelab: *W,CSINFI (./netlist/verilog/core.pnr.v,109356|20): implicit wire has no fanin (fullchip_tb.core_instance.FE_UNCONNECTEDZ_225).
+		FE_UNCONNECTEDZ_224,
+		                  |
+xmelab: *W,CSINFI (./netlist/verilog/core.pnr.v,109355|20): implicit wire has no fanin (fullchip_tb.core_instance.FE_UNCONNECTEDZ_224).
+		FE_UNCONNECTEDZ_223,
+		                  |
+xmelab: *W,CSINFI (./netlist/verilog/core.pnr.v,109354|20): implicit wire has no fanin (fullchip_tb.core_instance.FE_UNCONNECTEDZ_223).
+		FE_UNCONNECTEDZ_222,
+		                  |
+xmelab: *W,CSINFI (./netlist/verilog/core.pnr.v,109353|20): implicit wire has no fanin (fullchip_tb.core_instance.FE_UNCONNECTEDZ_222).
+		FE_UNCONNECTEDZ_221,
+		                  |
+xmelab: *W,CSINFI (./netlist/verilog/core.pnr.v,109352|20): implicit wire has no fanin (fullchip_tb.core_instance.FE_UNCONNECTEDZ_221).
+		FE_UNCONNECTEDZ_220,
+		                  |
+xmelab: *W,CSINFI (./netlist/verilog/core.pnr.v,109351|20): implicit wire has no fanin (fullchip_tb.core_instance.FE_UNCONNECTEDZ_220).
+		FE_UNCONNECTEDZ_219,
+		                  |
+xmelab: *W,CSINFI (./netlist/verilog/core.pnr.v,109350|20): implicit wire has no fanin (fullchip_tb.core_instance.FE_UNCONNECTEDZ_219).
+		FE_UNCONNECTEDZ_218,
+		                  |
+xmelab: *W,CSINFI (./netlist/verilog/core.pnr.v,109349|20): implicit wire has no fanin (fullchip_tb.core_instance.FE_UNCONNECTEDZ_218).
+		FE_UNCONNECTEDZ_217,
+		                  |
+xmelab: *W,CSINFI (./netlist/verilog/core.pnr.v,109348|20): implicit wire has no fanin (fullchip_tb.core_instance.FE_UNCONNECTEDZ_217).
+		FE_UNCONNECTEDZ_216,
+		                  |
+xmelab: *W,CSINFI (./netlist/verilog/core.pnr.v,109347|20): implicit wire has no fanin (fullchip_tb.core_instance.FE_UNCONNECTEDZ_216).
+		FE_UNCONNECTEDZ_215,
+		                  |
+xmelab: *W,CSINFI (./netlist/verilog/core.pnr.v,109346|20): implicit wire has no fanin (fullchip_tb.core_instance.FE_UNCONNECTEDZ_215).
+		FE_UNCONNECTEDZ_214,
+		                  |
+xmelab: *W,CSINFI (./netlist/verilog/core.pnr.v,109345|20): implicit wire has no fanin (fullchip_tb.core_instance.FE_UNCONNECTEDZ_214).
+		FE_UNCONNECTEDZ_213,
+		                  |
+xmelab: *W,CSINFI (./netlist/verilog/core.pnr.v,109344|20): implicit wire has no fanin (fullchip_tb.core_instance.FE_UNCONNECTEDZ_213).
+		FE_UNCONNECTEDZ_212,
+		                  |
+xmelab: *W,CSINFI (./netlist/verilog/core.pnr.v,109343|20): implicit wire has no fanin (fullchip_tb.core_instance.FE_UNCONNECTEDZ_212).
+		FE_UNCONNECTEDZ_211,
+		                  |
+xmelab: *W,CSINFI (./netlist/verilog/core.pnr.v,109342|20): implicit wire has no fanin (fullchip_tb.core_instance.FE_UNCONNECTEDZ_211).
+		FE_UNCONNECTEDZ_210,
+		                  |
+xmelab: *W,CSINFI (./netlist/verilog/core.pnr.v,109341|20): implicit wire has no fanin (fullchip_tb.core_instance.FE_UNCONNECTEDZ_210).
+		FE_UNCONNECTEDZ_209,
+		                  |
+xmelab: *W,CSINFI (./netlist/verilog/core.pnr.v,109340|20): implicit wire has no fanin (fullchip_tb.core_instance.FE_UNCONNECTEDZ_209).
+		FE_UNCONNECTEDZ_208,
+		                  |
+xmelab: *W,CSINFI (./netlist/verilog/core.pnr.v,109339|20): implicit wire has no fanin (fullchip_tb.core_instance.FE_UNCONNECTEDZ_208).
+		FE_UNCONNECTEDZ_207,
+		                  |
+xmelab: *W,CSINFI (./netlist/verilog/core.pnr.v,109338|20): implicit wire has no fanin (fullchip_tb.core_instance.FE_UNCONNECTEDZ_207).
+		FE_UNCONNECTEDZ_206,
+		                  |
+xmelab: *W,CSINFI (./netlist/verilog/core.pnr.v,109337|20): implicit wire has no fanin (fullchip_tb.core_instance.FE_UNCONNECTEDZ_206).
+		FE_UNCONNECTEDZ_205,
+		                  |
+xmelab: *W,CSINFI (./netlist/verilog/core.pnr.v,109336|20): implicit wire has no fanin (fullchip_tb.core_instance.FE_UNCONNECTEDZ_205).
+		FE_UNCONNECTEDZ_204,
+		                  |
+xmelab: *W,CSINFI (./netlist/verilog/core.pnr.v,109335|20): implicit wire has no fanin (fullchip_tb.core_instance.FE_UNCONNECTEDZ_204).
+		FE_UNCONNECTEDZ_203,
+		                  |
+xmelab: *W,CSINFI (./netlist/verilog/core.pnr.v,109334|20): implicit wire has no fanin (fullchip_tb.core_instance.FE_UNCONNECTEDZ_203).
+		FE_UNCONNECTEDZ_202,
+		                  |
+xmelab: *W,CSINFI (./netlist/verilog/core.pnr.v,109333|20): implicit wire has no fanin (fullchip_tb.core_instance.FE_UNCONNECTEDZ_202).
+		FE_UNCONNECTEDZ_201,
+		                  |
+xmelab: *W,CSINFI (./netlist/verilog/core.pnr.v,109332|20): implicit wire has no fanin (fullchip_tb.core_instance.FE_UNCONNECTEDZ_201).
+		FE_UNCONNECTEDZ_200,
+		                  |
+xmelab: *W,CSINFI (./netlist/verilog/core.pnr.v,109331|20): implicit wire has no fanin (fullchip_tb.core_instance.FE_UNCONNECTEDZ_200).
+		FE_UNCONNECTEDZ_199,
+		                  |
+xmelab: *W,CSINFI (./netlist/verilog/core.pnr.v,109330|20): implicit wire has no fanin (fullchip_tb.core_instance.FE_UNCONNECTEDZ_199).
+		FE_UNCONNECTEDZ_198,
+		                  |
+xmelab: *W,CSINFI (./netlist/verilog/core.pnr.v,109329|20): implicit wire has no fanin (fullchip_tb.core_instance.FE_UNCONNECTEDZ_198).
+		FE_UNCONNECTEDZ_197,
+		                  |
+xmelab: *W,CSINFI (./netlist/verilog/core.pnr.v,109328|20): implicit wire has no fanin (fullchip_tb.core_instance.FE_UNCONNECTEDZ_197).
+		FE_UNCONNECTEDZ_196,
+		                  |
+xmelab: *W,CSINFI (./netlist/verilog/core.pnr.v,109327|20): implicit wire has no fanin (fullchip_tb.core_instance.FE_UNCONNECTEDZ_196).
+		FE_UNCONNECTEDZ_195,
+		                  |
+xmelab: *W,CSINFI (./netlist/verilog/core.pnr.v,109326|20): implicit wire has no fanin (fullchip_tb.core_instance.FE_UNCONNECTEDZ_195).
+		FE_UNCONNECTEDZ_194,
+		                  |
+xmelab: *W,CSINFI (./netlist/verilog/core.pnr.v,109325|20): implicit wire has no fanin (fullchip_tb.core_instance.FE_UNCONNECTEDZ_194).
+		FE_UNCONNECTEDZ_193,
+		                  |
+xmelab: *W,CSINFI (./netlist/verilog/core.pnr.v,109324|20): implicit wire has no fanin (fullchip_tb.core_instance.FE_UNCONNECTEDZ_193).
+	.D({ FE_UNCONNECTEDZ_192,
+	                       |
+xmelab: *W,CSINFI (./netlist/verilog/core.pnr.v,109323|24): implicit wire has no fanin (fullchip_tb.core_instance.FE_UNCONNECTEDZ_192).
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                   Instances  Unique
+		Modules:               29385     323
+		UDPs:                  15521       3
+		Primitives:            58127       9
+		Registers:              5527      49
+		Scalar wires:          14536       -
+		Expanded wires:           72       3
+		Vectored wires:           19       -
+		Always blocks:             1       1
+		Initial blocks:           19      19
+		Cont. assignments:        11      23
+		Pseudo assignments:        3       3
+		Simulation timescale:    1ps
+	Writing initial simulation snapshot: worklib.fullchip_tb:v
+xmelab: Memory Usage - Final: 56.2M, Peak: 60.6M, Peak virtual: 185.4M
+xmelab: CPU Usage - 0.1s system + 2.9s user = 3.0s total (3.1s, 96.6% cpu)
+
+-------------------------------------
+Relinquished control to SimVision...
+xcelium> 
+xcelium> source /software/ECE/XCELIUM-2009/tools/xcelium/files/xmsimrc
+xcelium> database -open waves -into waves.shm -default
+Created default SHM database waves
+xcelium> probe -create -shm fullchip_tb.core_instance.array_out fullchip_tb.core_instance.clk fullchip_tb.core_instance.fifo_wr fullchip_tb.core_instance.inst fullchip_tb.core_instance.mac_in fullchip_tb.core_instance.kmem_out fullchip_tb.core_instance.mem_in fullchip_tb.core_instance.out fullchip_tb.core_instance.qmem_out fullchip_tb.core_instance.pmem_in fullchip_tb.core_instance.reset fullchip_tb.core_instance.sum_out
+Created probe 1
+xcelium> run
+##### Q data txt reading #####
+Q0 = [         -5          7         -5         -7         -1          6          1          2] Hex: fb07fbf9ff060102 
+Q1 = [         -4          7         -2         -5         -3          4          1         -3] Hex: fc07fefbfd0401fd 
+Q2 = [         -4         -1         -4         -4          0          5          2          0] Hex: fcfffcfc00050200 
+Q3 = [         -3          3          6         -4          6          2          1          6] Hex: fd0306fc06020106 
+Q4 = [         -8          5         -2          6          2          1         -3          4] Hex: f805fe060201fd04 
+Q5 = [         -2         -1         -2         -6         -1          4          0          2] Hex: fefffefaff040002 
+Q6 = [          5         -7         -1          3          2          1         -7          6] Hex: 05f9ff030201f906 
+Q7 = [          5         -8         -3          6          0         -2          6         -1] Hex: 05f8fd0600fe06ff 
+##### K data txt reading #####
+K0 = [         -6          3         -2         -1         -5          1          0          7] Hex: fa03fefffb010007 
+K1 = [          0         -5         -8          0          6          0         -5         -7] Hex: 00fbf8000600fbf9 
+K2 = [          4         -7         -6          3          7          7          6          6] Hex: 04f9fa0307070606 
+K3 = [         -3          0          0         -7          6          3          4          7] Hex: fd0000f906030407 
+K4 = [          6         -3          4         -7         -4         -3         -2         -5] Hex: 06fd04f9fcfdfefb 
+K5 = [          0         -7          3          3         -2          6          4         -1] Hex: 00f90303fe0604ff 
+K6 = [          7         -5          2          1          3          6          1         -5] Hex: 07fb0201030601fb 
+K7 = [          3         -1          6          3         -6         -2          1         -4] Hex: 03ff0603fafe01fc 
+##### Estimated multiplication result #####
+prd @cycle 0: Q0*K[n] = [         93         -20          -7          94         -48         -45         -63         -86 ]
+prd @cycle 1: Q1*K[n] = [         52         -21         -73          24          -5         -33         -41         -23 ]
+prd @cycle 2: Q2*K[n] = [         38          27          50          63         -28          21          -3         -55 ]
+prd @cycle 3: Q3*K[n] = [         33         -74          17         125         -37         -17         -27         -51 ]
+prd @cycle 4: Q4*K[n] = [         80         -10         -10          13        -138         -37         -90         -56 ]
+prd @cycle 5: Q5*K[n] = [         42           1          26          68           7           7          -8         -45 ]
+prd @cycle 6: Q6*K[n] = [        -19          48          99          -7          -1          23          46         -20 ]
+prd @cycle 7: Q7*K[n] = [        -63          41         128         -46          -1          78          74          37 ]
+##### Qmem writing  #####
+Clock Cycle = 12: Q0 = [         -5          7         -5         -7         -1          6          1          2]
+Clock Cycle = 13: Q1 = [         -4          7         -2         -5         -3          4          1         -3]
+Clock Cycle = 14: Q2 = [         -4         -1         -4         -4          0          5          2          0]
+Clock Cycle = 15: Q3 = [         -3          3          6         -4          6          2          1          6]
+Clock Cycle = 16: Q4 = [         -8          5         -2          6          2          1         -3          4]
+Clock Cycle = 17: Q5 = [         -2         -1         -2         -6         -1          4          0          2]
+Clock Cycle = 18: Q6 = [          5         -7         -1          3          2          1         -7          6]
+Clock Cycle = 19: Q7 = [          5         -8         -3          6          0         -2          6         -1]
+##### Kmem writing #####
+Clock Cycle = 21: K0 = [         -6          3         -2         -1         -5          1          0          7]
+Clock Cycle = 22: K1 = [          0         -5         -8          0          6          0         -5         -7]
+Clock Cycle = 23: K2 = [          4         -7         -6          3          7          7          6          6]
+Clock Cycle = 24: K3 = [         -3          0          0         -7          6          3          4          7]
+Clock Cycle = 25: K4 = [          6         -3          4         -7         -4         -3         -2         -5]
+Clock Cycle = 26: K5 = [          0         -7          3          3         -2          6          4         -1]
+Clock Cycle = 27: K6 = [          7         -5          2          1          3          6          1         -5]
+Clock Cycle = 28: K7 = [          3         -1          6          3         -6         -2          1         -4]
+##### K data loading to processor #####
+##### execute #####
+##### move ofifo to pmem #####
+##### move ofifo to pmem #####
+Simulation complete via $finish(1) at time 111 NS + 0
+./netlist/verilog/fullchip_tb.v:414   #10 $finish;
+xcelium> scope -set fullchip_tb.core_instance
+xcelium> scope -set fullchip_tb.core_instance.FE_OCPC4426_sum_out_0_
+xcelium> scope -set fullchip_tb.core_instance
+xcelium> probe -create -shm fullchip_tb.core_instance.mac_array_instance.col_idx_1__mac_col_inst.out
+Created probe 2
+xcelium> reset
+Loaded snapshot worklib.fullchip_tb:v
+xcelium> scope -set fullchip_tb
+xcelium> run
+##### Q data txt reading #####
+Q0 = [         -5          7         -5         -7         -1          6          1          2] Hex: fb07fbf9ff060102 
+Q1 = [         -4          7         -2         -5         -3          4          1         -3] Hex: fc07fefbfd0401fd 
+Q2 = [         -4         -1         -4         -4          0          5          2          0] Hex: fcfffcfc00050200 
+Q3 = [         -3          3          6         -4          6          2          1          6] Hex: fd0306fc06020106 
+Q4 = [         -8          5         -2          6          2          1         -3          4] Hex: f805fe060201fd04 
+Q5 = [         -2         -1         -2         -6         -1          4          0          2] Hex: fefffefaff040002 
+Q6 = [          5         -7         -1          3          2          1         -7          6] Hex: 05f9ff030201f906 
+Q7 = [          5         -8         -3          6          0         -2          6         -1] Hex: 05f8fd0600fe06ff 
+##### K data txt reading #####
+K0 = [         -6          3         -2         -1         -5          1          0          7] Hex: fa03fefffb010007 
+K1 = [          0         -5         -8          0          6          0         -5         -7] Hex: 00fbf8000600fbf9 
+K2 = [          4         -7         -6          3          7          7          6          6] Hex: 04f9fa0307070606 
+K3 = [         -3          0          0         -7          6          3          4          7] Hex: fd0000f906030407 
+K4 = [          6         -3          4         -7         -4         -3         -2         -5] Hex: 06fd04f9fcfdfefb 
+K5 = [          0         -7          3          3         -2          6          4         -1] Hex: 00f90303fe0604ff 
+K6 = [          7         -5          2          1          3          6          1         -5] Hex: 07fb0201030601fb 
+K7 = [          3         -1          6          3         -6         -2          1         -4] Hex: 03ff0603fafe01fc 
+##### Estimated multiplication result #####
+prd @cycle 0: Q0*K[n] = [         93         -20          -7          94         -48         -45         -63         -86 ]
+prd @cycle 1: Q1*K[n] = [         52         -21         -73          24          -5         -33         -41         -23 ]
+prd @cycle 2: Q2*K[n] = [         38          27          50          63         -28          21          -3         -55 ]
+prd @cycle 3: Q3*K[n] = [         33         -74          17         125         -37         -17         -27         -51 ]
+prd @cycle 4: Q4*K[n] = [         80         -10         -10          13        -138         -37         -90         -56 ]
+prd @cycle 5: Q5*K[n] = [         42           1          26          68           7           7          -8         -45 ]
+prd @cycle 6: Q6*K[n] = [        -19          48          99          -7          -1          23          46         -20 ]
+prd @cycle 7: Q7*K[n] = [        -63          41         128         -46          -1          78          74          37 ]
+##### Qmem writing  #####
+Clock Cycle = 12: Q0 = [         -5          7         -5         -7         -1          6          1          2]
+Clock Cycle = 13: Q1 = [         -4          7         -2         -5         -3          4          1         -3]
+Clock Cycle = 14: Q2 = [         -4         -1         -4         -4          0          5          2          0]
+Clock Cycle = 15: Q3 = [         -3          3          6         -4          6          2          1          6]
+Clock Cycle = 16: Q4 = [         -8          5         -2          6          2          1         -3          4]
+Clock Cycle = 17: Q5 = [         -2         -1         -2         -6         -1          4          0          2]
+Clock Cycle = 18: Q6 = [          5         -7         -1          3          2          1         -7          6]
+Clock Cycle = 19: Q7 = [          5         -8         -3          6          0         -2          6         -1]
+##### Kmem writing #####
+Clock Cycle = 21: K0 = [         -6          3         -2         -1         -5          1          0          7]
+Clock Cycle = 22: K1 = [          0         -5         -8          0          6          0         -5         -7]
+Clock Cycle = 23: K2 = [          4         -7         -6          3          7          7          6          6]
+Clock Cycle = 24: K3 = [         -3          0          0         -7          6          3          4          7]
+Clock Cycle = 25: K4 = [          6         -3          4         -7         -4         -3         -2         -5]
+Clock Cycle = 26: K5 = [          0         -7          3          3         -2          6          4         -1]
+Clock Cycle = 27: K6 = [          7         -5          2          1          3          6          1         -5]
+Clock Cycle = 28: K7 = [          3         -1          6          3         -6         -2          1         -4]
+##### K data loading to processor #####
+##### execute #####
+##### move ofifo to pmem #####
+##### move ofifo to pmem #####
+Simulation complete via $finish(1) at time 111 NS + 0
+./netlist/verilog/fullchip_tb.v:414   #10 $finish;
+xcelium> scope -set fullchip_tb.core_instance.mac_array_instance.col_idx_1__mac_col_inst
+xcelium> scope -set fullchip_tb.core_instance.mac_array_instance.col_idx_1__mac_col_inst.mac_16in_instance
+xcelium> scope -set fullchip_tb.core_instance.mac_array_instance.col_idx_1__mac_col_inst
+xcelium> probe -create -shm fullchip_tb.core_instance.mac_array_instance.col_idx_8__mac_col_inst.out
+Created probe 3
+xcelium> reset
+Loaded snapshot worklib.fullchip_tb:v
+xcelium> scope -set fullchip_tb
+xcelium> run
+##### Q data txt reading #####
+Q0 = [         -5          7         -5         -7         -1          6          1          2] Hex: fb07fbf9ff060102 
+Q1 = [         -4          7         -2         -5         -3          4          1         -3] Hex: fc07fefbfd0401fd 
+Q2 = [         -4         -1         -4         -4          0          5          2          0] Hex: fcfffcfc00050200 
+Q3 = [         -3          3          6         -4          6          2          1          6] Hex: fd0306fc06020106 
+Q4 = [         -8          5         -2          6          2          1         -3          4] Hex: f805fe060201fd04 
+Q5 = [         -2         -1         -2         -6         -1          4          0          2] Hex: fefffefaff040002 
+Q6 = [          5         -7         -1          3          2          1         -7          6] Hex: 05f9ff030201f906 
+Q7 = [          5         -8         -3          6          0         -2          6         -1] Hex: 05f8fd0600fe06ff 
+##### K data txt reading #####
+K0 = [         -6          3         -2         -1         -5          1          0          7] Hex: fa03fefffb010007 
+K1 = [          0         -5         -8          0          6          0         -5         -7] Hex: 00fbf8000600fbf9 
+K2 = [          4         -7         -6          3          7          7          6          6] Hex: 04f9fa0307070606 
+K3 = [         -3          0          0         -7          6          3          4          7] Hex: fd0000f906030407 
+K4 = [          6         -3          4         -7         -4         -3         -2         -5] Hex: 06fd04f9fcfdfefb 
+K5 = [          0         -7          3          3         -2          6          4         -1] Hex: 00f90303fe0604ff 
+K6 = [          7         -5          2          1          3          6          1         -5] Hex: 07fb0201030601fb 
+K7 = [          3         -1          6          3         -6         -2          1         -4] Hex: 03ff0603fafe01fc 
+##### Estimated multiplication result #####
+prd @cycle 0: Q0*K[n] = [         93         -20          -7          94         -48         -45         -63         -86 ]
+prd @cycle 1: Q1*K[n] = [         52         -21         -73          24          -5         -33         -41         -23 ]
+prd @cycle 2: Q2*K[n] = [         38          27          50          63         -28          21          -3         -55 ]
+prd @cycle 3: Q3*K[n] = [         33         -74          17         125         -37         -17         -27         -51 ]
+prd @cycle 4: Q4*K[n] = [         80         -10         -10          13        -138         -37         -90         -56 ]
+prd @cycle 5: Q5*K[n] = [         42           1          26          68           7           7          -8         -45 ]
+prd @cycle 6: Q6*K[n] = [        -19          48          99          -7          -1          23          46         -20 ]
+prd @cycle 7: Q7*K[n] = [        -63          41         128         -46          -1          78          74          37 ]
+##### Qmem writing  #####
+Clock Cycle = 12: Q0 = [         -5          7         -5         -7         -1          6          1          2]
+Clock Cycle = 13: Q1 = [         -4          7         -2         -5         -3          4          1         -3]
+Clock Cycle = 14: Q2 = [         -4         -1         -4         -4          0          5          2          0]
+Clock Cycle = 15: Q3 = [         -3          3          6         -4          6          2          1          6]
+Clock Cycle = 16: Q4 = [         -8          5         -2          6          2          1         -3          4]
+Clock Cycle = 17: Q5 = [         -2         -1         -2         -6         -1          4          0          2]
+Clock Cycle = 18: Q6 = [          5         -7         -1          3          2          1         -7          6]
+Clock Cycle = 19: Q7 = [          5         -8         -3          6          0         -2          6         -1]
+##### Kmem writing #####
+Clock Cycle = 21: K0 = [         -6          3         -2         -1         -5          1          0          7]
+Clock Cycle = 22: K1 = [          0         -5         -8          0          6          0         -5         -7]
+Clock Cycle = 23: K2 = [          4         -7         -6          3          7          7          6          6]
+Clock Cycle = 24: K3 = [         -3          0          0         -7          6          3          4          7]
+Clock Cycle = 25: K4 = [          6         -3          4         -7         -4         -3         -2         -5]
+Clock Cycle = 26: K5 = [          0         -7          3          3         -2          6          4         -1]
+Clock Cycle = 27: K6 = [          7         -5          2          1          3          6          1         -5]
+Clock Cycle = 28: K7 = [          3         -1          6          3         -6         -2          1         -4]
+##### K data loading to processor #####
+##### execute #####
+##### move ofifo to pmem #####
+##### move ofifo to pmem #####
+Simulation complete via $finish(1) at time 111 NS + 0
+./netlist/verilog/fullchip_tb.v:414   #10 $finish;
+xcelium> scope -set fullchip_tb.core_instance.mac_array_instance.col_idx_8__mac_col_inst
+xcelium> probe -create -shm fullchip_tb.core_instance.mac_array_instance.col_idx_8__mac_col_inst.n fullchip_tb.core_instance.mac_array_instance.col_idx_8__mac_col_inst.key_q
+Created probe 4
+xcelium> reset
+Loaded snapshot worklib.fullchip_tb:v
+xcelium> scope -set fullchip_tb
+xcelium> run
+##### Q data txt reading #####
+Q0 = [         -5          7         -5         -7         -1          6          1          2] Hex: fb07fbf9ff060102 
+Q1 = [         -4          7         -2         -5         -3          4          1         -3] Hex: fc07fefbfd0401fd 
+Q2 = [         -4         -1         -4         -4          0          5          2          0] Hex: fcfffcfc00050200 
+Q3 = [         -3          3          6         -4          6          2          1          6] Hex: fd0306fc06020106 
+Q4 = [         -8          5         -2          6          2          1         -3          4] Hex: f805fe060201fd04 
+Q5 = [         -2         -1         -2         -6         -1          4          0          2] Hex: fefffefaff040002 
+Q6 = [          5         -7         -1          3          2          1         -7          6] Hex: 05f9ff030201f906 
+Q7 = [          5         -8         -3          6          0         -2          6         -1] Hex: 05f8fd0600fe06ff 
+##### K data txt reading #####
+K0 = [         -6          3         -2         -1         -5          1          0          7] Hex: fa03fefffb010007 
+K1 = [          0         -5         -8          0          6          0         -5         -7] Hex: 00fbf8000600fbf9 
+K2 = [          4         -7         -6          3          7          7          6          6] Hex: 04f9fa0307070606 
+K3 = [         -3          0          0         -7          6          3          4          7] Hex: fd0000f906030407 
+K4 = [          6         -3          4         -7         -4         -3         -2         -5] Hex: 06fd04f9fcfdfefb 
+K5 = [          0         -7          3          3         -2          6          4         -1] Hex: 00f90303fe0604ff 
+K6 = [          7         -5          2          1          3          6          1         -5] Hex: 07fb0201030601fb 
+K7 = [          3         -1          6          3         -6         -2          1         -4] Hex: 03ff0603fafe01fc 
+##### Estimated multiplication result #####
+prd @cycle 0: Q0*K[n] = [         93         -20          -7          94         -48         -45         -63         -86 ]
+prd @cycle 1: Q1*K[n] = [         52         -21         -73          24          -5         -33         -41         -23 ]
+prd @cycle 2: Q2*K[n] = [         38          27          50          63         -28          21          -3         -55 ]
+prd @cycle 3: Q3*K[n] = [         33         -74          17         125         -37         -17         -27         -51 ]
+prd @cycle 4: Q4*K[n] = [         80         -10         -10          13        -138         -37         -90         -56 ]
+prd @cycle 5: Q5*K[n] = [         42           1          26          68           7           7          -8         -45 ]
+prd @cycle 6: Q6*K[n] = [        -19          48          99          -7          -1          23          46         -20 ]
+prd @cycle 7: Q7*K[n] = [        -63          41         128         -46          -1          78          74          37 ]
+##### Qmem writing  #####
+Clock Cycle = 12: Q0 = [         -5          7         -5         -7         -1          6          1          2]
+Clock Cycle = 13: Q1 = [         -4          7         -2         -5         -3          4          1         -3]
+Clock Cycle = 14: Q2 = [         -4         -1         -4         -4          0          5          2          0]
+Clock Cycle = 15: Q3 = [         -3          3          6         -4          6          2          1          6]
+Clock Cycle = 16: Q4 = [         -8          5         -2          6          2          1         -3          4]
+Clock Cycle = 17: Q5 = [         -2         -1         -2         -6         -1          4          0          2]
+Clock Cycle = 18: Q6 = [          5         -7         -1          3          2          1         -7          6]
+Clock Cycle = 19: Q7 = [          5         -8         -3          6          0         -2          6         -1]
+##### Kmem writing #####
+Clock Cycle = 21: K0 = [         -6          3         -2         -1         -5          1          0          7]
+Clock Cycle = 22: K1 = [          0         -5         -8          0          6          0         -5         -7]
+Clock Cycle = 23: K2 = [          4         -7         -6          3          7          7          6          6]
+Clock Cycle = 24: K3 = [         -3          0          0         -7          6          3          4          7]
+Clock Cycle = 25: K4 = [          6         -3          4         -7         -4         -3         -2         -5]
+Clock Cycle = 26: K5 = [          0         -7          3          3         -2          6          4         -1]
+Clock Cycle = 27: K6 = [          7         -5          2          1          3          6          1         -5]
+Clock Cycle = 28: K7 = [          3         -1          6          3         -6         -2          1         -4]
+##### K data loading to processor #####
+##### execute #####
+##### move ofifo to pmem #####
+##### move ofifo to pmem #####
+Simulation complete via $finish(1) at time 111 NS + 0
+./netlist/verilog/fullchip_tb.v:414   #10 $finish;
+xcelium> ^C
+xcelium> 
