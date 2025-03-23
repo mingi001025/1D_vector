@@ -43,6 +43,15 @@ wire  kmem_wr;
 wire  pmem_rd;
 wire  pmem_wr; 
 
+wire out_fifo_empty;
+wire div;
+wire acc;
+wire fifo_valid;
+wire fifo_out_wr;
+reg out_rd;
+reg pmem_rd_q;
+
+
 assign get_sum = inst[19];
 assign div = inst[18];
 assign acc = inst[17];
@@ -121,10 +130,6 @@ sfp_row #(.col(col), .bw(bw), .bw_psum(bw_psum)) sfp_instance (
 	.reset(reset),
 	.fifo_out_wr(fifo_out_wr)
 );
-
-  wire out_fifo_empty;
-  reg out_rd;
-  reg pmem_rd_q;
 
   fifo_depth8 #(.bw(bw_psum*col)) fifo_out_inst (
      .rd_clk(clk), 
