@@ -27,7 +27,7 @@ integer  weight [col*pr-1:0];
 
 integer  K[col-1:0][2*pr-1:0];
 integer  Q[total_cycle-1:0][pr-1:0];
-integer  result[total_cycle-1:0][2*col-1:0];
+reg [bw_psum-1:0]  result[total_cycle-1:0][2*col-1:0];
 integer  rtlResult[total_cycle-1:0][col-1:0];
 integer  sum[total_cycle-1:0];
 
