@@ -33,13 +33,10 @@ module sfp_row (clk, acc, div, fifo_ext_rd, sum_in, sum_out, sfp_in, sfp_out, re
   reg [bw_psum+3:0] sum_q;
   wire [bw_psum+3:0] sum_ext;
   wire [bw_psum+3:0] sum_div;
+  reg [3:0] cntr;
 
   reg fifo_wr;
-  reg [3:0] cntr;
-  wire fifo_out_wr;
-  assign fifo_out_wr = (cntr == 8);
-
-  
+  assign fifo_out_wr = (cntr==8); 
   wire div_pulse;
   assign div_pulse = div_q & !div;
   always @(posedge clk) begin
