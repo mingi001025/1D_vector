@@ -445,9 +445,13 @@ end
 $display("##### output from chip #####");
 
 #0.5 clk = 1'b0;  
-pmem_rd = 1; pmem_add = 0; div = 0;
+pmem_add = 0; div = 0;
 #0.5 clk = 1'b1; #0.5 clk = 1'b0;
+pmem_rd = 1; #0.5 clk = 1'b1; #0.5 clk = 1'b0;
+pmem_add = pmem_add + 1;
+//$display("cycle 0: %40h", rtl_out);
 #0.5 clk = 1'b1; #0.5 clk = 1'b0;
+<<<<<<< Updated upstream
 for (t=0; t<total_cycle; t=t+1) begin
   #0.5 clk = 1'b1; #0.5 clk = 1'b0;
   if (t>0) begin
@@ -478,6 +482,31 @@ fifo_out_wr = 0;
 #0.5 clk = 1'b1;  #0.5 clk = 1'b0;
   $display("cycle 7: %40h", rtl_out);
 fifo_out_rd = 0;
+=======
+pmem_add = pmem_add + 1;
+$display("cycle 0: %40h", rtl_out);
+#0.5 clk = 1'b1; #0.5 clk = 1'b0;
+pmem_add = pmem_add + 1;
+$display("cycle 1: %40h", rtl_out);
+#0.5 clk = 1'b1; #0.5 clk = 1'b0;
+pmem_add = pmem_add + 1;
+$display("cycle 2: %40h", rtl_out);
+#0.5 clk = 1'b1; #0.5 clk = 1'b0;
+pmem_add = pmem_add + 1;
+$display("cycle 3: %40h", rtl_out);
+#0.5 clk = 1'b1; #0.5 clk = 1'b0;
+pmem_add = pmem_add + 1;
+$display("cycle 4: %40h", rtl_out);
+#0.5 clk = 1'b1; #0.5 clk = 1'b0;
+pmem_add = pmem_add + 1;
+$display("cycle 5: %40h", rtl_out);
+#0.5 clk = 1'b1; #0.5 clk = 1'b0;
+$display("cycle 6: %40h", rtl_out);
+pmem_rd = 0;
+#0.5 clk = 1'b1; #0.5 clk = 1'b0;
+$display("cycle 7: %40h", rtl_out);
+
+>>>>>>> Stashed changes
 #0.5 clk = 1'b1;  #0.5 clk = 1'b0;
 pmem_add = 0; reset = 1;
 #0.5 clk = 1'b1;  #0.5 clk = 1'b0;
@@ -836,9 +865,9 @@ $display("##### move ofifo to pmem #####");
 $display("##### output from chip #####");
 
 #0.5 clk = 1'b0;  
-pmem_rd = 1; pmem_add = 0; div = 0;
+pmem_add = 0; div = 0;
 #0.5 clk = 1'b1; #0.5 clk = 1'b0;
-#0.5 clk = 1'b1; #0.5 clk = 1'b0;
+<<<<<<< Updated upstream
 for (t=0; t<total_cycle; t=t+1) begin
   #0.5 clk = 1'b1; #0.5 clk = 1'b0;
   if (t>0) begin
@@ -846,6 +875,31 @@ for (t=0; t<total_cycle; t=t+1) begin
   end
   pmem_add = pmem_add + 1;
 end
+=======
+pmem_rd = 1; #0.5 clk = 1'b1; #0.5 clk = 1'b0;
+pmem_add = pmem_add + 1;
+$display("cycle 0: %40h", rtl_out);
+#0.5 clk = 1'b1; #0.5 clk = 1'b0;
+pmem_add = pmem_add + 1;
+$display("cycle 1: %40h", rtl_out);
+#0.5 clk = 1'b1; #0.5 clk = 1'b0;
+pmem_add = pmem_add + 1;
+$display("cycle 2: %40h", rtl_out);
+#0.5 clk = 1'b1; #0.5 clk = 1'b0;
+pmem_add = pmem_add + 1;
+$display("cycle 3: %40h", rtl_out);
+#0.5 clk = 1'b1; #0.5 clk = 1'b0;
+pmem_add = pmem_add + 1;
+$display("cycle 4: %40h", rtl_out);
+#0.5 clk = 1'b1; #0.5 clk = 1'b0;
+pmem_add = pmem_add + 1;
+$display("cycle 5: %40h", rtl_out);
+#0.5 clk = 1'b1; #0.5 clk = 1'b0;
+pmem_add = pmem_add + 1;
+$display("cycle 6: %40h", rtl_out);
+#0.5 clk = 1'b1; #0.5 clk = 1'b0;
+$display("cycle 7: %40h", rtl_out);
+>>>>>>> Stashed changes
 pmem_rd = 0;
 pmem_wr = 0;
 #0.5 clk = 1'b1;  #0.5 clk = 1'b0;

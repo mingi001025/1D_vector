@@ -42,9 +42,7 @@ core #(.bw(bw), .bw_psum(bw_psum), .col(col), .pr(pr)) core_instance1 (
       .sum_out(sum1),
       .out(out1),
       .valid(valid1)
-      
 );
-
 
 
 

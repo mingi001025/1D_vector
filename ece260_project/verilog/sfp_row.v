@@ -1,6 +1,6 @@
 // Created by prof. Mingu Kang @VVIP Lab in UCSD ECE department
 // Please do not spread this code without permission 
-module sfp_row (clk, acc, div, fifo_ext_rd, sum_in, sum_out, sfp_in, sfp_out);
+module sfp_row (clk, acc, div, fifo_ext_rd, sum_in, sum_out, sfp_in, sfp_out, reset, fifo_out_wr);
 
   parameter col = 8;
   parameter bw = 8;
@@ -10,10 +10,12 @@ module sfp_row (clk, acc, div, fifo_ext_rd, sum_in, sum_out, sfp_in, sfp_out);
   input  clk, div, acc, fifo_ext_rd;
   input  [bw_psum+3:0] sum_in; //24
   input  [col*bw_psum-1:0] sfp_in;
+  input reset;
   wire  [bw_psum+3:0] sum_in_valid;
   wire  [col*bw_psum-1:0] abs;
   reg    div_q;
   output [col*bw_psum-1:0] sfp_out;
+  output fifo_out_wr;
   output [bw_psum+3:0] sum_out;
   wire [bw_psum+3:0] sum_this_core;
   wire signed [bw_psum-1:0] sum_2core;
@@ -31,8 +33,27 @@ module sfp_row (clk, acc, div, fifo_ext_rd, sum_in, sum_out, sfp_in, sfp_out);
   reg [bw_psum+3:0] sum_q;
   wire [bw_psum+3:0] sum_ext;
   wire [bw_psum+3:0] sum_div;
+
   reg fifo_wr;
+  reg [3:0] cntr;
+  wire fifo_out_wr;
+  assign fifo_out_wr = (cntr == 8);
+
   
+  wire div_pulse;
+  assign div_pulse = div_q & !div;
+  always @(posedge clk) begin
+     if(reset) begin
+	     cntr <= 0;
+     end
+     else begin
+	    
+//	       div_q <= div;
+	       if(div_pulse)
+	       cntr <= cntr + 1;
+	     
+     end
+  end
 
   // assign sfp_out[bw_psum*1-1 : bw_psum*0] = (sfp_out_0 >> 8);
   // assign sfp_out[bw_psum*2-1 : bw_psum*1] = (sfp_out_1 >> 8);
@@ -66,7 +87,7 @@ module sfp_row (clk, acc, div, fifo_ext_rd, sum_in, sum_out, sfp_in, sfp_out);
   assign abs[bw_psum*8-1 : bw_psum*7] = (sfp_in[bw_psum*8-1]) ?  (~sfp_in[bw_psum*8-1 : bw_psum*7] + 1)  :  sfp_in[bw_psum*8-1 : bw_psum*7];
 
 
-  fifo_depth16 #(.bw(bw_psum+4)) fifo_inst_int (
+  fifo_depth8 #(.bw(bw_psum+4)) fifo_inst_int (
      .rd_clk(clk), 
      .wr_clk(clk), 
      .in(sum_q),
@@ -76,7 +97,7 @@ module sfp_row (clk, acc, div, fifo_ext_rd, sum_in, sum_out, sfp_in, sfp_out);
      .reset(reset)
   );
 
-  fifo_depth16 #(.bw(bw_psum+4)) fifo_inst_ext (
+  fifo_depth8 #(.bw(bw_psum+4)) fifo_inst_ext (
      .rd_clk(clk), 
      .wr_clk(clk), 
      .in(sum_in_valid),

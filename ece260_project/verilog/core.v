@@ -1,6 +1,6 @@
 // Created by prof. Mingu Kang @VVIP Lab in UCSD ECE department
 // Please do not spread this code without permission 
-module core (clk, sum_in, sum_out, mem_in, out, inst, reset);
+module core (clk, sum_in, sum_out, mem_in, out, inst, reset, valid);
 
 parameter col = 8;
 parameter bw = 8;
@@ -15,7 +15,10 @@ input  [pr*bw-1:0] mem_in;
 input  clk;
 input  [19:0] inst; 
 input  reset;
+output valid ;
 
+assign valid = out_rd;
+wire [bw_psum*col-1:0] out_sync;
 
 wire  [pr*bw-1:0] mac_in;
 wire  [pr*bw-1:0] kmem_out;
@@ -57,7 +60,7 @@ assign pmem_wr = inst[0];
 assign mac_in  = inst[6] ? kmem_out : qmem_out;
 assign pmem_in = (div||acc) ? sfp_out : fifo_out;
 assign sfp_in  = pmem_out;
-assign out = pmem_out;
+assign out = out_sync;
 assign sum_out = core_sum;
 
 mac_array #(.bw(bw), .bw_psum(bw_psum), .col(col), .pr(pr)) mac_array_instance (
@@ -114,10 +117,35 @@ sfp_row #(.col(col), .bw(bw), .bw_psum(bw_psum)) sfp_instance (
 	.sum_in(sum_in),
 	.sum_out(core_sum),
 	.sfp_in(sfp_in),
-	.sfp_out(sfp_out)
+	.sfp_out(sfp_out),
+	.reset(reset),
+	.fifo_out_wr(fifo_out_wr)
 );
 
+  wire out_fifo_empty;
+  reg out_rd;
+  reg pmem_rd_q;
 
+  fifo_depth8 #(.bw(bw_psum*col)) fifo_out_inst (
+     .rd_clk(clk), 
+     .wr_clk(clk), 
+     .in(pmem_out),
+     .out(out_sync), 
+     .rd(out_rd), 
+     .wr(fifo_out_wr&&pmem_rd_q), 
+     .reset(reset),
+    
+     .o_empty(out_fifo_empty)
+  );
+
+  always @(posedge clk) begin
+	  if(reset) 
+		  out_rd <= 0;
+	  else begin
+		  out_rd <= fifo_out_wr && pmem_rd_q;
+		  pmem_rd_q <= pmem_rd;
+	  end
+  end
 
 
 endmodule
