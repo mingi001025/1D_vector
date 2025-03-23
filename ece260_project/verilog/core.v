@@ -17,6 +17,14 @@ input  [19:0] inst;
 input  reset;
 output valid ;
 
+wire out_fifo_empty;
+wire div;
+wire acc;
+wire fifo_valid;
+wire fifo_out_wr;
+reg out_rd;
+reg pmem_rd_q;
+	
 assign valid = out_rd;
 wire [bw_psum*col-1:0] out_sync;
 
@@ -42,15 +50,6 @@ wire  kmem_rd;
 wire  kmem_wr; 
 wire  pmem_rd;
 wire  pmem_wr; 
-
-wire out_fifo_empty;
-wire div;
-wire acc;
-wire fifo_valid;
-wire fifo_out_wr;
-reg out_rd;
-reg pmem_rd_q;
-
 
 assign get_sum = inst[19];
 assign div = inst[18];
