@@ -448,28 +448,155 @@ pmem_add = pmem_add + 1;
 //$display("cycle 0: %40h", rtl_out);
 #0.5 clk = 1'b1; #0.5 clk = 1'b0;
 pmem_add = pmem_add + 1;
-$display("cycle 0: %40h", rtl_out);
+$write("cycle 0:");
+$write(" %d", rtl_out[bw_psum*(16)-1:bw_psum*15]);
+$write(" %d", rtl_out[bw_psum*(15)-1:bw_psum*14]);
+$write(" %d", rtl_out[bw_psum*(14)-1:bw_psum*13]);
+$write(" %d", rtl_out[bw_psum*(13)-1:bw_psum*12]);
+$write(" %d", rtl_out[bw_psum*(12)-1:bw_psum*11]);
+$write(" %d", rtl_out[bw_psum*(11)-1:bw_psum*10]);
+$write(" %d", rtl_out[bw_psum*(10)-1:bw_psum*9]);
+$write(" %d", rtl_out[bw_psum*(9)-1:bw_psum*8]);
+$write(" %d", rtl_out[bw_psum*(8)-1:bw_psum*7]);
+$write(" %d", rtl_out[bw_psum*(7)-1:bw_psum*6]);
+$write(" %d", rtl_out[bw_psum*(6)-1:bw_psum*5]);
+$write(" %d", rtl_out[bw_psum*(5)-1:bw_psum*4]);
+$write(" %d", rtl_out[bw_psum*(4)-1:bw_psum*3]);
+$write(" %d", rtl_out[bw_psum*(3)-1:bw_psum*2]);
+$write(" %d", rtl_out[bw_psum*(2)-1:bw_psum*1]);
+$display(" %d", rtl_out[bw_psum*(1)-1:0]);
 #0.5 clk = 1'b1; #0.5 clk = 1'b0;
 pmem_add = pmem_add + 1;
-$display("cycle 1: %40h", rtl_out);
+$write("cycle 1:");
+$write(" %d", rtl_out[bw_psum*(16)-1:bw_psum*15]);
+$write(" %d", rtl_out[bw_psum*(15)-1:bw_psum*14]);
+$write(" %d", rtl_out[bw_psum*(14)-1:bw_psum*13]);
+$write(" %d", rtl_out[bw_psum*(13)-1:bw_psum*12]);
+$write(" %d", rtl_out[bw_psum*(12)-1:bw_psum*11]);
+$write(" %d", rtl_out[bw_psum*(11)-1:bw_psum*10]);
+$write(" %d", rtl_out[bw_psum*(10)-1:bw_psum*9]);
+$write(" %d", rtl_out[bw_psum*(9)-1:bw_psum*8]);
+$write(" %d", rtl_out[bw_psum*(8)-1:bw_psum*7]);
+$write(" %d", rtl_out[bw_psum*(7)-1:bw_psum*6]);
+$write(" %d", rtl_out[bw_psum*(6)-1:bw_psum*5]);
+$write(" %d", rtl_out[bw_psum*(5)-1:bw_psum*4]);
+$write(" %d", rtl_out[bw_psum*(4)-1:bw_psum*3]);
+$write(" %d", rtl_out[bw_psum*(3)-1:bw_psum*2]);
+$write(" %d", rtl_out[bw_psum*(2)-1:bw_psum*1]);
+$display(" %d", rtl_out[bw_psum*(1)-1:0]);
 #0.5 clk = 1'b1; #0.5 clk = 1'b0;
 pmem_add = pmem_add + 1;
-$display("cycle 2: %40h", rtl_out);
+$write("cycle 2:");
+$write(" %d", rtl_out[bw_psum*(16)-1:bw_psum*15]);
+$write(" %d", rtl_out[bw_psum*(15)-1:bw_psum*14]);
+$write(" %d", rtl_out[bw_psum*(14)-1:bw_psum*13]);
+$write(" %d", rtl_out[bw_psum*(13)-1:bw_psum*12]);
+$write(" %d", rtl_out[bw_psum*(12)-1:bw_psum*11]);
+$write(" %d", rtl_out[bw_psum*(11)-1:bw_psum*10]);
+$write(" %d", rtl_out[bw_psum*(10)-1:bw_psum*9]);
+$write(" %d", rtl_out[bw_psum*(9)-1:bw_psum*8]);
+$write(" %d", rtl_out[bw_psum*(8)-1:bw_psum*7]);
+$write(" %d", rtl_out[bw_psum*(7)-1:bw_psum*6]);
+$write(" %d", rtl_out[bw_psum*(6)-1:bw_psum*5]);
+$write(" %d", rtl_out[bw_psum*(5)-1:bw_psum*4]);
+$write(" %d", rtl_out[bw_psum*(4)-1:bw_psum*3]);
+$write(" %d", rtl_out[bw_psum*(3)-1:bw_psum*2]);
+$write(" %d", rtl_out[bw_psum*(2)-1:bw_psum*1]);
+$display(" %d", rtl_out[bw_psum*(1)-1:0]);
 #0.5 clk = 1'b1; #0.5 clk = 1'b0;
 pmem_add = pmem_add + 1;
-$display("cycle 3: %40h", rtl_out);
+$write("cycle 3:");
+$write(" %d", rtl_out[bw_psum*(16)-1:bw_psum*15]);
+$write(" %d", rtl_out[bw_psum*(15)-1:bw_psum*14]);
+$write(" %d", rtl_out[bw_psum*(14)-1:bw_psum*13]);
+$write(" %d", rtl_out[bw_psum*(13)-1:bw_psum*12]);
+$write(" %d", rtl_out[bw_psum*(12)-1:bw_psum*11]);
+$write(" %d", rtl_out[bw_psum*(11)-1:bw_psum*10]);
+$write(" %d", rtl_out[bw_psum*(10)-1:bw_psum*9]);
+$write(" %d", rtl_out[bw_psum*(9)-1:bw_psum*8]);
+$write(" %d", rtl_out[bw_psum*(8)-1:bw_psum*7]);
+$write(" %d", rtl_out[bw_psum*(7)-1:bw_psum*6]);
+$write(" %d", rtl_out[bw_psum*(6)-1:bw_psum*5]);
+$write(" %d", rtl_out[bw_psum*(5)-1:bw_psum*4]);
+$write(" %d", rtl_out[bw_psum*(4)-1:bw_psum*3]);
+$write(" %d", rtl_out[bw_psum*(3)-1:bw_psum*2]);
+$write(" %d", rtl_out[bw_psum*(2)-1:bw_psum*1]);
+$display(" %d", rtl_out[bw_psum*(1)-1:0]);
 #0.5 clk = 1'b1; #0.5 clk = 1'b0;
 pmem_add = pmem_add + 1;
-$display("cycle 4: %40h", rtl_out);
+$write("cycle 4:");
+$write(" %d", rtl_out[bw_psum*(16)-1:bw_psum*15]);
+$write(" %d", rtl_out[bw_psum*(15)-1:bw_psum*14]);
+$write(" %d", rtl_out[bw_psum*(14)-1:bw_psum*13]);
+$write(" %d", rtl_out[bw_psum*(13)-1:bw_psum*12]);
+$write(" %d", rtl_out[bw_psum*(12)-1:bw_psum*11]);
+$write(" %d", rtl_out[bw_psum*(11)-1:bw_psum*10]);
+$write(" %d", rtl_out[bw_psum*(10)-1:bw_psum*9]);
+$write(" %d", rtl_out[bw_psum*(9)-1:bw_psum*8]);
+$write(" %d", rtl_out[bw_psum*(8)-1:bw_psum*7]);
+$write(" %d", rtl_out[bw_psum*(7)-1:bw_psum*6]);
+$write(" %d", rtl_out[bw_psum*(6)-1:bw_psum*5]);
+$write(" %d", rtl_out[bw_psum*(5)-1:bw_psum*4]);
+$write(" %d", rtl_out[bw_psum*(4)-1:bw_psum*3]);
+$write(" %d", rtl_out[bw_psum*(3)-1:bw_psum*2]);
+$write(" %d", rtl_out[bw_psum*(2)-1:bw_psum*1]);
+$display(" %d", rtl_out[bw_psum*(1)-1:0]);
 #0.5 clk = 1'b1; #0.5 clk = 1'b0;
 pmem_add = pmem_add + 1;
-$display("cycle 5: %40h", rtl_out);
+$write("cycle 5:");
+$write(" %d", rtl_out[bw_psum*(16)-1:bw_psum*15]);
+$write(" %d", rtl_out[bw_psum*(15)-1:bw_psum*14]);
+$write(" %d", rtl_out[bw_psum*(14)-1:bw_psum*13]);
+$write(" %d", rtl_out[bw_psum*(13)-1:bw_psum*12]);
+$write(" %d", rtl_out[bw_psum*(12)-1:bw_psum*11]);
+$write(" %d", rtl_out[bw_psum*(11)-1:bw_psum*10]);
+$write(" %d", rtl_out[bw_psum*(10)-1:bw_psum*9]);
+$write(" %d", rtl_out[bw_psum*(9)-1:bw_psum*8]);
+$write(" %d", rtl_out[bw_psum*(8)-1:bw_psum*7]);
+$write(" %d", rtl_out[bw_psum*(7)-1:bw_psum*6]);
+$write(" %d", rtl_out[bw_psum*(6)-1:bw_psum*5]);
+$write(" %d", rtl_out[bw_psum*(5)-1:bw_psum*4]);
+$write(" %d", rtl_out[bw_psum*(4)-1:bw_psum*3]);
+$write(" %d", rtl_out[bw_psum*(3)-1:bw_psum*2]);
+$write(" %d", rtl_out[bw_psum*(2)-1:bw_psum*1]);
+$display(" %d", rtl_out[bw_psum*(1)-1:0]);
 #0.5 clk = 1'b1; #0.5 clk = 1'b0;
-$display("cycle 6: %40h", rtl_out);
+$write("cycle 6:");
+$write(" %d", rtl_out[bw_psum*(16)-1:bw_psum*15]);
+$write(" %d", rtl_out[bw_psum*(15)-1:bw_psum*14]);
+$write(" %d", rtl_out[bw_psum*(14)-1:bw_psum*13]);
+$write(" %d", rtl_out[bw_psum*(13)-1:bw_psum*12]);
+$write(" %d", rtl_out[bw_psum*(12)-1:bw_psum*11]);
+$write(" %d", rtl_out[bw_psum*(11)-1:bw_psum*10]);
+$write(" %d", rtl_out[bw_psum*(10)-1:bw_psum*9]);
+$write(" %d", rtl_out[bw_psum*(9)-1:bw_psum*8]);
+$write(" %d", rtl_out[bw_psum*(8)-1:bw_psum*7]);
+$write(" %d", rtl_out[bw_psum*(7)-1:bw_psum*6]);
+$write(" %d", rtl_out[bw_psum*(6)-1:bw_psum*5]);
+$write(" %d", rtl_out[bw_psum*(5)-1:bw_psum*4]);
+$write(" %d", rtl_out[bw_psum*(4)-1:bw_psum*3]);
+$write(" %d", rtl_out[bw_psum*(3)-1:bw_psum*2]);
+$write(" %d", rtl_out[bw_psum*(2)-1:bw_psum*1]);
+$display(" %d", rtl_out[bw_psum*(1)-1:0]);
 pmem_rd = 0;
 #0.5 clk = 1'b1;  #0.5 clk = 1'b0;
-$display("cycle 7: %40h", rtl_out);
-
+$write("cycle 7:");
+$write(" %d", rtl_out[bw_psum*(16)-1:bw_psum*15]);
+$write(" %d", rtl_out[bw_psum*(15)-1:bw_psum*14]);
+$write(" %d", rtl_out[bw_psum*(14)-1:bw_psum*13]);
+$write(" %d", rtl_out[bw_psum*(13)-1:bw_psum*12]);
+$write(" %d", rtl_out[bw_psum*(12)-1:bw_psum*11]);
+$write(" %d", rtl_out[bw_psum*(11)-1:bw_psum*10]);
+$write(" %d", rtl_out[bw_psum*(10)-1:bw_psum*9]);
+$write(" %d", rtl_out[bw_psum*(9)-1:bw_psum*8]);
+$write(" %d", rtl_out[bw_psum*(8)-1:bw_psum*7]);
+$write(" %d", rtl_out[bw_psum*(7)-1:bw_psum*6]);
+$write(" %d", rtl_out[bw_psum*(6)-1:bw_psum*5]);
+$write(" %d", rtl_out[bw_psum*(5)-1:bw_psum*4]);
+$write(" %d", rtl_out[bw_psum*(4)-1:bw_psum*3]);
+$write(" %d", rtl_out[bw_psum*(3)-1:bw_psum*2]);
+$write(" %d", rtl_out[bw_psum*(2)-1:bw_psum*1]);
+$display(" %d", rtl_out[bw_psum*(1)-1:0]);
 pmem_add = 0; reset = 1;
 #0.5 clk = 1'b1;  #0.5 clk = 1'b0;
 reset = 0;
@@ -533,7 +660,7 @@ $display("##### Estimated multiplication result #####");
      est_out13 = ((sum_temp0+sum_temp1)!=0)?((result[t][13]<<8) / (sum_temp0+sum_temp1)):({(bw_psum+8){1'b0}});
      est_out14 = ((sum_temp0+sum_temp1)!=0)?((result[t][14]<<8) / (sum_temp0+sum_temp1)):({(bw_psum+8){1'b0}});
      est_out15 = ((sum_temp0+sum_temp1)!=0)?((result[t][15]<<8) / (sum_temp0+sum_temp1)):({(bw_psum+8){1'b0}});
-     $display("normalized: %5h %5h %5h %5h %5h %5h %5h %5h %5h %5h %5h %5h %5h %5h %5h %5h", est_out0, est_out1, est_out2, est_out3, est_out4, est_out5, est_out6, est_out7, est_out8, est_out9, est_out10, est_out11, est_out12, est_out13, est_out14, est_out15);//after normalization
+     $display("normalized: %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d", est_out0, est_out1, est_out2, est_out3, est_out4, est_out5, est_out6, est_out7, est_out8, est_out9, est_out10, est_out11, est_out12, est_out13, est_out14, est_out15);//after normalization
   end
 
 
@@ -760,16 +887,50 @@ $display("##### K data loading to processor #####");
   load = 0; 
   #0.5 clk = 1'b1;  
 
-///////////////////////////////////////////
 
  for (q=0; q<10; q=q+1) begin
     #0.5 clk = 1'b0;   
     #0.5 clk = 1'b1;   
  end
 
+////////////////////////////////////////////////////////////////
 
+//////////////for div -> div_pulse -> fifo_out_wr -> to shift rd ptr for
+//output from chip:
 
+#0.5 clk = 1'b0;  
 
+for (q=0; q<total_cycle; q=q+1) begin
+
+  #0.5 clk = 1'b1;  #0.5 clk = 1'b0;//pmem_shift, fifo_ext_rd
+  div = 0;
+  pmem_rd = 1;
+  pmem_wr = 0;
+  fifo_ext_rd = 0;
+  
+  #0.5 clk = 1'b1; #0.5 clk = 1'b0; //pmem_rd
+  acc = 1;
+
+  #0.5 clk = 1'b1; #0.5 clk = 1'b0; //pmem_rd, acc
+  acc = 0;
+
+  #0.5 clk = 1'b1; #0.5 clk = 1'b0; //pmem_rd
+  div = 1;
+
+  #0.5 clk = 1'b1; #0.5 clk = 1'b0;//pmem_rd, div
+  pmem_rd = 0;
+  pmem_wr = 1;
+  
+  #0.5 clk = 1'b1; #0.5 clk = 1'b0; //pmem_wr
+  pmem_wr = 0;
+  pmem_add = pmem_add + 1;
+  fifo_ext_rd = 1;//fifo_ext_rd
+  
+
+end
+
+pmem_add = 0;
+div = 0;
 
 ///// execution  /////
 $display("##### execute #####");
@@ -799,8 +960,6 @@ $display("##### execute #####");
  end
 
 
-
-
 ////////////// output fifo rd and wb to psum mem ///////////////////
 
 $display("##### move ofifo to pmem #####");
@@ -821,38 +980,170 @@ $display("##### move ofifo to pmem #####");
   pmem_wr = 0; pmem_add = 0; ofifo_rd = 0;
   #0.5 clk = 1'b1;  
 
-///////////////////////////////////////////
+/////////////////////////////////////////////////////////////////
 
 $display("##### output from chip #####");
 
 #0.5 clk = 1'b0;  
-pmem_rd = 1; pmem_add = 0; div = 0;
+pmem_add = 0; div = 0;
 #0.5 clk = 1'b1; #0.5 clk = 1'b0;
+pmem_rd = 1; #0.5 clk = 1'b1; #0.5 clk = 1'b0;
+pmem_add = pmem_add + 1;
+//$display("cycle 0: %40h", rtl_out);
 #0.5 clk = 1'b1; #0.5 clk = 1'b0;
 pmem_add = pmem_add + 1;
-$display("cycle 0: %40h", rtl_out);
+$write("cycle 0:");
+$write(" %d", $signed(rtl_out[bw_psum*(16)-1:bw_psum*15]));
+$write(" %d", $signed(rtl_out[bw_psum*(15)-1:bw_psum*14]));
+$write(" %d", $signed(rtl_out[bw_psum*(14)-1:bw_psum*13]));
+$write(" %d", $signed(rtl_out[bw_psum*(13)-1:bw_psum*12]));
+$write(" %d", $signed(rtl_out[bw_psum*(12)-1:bw_psum*11]));
+$write(" %d", $signed(rtl_out[bw_psum*(11)-1:bw_psum*10]));
+$write(" %d", $signed(rtl_out[bw_psum*(10)-1:bw_psum*9]));
+$write(" %d", $signed(rtl_out[bw_psum*(9)-1:bw_psum*8]));
+$write(" %d", $signed(rtl_out[bw_psum*(8)-1:bw_psum*7]));
+$write(" %d", $signed(rtl_out[bw_psum*(7)-1:bw_psum*6]));
+$write(" %d", $signed(rtl_out[bw_psum*(6)-1:bw_psum*5]));
+$write(" %d", $signed(rtl_out[bw_psum*(5)-1:bw_psum*4]));
+$write(" %d", $signed(rtl_out[bw_psum*(4)-1:bw_psum*3]));
+$write(" %d", $signed(rtl_out[bw_psum*(3)-1:bw_psum*2]));
+$write(" %d", $signed(rtl_out[bw_psum*(2)-1:bw_psum*1]));
+$display(" %d", $signed(rtl_out[bw_psum*(1)-1:0]));
 #0.5 clk = 1'b1; #0.5 clk = 1'b0;
 pmem_add = pmem_add + 1;
-$display("cycle 1: %40h", rtl_out);
+$write("cycle 1:");
+$write(" %d", $signed(rtl_out[bw_psum*(16)-1:bw_psum*15]));
+$write(" %d", $signed(rtl_out[bw_psum*(15)-1:bw_psum*14]));
+$write(" %d", $signed(rtl_out[bw_psum*(14)-1:bw_psum*13]));
+$write(" %d", $signed(rtl_out[bw_psum*(13)-1:bw_psum*12]));
+$write(" %d", $signed(rtl_out[bw_psum*(12)-1:bw_psum*11]));
+$write(" %d", $signed(rtl_out[bw_psum*(11)-1:bw_psum*10]));
+$write(" %d", $signed(rtl_out[bw_psum*(10)-1:bw_psum*9]));
+$write(" %d", $signed(rtl_out[bw_psum*(9)-1:bw_psum*8]));
+$write(" %d", $signed(rtl_out[bw_psum*(8)-1:bw_psum*7]));
+$write(" %d", $signed(rtl_out[bw_psum*(7)-1:bw_psum*6]));
+$write(" %d", $signed(rtl_out[bw_psum*(6)-1:bw_psum*5]));
+$write(" %d", $signed(rtl_out[bw_psum*(5)-1:bw_psum*4]));
+$write(" %d", $signed(rtl_out[bw_psum*(4)-1:bw_psum*3]));
+$write(" %d", $signed(rtl_out[bw_psum*(3)-1:bw_psum*2]));
+$write(" %d", $signed(rtl_out[bw_psum*(2)-1:bw_psum*1]));
+$display(" %d", $signed(rtl_out[bw_psum*(1)-1:0]));
 #0.5 clk = 1'b1; #0.5 clk = 1'b0;
 pmem_add = pmem_add + 1;
-$display("cycle 2: %40h", rtl_out);
+$write("cycle 2:");
+$write(" %d", $signed(rtl_out[bw_psum*(16)-1:bw_psum*15]));
+$write(" %d", $signed(rtl_out[bw_psum*(15)-1:bw_psum*14]));
+$write(" %d", $signed(rtl_out[bw_psum*(14)-1:bw_psum*13]));
+$write(" %d", $signed(rtl_out[bw_psum*(13)-1:bw_psum*12]));
+$write(" %d", $signed(rtl_out[bw_psum*(12)-1:bw_psum*11]));
+$write(" %d", $signed(rtl_out[bw_psum*(11)-1:bw_psum*10]));
+$write(" %d", $signed(rtl_out[bw_psum*(10)-1:bw_psum*9]));
+$write(" %d", $signed(rtl_out[bw_psum*(9)-1:bw_psum*8]));
+$write(" %d", $signed(rtl_out[bw_psum*(8)-1:bw_psum*7]));
+$write(" %d", $signed(rtl_out[bw_psum*(7)-1:bw_psum*6]));
+$write(" %d", $signed(rtl_out[bw_psum*(6)-1:bw_psum*5]));
+$write(" %d", $signed(rtl_out[bw_psum*(5)-1:bw_psum*4]));
+$write(" %d", $signed(rtl_out[bw_psum*(4)-1:bw_psum*3]));
+$write(" %d", $signed(rtl_out[bw_psum*(3)-1:bw_psum*2]));
+$write(" %d", $signed(rtl_out[bw_psum*(2)-1:bw_psum*1]));
+$display(" %d", $signed(rtl_out[bw_psum*(1)-1:0]));
 #0.5 clk = 1'b1; #0.5 clk = 1'b0;
 pmem_add = pmem_add + 1;
-$display("cycle 3: %40h", rtl_out);
+$write("cycle 3:");
+$write(" %d", $signed(rtl_out[bw_psum*(16)-1:bw_psum*15]));
+$write(" %d", $signed(rtl_out[bw_psum*(15)-1:bw_psum*14]));
+$write(" %d", $signed(rtl_out[bw_psum*(14)-1:bw_psum*13]));
+$write(" %d", $signed(rtl_out[bw_psum*(13)-1:bw_psum*12]));
+$write(" %d", $signed(rtl_out[bw_psum*(12)-1:bw_psum*11]));
+$write(" %d", $signed(rtl_out[bw_psum*(11)-1:bw_psum*10]));
+$write(" %d", $signed(rtl_out[bw_psum*(10)-1:bw_psum*9]));
+$write(" %d", $signed(rtl_out[bw_psum*(9)-1:bw_psum*8]));
+$write(" %d", $signed(rtl_out[bw_psum*(8)-1:bw_psum*7]));
+$write(" %d", $signed(rtl_out[bw_psum*(7)-1:bw_psum*6]));
+$write(" %d", $signed(rtl_out[bw_psum*(6)-1:bw_psum*5]));
+$write(" %d", $signed(rtl_out[bw_psum*(5)-1:bw_psum*4]));
+$write(" %d", $signed(rtl_out[bw_psum*(4)-1:bw_psum*3]));
+$write(" %d", $signed(rtl_out[bw_psum*(3)-1:bw_psum*2]));
+$write(" %d", $signed(rtl_out[bw_psum*(2)-1:bw_psum*1]));
+$display(" %d", $signed(rtl_out[bw_psum*(1)-1:0]));
 #0.5 clk = 1'b1; #0.5 clk = 1'b0;
 pmem_add = pmem_add + 1;
-$display("cycle 4: %40h", rtl_out);
+$write("cycle 4:");
+$write(" %d", $signed(rtl_out[bw_psum*(16)-1:bw_psum*15]));
+$write(" %d", $signed(rtl_out[bw_psum*(15)-1:bw_psum*14]));
+$write(" %d", $signed(rtl_out[bw_psum*(14)-1:bw_psum*13]));
+$write(" %d", $signed(rtl_out[bw_psum*(13)-1:bw_psum*12]));
+$write(" %d", $signed(rtl_out[bw_psum*(12)-1:bw_psum*11]));
+$write(" %d", $signed(rtl_out[bw_psum*(11)-1:bw_psum*10]));
+$write(" %d", $signed(rtl_out[bw_psum*(10)-1:bw_psum*9]));
+$write(" %d", $signed(rtl_out[bw_psum*(9)-1:bw_psum*8]));
+$write(" %d", $signed(rtl_out[bw_psum*(8)-1:bw_psum*7]));
+$write(" %d", $signed(rtl_out[bw_psum*(7)-1:bw_psum*6]));
+$write(" %d", $signed(rtl_out[bw_psum*(6)-1:bw_psum*5]));
+$write(" %d", $signed(rtl_out[bw_psum*(5)-1:bw_psum*4]));
+$write(" %d", $signed(rtl_out[bw_psum*(4)-1:bw_psum*3]));
+$write(" %d", $signed(rtl_out[bw_psum*(3)-1:bw_psum*2]));
+$write(" %d", $signed(rtl_out[bw_psum*(2)-1:bw_psum*1]));
+$display(" %d", $signed(rtl_out[bw_psum*(1)-1:0]));
 #0.5 clk = 1'b1; #0.5 clk = 1'b0;
 pmem_add = pmem_add + 1;
-$display("cycle 5: %40h", rtl_out);
+$write("cycle 5:");
+$write(" %d", $signed(rtl_out[bw_psum*(16)-1:bw_psum*15]));
+$write(" %d", $signed(rtl_out[bw_psum*(15)-1:bw_psum*14]));
+$write(" %d", $signed(rtl_out[bw_psum*(14)-1:bw_psum*13]));
+$write(" %d", $signed(rtl_out[bw_psum*(13)-1:bw_psum*12]));
+$write(" %d", $signed(rtl_out[bw_psum*(12)-1:bw_psum*11]));
+$write(" %d", $signed(rtl_out[bw_psum*(11)-1:bw_psum*10]));
+$write(" %d", $signed(rtl_out[bw_psum*(10)-1:bw_psum*9]));
+$write(" %d", $signed(rtl_out[bw_psum*(9)-1:bw_psum*8]));
+$write(" %d", $signed(rtl_out[bw_psum*(8)-1:bw_psum*7]));
+$write(" %d", $signed(rtl_out[bw_psum*(7)-1:bw_psum*6]));
+$write(" %d", $signed(rtl_out[bw_psum*(6)-1:bw_psum*5]));
+$write(" %d", $signed(rtl_out[bw_psum*(5)-1:bw_psum*4]));
+$write(" %d", $signed(rtl_out[bw_psum*(4)-1:bw_psum*3]));
+$write(" %d", $signed(rtl_out[bw_psum*(3)-1:bw_psum*2]));
+$write(" %d", $signed(rtl_out[bw_psum*(2)-1:bw_psum*1]));
+$display(" %d", $signed(rtl_out[bw_psum*(1)-1:0]));
 #0.5 clk = 1'b1; #0.5 clk = 1'b0;
-pmem_add = pmem_add + 1;
-$display("cycle 6: %40h", rtl_out);
-#0.5 clk = 1'b1; #0.5 clk = 1'b0;
-$display("cycle 7: %40h", rtl_out);
+$write("cycle 6:");
+$write(" %d", $signed(rtl_out[bw_psum*(16)-1:bw_psum*15]));
+$write(" %d", $signed(rtl_out[bw_psum*(15)-1:bw_psum*14]));
+$write(" %d", $signed(rtl_out[bw_psum*(14)-1:bw_psum*13]));
+$write(" %d", $signed(rtl_out[bw_psum*(13)-1:bw_psum*12]));
+$write(" %d", $signed(rtl_out[bw_psum*(12)-1:bw_psum*11]));
+$write(" %d", $signed(rtl_out[bw_psum*(11)-1:bw_psum*10]));
+$write(" %d", $signed(rtl_out[bw_psum*(10)-1:bw_psum*9]));
+$write(" %d", $signed(rtl_out[bw_psum*(9)-1:bw_psum*8]));
+$write(" %d", $signed(rtl_out[bw_psum*(8)-1:bw_psum*7]));
+$write(" %d", $signed(rtl_out[bw_psum*(7)-1:bw_psum*6]));
+$write(" %d", $signed(rtl_out[bw_psum*(6)-1:bw_psum*5]));
+$write(" %d", $signed(rtl_out[bw_psum*(5)-1:bw_psum*4]));
+$write(" %d", $signed(rtl_out[bw_psum*(4)-1:bw_psum*3]));
+$write(" %d", $signed(rtl_out[bw_psum*(3)-1:bw_psum*2]));
+$write(" %d", $signed(rtl_out[bw_psum*(2)-1:bw_psum*1]));
+$display(" %d", $signed(rtl_out[bw_psum*(1)-1:0]));
 pmem_rd = 0;
-#0.5 clk = 1'b1; 
+#0.5 clk = 1'b1;  #0.5 clk = 1'b0;
+$write("cycle 7:");
+$write(" %d", $signed(rtl_out[bw_psum*(16)-1:bw_psum*15]));
+$write(" %d", $signed(rtl_out[bw_psum*(15)-1:bw_psum*14]));
+$write(" %d", $signed(rtl_out[bw_psum*(14)-1:bw_psum*13]));
+$write(" %d", $signed(rtl_out[bw_psum*(13)-1:bw_psum*12]));
+$write(" %d", $signed(rtl_out[bw_psum*(12)-1:bw_psum*11]));
+$write(" %d", $signed(rtl_out[bw_psum*(11)-1:bw_psum*10]));
+$write(" %d", $signed(rtl_out[bw_psum*(10)-1:bw_psum*9]));
+$write(" %d", $signed(rtl_out[bw_psum*(9)-1:bw_psum*8]));
+$write(" %d", $signed(rtl_out[bw_psum*(8)-1:bw_psum*7]));
+$write(" %d", $signed(rtl_out[bw_psum*(7)-1:bw_psum*6]));
+$write(" %d", $signed(rtl_out[bw_psum*(6)-1:bw_psum*5]));
+$write(" %d", $signed(rtl_out[bw_psum*(5)-1:bw_psum*4]));
+$write(" %d", $signed(rtl_out[bw_psum*(4)-1:bw_psum*3]));
+$write(" %d", $signed(rtl_out[bw_psum*(3)-1:bw_psum*2]));
+$write(" %d", $signed(rtl_out[bw_psum*(2)-1:bw_psum*1]));
+$display(" %d", $signed(rtl_out[bw_psum*(1)-1:0]));
+pmem_add = 0; reset = 1;
+#0.5 clk = 1'b1;  #0.5 clk = 1'b0;
+reset = 0;
 
 
 /////////////// Estimated norm * value printing /////////////////
@@ -879,7 +1170,7 @@ $display("##### Estimated norm*value multiplication result #####");
          end
      end
      #0.5 clk = 1'b1; #0.5 clk = 1'b0;
-     $display("cycle%d: %5h %5h %5h %5h %5h %5h %5h %5h %5h %5h %5h %5h %5h %5h %5h %5h", t, result[t][0],result[t][1], result[t][2], result[t][3], result[t][4], result[t][5], result[t][6], result[t][7], result[t][8], result[t][9], result[t][10], result[t][11], result[t][12], result[t][13], result[t][14],result[t][15]);
+     $display("cycle%d: %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d", t, result[t][0],result[t][1], result[t][2], result[t][3], result[t][4], result[t][5], result[t][6], result[t][7], result[t][8], result[t][9], result[t][10], result[t][11], result[t][12], result[t][13], result[t][14],result[t][15]);
   end
 
 
