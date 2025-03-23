@@ -1,0 +1,4 @@
+rm -rf *innovus.log*
+rm -rf *innovus.cmd*
+rm -rf timing*
+rm -rf *enc*
